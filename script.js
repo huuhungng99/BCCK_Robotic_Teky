@@ -18,11 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const lessonsData = [
         {
             id: 1,
-            title: "Buổi 1: Khám Phá Khoa Học Chuyển Động Cùng Robot Milo",
+            title: "Buổi 1: Giới Thiệu Milo - Xe Tự Hành Khám Phá Không Gian",
             category: "milo",
             categoryName: "Binh Đoàn Milo",
             icon: "fa-robot",
-            img: "Hình ảnh lớp học/IMG_20260815_084353.jpg",
+            img: "Sản phẩm từng bài/bai_1_milo.jpg",
             desc: "Làm quen bộ linh kiện LEGO WeDo 2.0, tìm hiểu cách hoạt động của Động cơ (Motor), Não điều khiển Smarthub và lập trình cho xe thám hiểm Milo di chuyển tiến lên an toàn.",
             coreKnowledge: {
                 assembly: "Lắp ráp khung gầm bánh xe cơ bản & gá động cơ truyền động.",
@@ -34,11 +34,11 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             id: 2,
-            title: "Buổi 2: Mắt Thần Cảm Biến Khoảng Cách Của Xe Milo",
+            title: "Buổi 2: Milo, Hãy Cẩn Thận! (Mắt Thần Cảm Biến Khoảng Cách)",
             category: "milo",
             categoryName: "Binh Đoàn Milo",
             icon: "fa-eye",
-            img: "Hình ảnh lớp học/IMG_20260815_084408.jpg",
+            img: "Sản phẩm từng bài/bai_2_milo.webp",
             desc: "Tìm hiểu nguyên lý phát sóng hồng ngoại của Mắt thần (Motion Sensor). Lập trình cho xe Milo tự động phát hiện vật cản phía trước và phanh dừng khẩn cấp.",
             coreKnowledge: {
                 assembly: "Gắn cảm biến khoảng cách ở đầu xe với góc quét tối ưu.",
@@ -50,11 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             id: 3,
-            title: "Buổi 3: Cảm Biến Độ Nghiêng & Báo Động Vượt Dốc",
+            title: "Buổi 3: Milo Gọi, Trung Tâm Trả Lời (Cảm Biến Độ Nghiêng & Còi Cứu Hộ)",
             category: "milo",
             categoryName: "Binh Đoàn Milo",
             icon: "fa-compass",
-            img: "Hình ảnh lớp học/IMG_20260815_084432.jpg",
+            img: "Sản phẩm từng bài/bai_3_milo.jpg",
             desc: "Khám phá Cảm biến độ nghiêng (Tilt Sensor). Lập trình cho xe Milo nhận biết góc dốc địa hình nguy hiểm, tự động đổi màu đèn LED và phát âm thanh còi cứu hộ.",
             coreKnowledge: {
                 assembly: "Cố định cảm biến độ nghiêng song song với mặt đất trên xe.",
@@ -66,11 +66,11 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             id: 4,
-            title: "Buổi 4: Đội Cứu Hộ Milo & Hợp Tác Kéo Hàng",
+            title: "Buổi 4: Binh Đoàn Robot (Phối Hợp Nhóm & Móc Kéo Cứu Hộ)",
             category: "milo",
             categoryName: "Binh Đoàn Milo",
             icon: "fa-people-carry-box",
-            img: "Hình ảnh lớp học/IMG_20260815_092054.jpg",
+            img: "Sản phẩm từng bài/bai_4_robot.jpg",
             desc: "Lắp ráp móc kéo chịu tải cho xe Milo. Tìm hiểu ma sát bề mặt, trọng tâm xe và lập trình phối hợp nhiều robot để cùng kéo xe hàng nặng về trạm chỉ huy.",
             coreKnowledge: {
                 assembly: "Thiết kế cơ cấu móc kéo, phân bổ trọng tâm tăng lực kéo.",
@@ -82,11 +82,27 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             id: 5,
-            title: "Buổi 5: Tốc Độ Xe Đua & Bí Mật Cặp Bánh Răng",
+            title: "Buổi 5: Robot Pull Xuất Hiện (Bánh Răng Tăng Sức Kéo Siêu Tải)",
+            category: "mechanics",
+            categoryName: "Cơ Cấu Truyền Động",
+            icon: "fa-truck-monster",
+            img: "Sản phẩm từng bài/bai_5_robot_pull.jfif",
+            desc: "Nghiên cứu chiều truyền động bánh răng tăng lực: Bánh răng Nhỏ dẫn động Bánh răng Lớn (Tỉ số truyền 1:3) giúp robot giảm tốc độ nhưng tăng sức kéo cực kỳ mạnh mẽ.",
+            coreKnowledge: {
+                assembly: "Ghép bánh răng nhỏ dẫn động bánh răng lớn tạo mô-men xoắn cao.",
+                sensors: "Cảm biến nghiêng kiểm soát xe khi lên dốc chở nặng.",
+                coding: "Lập trình lực kéo bền bỉ duy trì vận tốc ổn định.",
+                challenge: "Chở khối gạch LEGO leo dốc nghiêng mà không bị tuột."
+            },
+            tags: ["Tăng mô-men lực", "Bánh răng giảm tốc", "Chở tải siêu nặng", "Leo dốc cao"]
+        },
+        {
+            id: 6,
+            title: "Buổi 6: Vương Quốc Xe Đua (Bí Mật Bánh Răng Tăng Tốc Độ F1)",
             category: "mechanics",
             categoryName: "Cơ Cấu Truyền Động",
             icon: "fa-gauge-high",
-            img: "Hình ảnh lớp học/IMG_20260815_092512.jpg",
+            img: "Sản phẩm từng bài/bai_6_race_car.jpg",
             desc: "Khám phá nguyên lý Tỉ số truyền bánh răng: Bánh răng Lớn (24 răng) truyền động cho Bánh răng Nhỏ (8 răng) để Tăng Tốc Độ gấp 3 lần cho siêu xe đua F1.",
             coreKnowledge: {
                 assembly: "Ghép cặp bánh răng tăng tốc (Tỉ số truyền 3:1) vào trục bánh xe.",
@@ -97,28 +113,12 @@ document.addEventListener('DOMContentLoaded', () => {
             tags: ["Tỉ số truyền bánh răng", "Tăng tốc độ 3x", "Bánh răng 24 & 8", "Đua xe F1"]
         },
         {
-            id: 6,
-            title: "Buổi 6: Xe Tải Hạng Nặng & Bánh Răng Tăng Lực",
-            category: "mechanics",
-            categoryName: "Cơ Cấu Truyền Động",
-            icon: "fa-truck-monster",
-            img: "Hình ảnh lớp học/IMG_20260822_091044.jpg",
-            desc: "Nghiên cứu chiều truyền động ngược lại: Bánh răng Nhỏ dẫn động Bánh răng Lớn (Tỉ số truyền 1:3) giúp xe Giảm Tốc Độ nhưng Tăng Sức Kéo cực kỳ mạnh mẽ.",
-            coreKnowledge: {
-                assembly: "Ghép bánh răng nhỏ dẫn động bánh răng lớn tạo lực mô-men xoắn cao.",
-                sensors: "Cảm biến nghiêng kiểm soát xe khi lên dốc chở nặng.",
-                coding: "Lập trình lực kéo bền bỉ duy trì vận tốc ổn định.",
-                challenge: "Chở khối gạch LEGO leo dốc nghiêng mà không bị tuột."
-            },
-            tags: ["Tăng mô-men lực", "Bánh răng giảm tốc", "Chở tải siêu nặng", "Leo dốc cao"]
-        },
-        {
             id: 7,
-            title: "Buổi 7: Bàn Rung Thử Nghiệm Tòa Nhà Chống Động Đất",
+            title: "Buổi 7: Công Trình Chống Động Đất (Bàn Rung Cơ Học Trục Khuỷu)",
             category: "capstone",
             categoryName: "Thiên Tai & Cuối Khóa",
             icon: "fa-house-crack",
-            img: "Hình ảnh lớp học/IMG_20260822_091135.jpg",
+            img: "Sản phẩm từng bài/bai_7_may_tao_dong_dat.jpg",
             desc: "Nghiên cứu nguyên lý rung chấn của động đất. Thiết kế mô hình bàn rung cơ học dùng trục khuỷu lệch tâm và thử nghiệm độ bền vững của các cấu trúc tòa nhà cao tầng.",
             coreKnowledge: {
                 assembly: "Lắp ráp cơ cấu trục khuỷu biến chuyển động quay thành rung lắc.",
@@ -130,27 +130,11 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             id: 8,
-            title: "Buổi 8: Đập Nước Thông Minh Chống Lũ & Cứu Hộ",
-            category: "capstone",
-            categoryName: "Thiên Tai & Cuối Khóa",
-            icon: "fa-water",
-            img: "Hình ảnh lớp học/IMG_20260822_091408.jpg",
-            desc: "Tìm hiểu nguyên lý xả lũ và chống ngập. Chế tạo cửa đập nước tự động đóng/mở bằng cơ cấu trục vít - bánh vít và mắt thần cảm biến nhận diện mực nước dâng cao.",
-            coreKnowledge: {
-                assembly: "Lắp ráp cơ cấu trục vít giữ cố định cánh đập không bị nước đẩy.",
-                sensors: "Cảm biến khoảng cách giả lập đo mực nước lũ dâng cao.",
-                coding: "Cửa đập tự động mở xả lũ khi nước vượt ngưỡng an toàn.",
-                challenge: "Hệ thống phản ứng đóng mở chính xác trong 3 giây."
-            },
-            tags: ["Đập nước chống lũ", "Cơ cấu trục vít", "Mắt thần đo nước", "Tự động xả lũ"]
-        },
-        {
-            id: 9,
-            title: "Buổi 9: Chú Ếch Bật Nhảy & Chu Kỳ Sinh Học",
+            title: "Buổi 8: Sự Tiến Hóa Của Ếch (Mô Phỏng Chân Đòn Bẩy Bật Nhảy)",
             category: "nature",
             categoryName: "Mô Phỏng Tự Nhiên",
             icon: "fa-frog",
-            img: "Hình ảnh lớp học/IMG_20260822_091212.jpg",
+            img: "Sản phẩm từng bài/bai_8_frog.jpg",
             desc: "Mô phỏng chuyển động sinh học của loài ếch. Thiết kế cơ cấu chân đòn bẩy đàn hồi và lập trình cho chú ếch LEGO bật nhảy về phía trước khi có tiếng vỗ tay.",
             coreKnowledge: {
                 assembly: "Cơ cấu chân khớp nối 4 thanh tạo lực đẩy bật nhảy.",
@@ -161,12 +145,12 @@ document.addEventListener('DOMContentLoaded', () => {
             tags: ["Cơ chế bật nhảy", "Đòn bẩy chân ếch", "Kích hoạt âm thanh", "Chuyển động sinh học"]
         },
         {
-            id: 10,
-            title: "Buổi 10: Hoa Và Ong - Khám Phá Thụ Phấn Tự Nhiên",
+            id: 9,
+            title: "Buổi 9: Robot Ong Chúa (Bánh Răng Nón 90° & Thụ Phấn Tự Nhiên)",
             category: "nature",
             categoryName: "Mô Phỏng Tự Nhiên",
             icon: "fa-seedling",
-            img: "Hình ảnh lớp học/IMG_20260822_091159.jpg",
+            img: "Sản phẩm từng bài/bai_9_bee.jfif",
             desc: "Tìm hiểu mối quan hệ cộng sinh giữa Ong và Hoa. Chế tạo mô hình cánh bướm/ong chao lượn quanh đài hoa nhờ cơ cấu bánh răng nón đổi hướng truyền động 90 độ.",
             coreKnowledge: {
                 assembly: "Lắp ráp bánh răng vương miện (Crown Gear) truyền góc 90 độ.",
@@ -177,8 +161,24 @@ document.addEventListener('DOMContentLoaded', () => {
             tags: ["Bánh răng nón 90°", "Ong hút mật", "Cộng sinh tự nhiên", "Cảm biến tiệm cận"]
         },
         {
+            id: 10,
+            title: "Buổi 10: Hệ Thống Điều Khiển Chống Lũ (Đập Nước Thông Minh & Trục Vít)",
+            category: "capstone",
+            categoryName: "Thiên Tai & Cuối Khóa",
+            icon: "fa-water",
+            img: "Sản phẩm từng bài/bai_10_floodgate.jpg",
+            desc: "Tìm hiểu nguyên lý xả lũ và chống ngập. Chế tạo cửa đập nước tự động đóng/mở bằng cơ cấu trục vít - bánh vít và mắt thần cảm biến nhận diện mực nước dâng cao.",
+            coreKnowledge: {
+                assembly: "Lắp ráp cơ cấu trục vít giữ cố định cánh đập không bị nước đẩy.",
+                sensors: "Cảm biến khoảng cách giả lập đo mực nước lũ dâng cao.",
+                coding: "Cửa đập tự động mở xả lũ khi nước vượt ngưỡng an toàn.",
+                challenge: "Hệ thống phản ứng đóng mở chính xác trong 3 giây."
+            },
+            tags: ["Đập nước chống lũ", "Cơ cấu trục vít", "Mắt thần đo nước", "Tự động xả lũ"]
+        },
+        {
             id: 11,
-            title: "Buổi 11: Dự Án Robot Cứu Hộ & Dọn Dẹp Môi Trường",
+            title: "Buổi 11: Tai Họa Thiên Nhiên Và Giải Cứu (Robot Cứu Hộ Đa Năng)",
             category: "capstone",
             categoryName: "Thiên Tai & Cuối Khóa",
             icon: "fa-recycle",
@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             id: 12,
-            title: "Buổi 12: Báo Cáo & Thuyết Trình Dự Án Cuối Khóa",
+            title: "Buổi 12: Dự Án Cuối Khóa (Sáng Tạo, Bảo Vệ & Thuyết Trình)",
             category: "capstone",
             categoryName: "Thiên Tai & Cuối Khóa",
             icon: "fa-trophy",
