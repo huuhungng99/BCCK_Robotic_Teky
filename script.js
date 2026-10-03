@@ -547,7 +547,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Inject all student slides first
     injectStudentSlides();
 
-    // --- 3. Slide Presentation Deck Controller (18 Slides Total) ---
+    // --- 3. Slide Presentation Deck Controller (19 Slides Total) ---
     const slides = document.querySelectorAll('.slide-section');
     const prevBtn = document.getElementById('prev-slide-btn');
     const nextBtn = document.getElementById('next-slide-btn');
@@ -563,7 +563,8 @@ document.addEventListener('DOMContentLoaded', () => {
         "Slide 3: Nội Dung 12 Buổi Học",
         "Slide 4: Ảnh Hoạt Động Lớp Học",
         ...studentsData.map((s, idx) => `Slide ${idx + 5}: Nhận Xét ${s.name}`),
-        "Slide 18: Tổng Kết & Chứng Nhận"
+        "Slide 18: Tổng Kết & Chứng Nhận",
+        "Slide 19: Lộ Trình Học Phần 2 (LEGO WeDo 2.0)"
     ];
 
     const slideIcons = [
@@ -572,7 +573,8 @@ document.addEventListener('DOMContentLoaded', () => {
         "fa-book-open",
         "fa-images",
         ...studentsData.map(() => "fa-user-graduate"),
-        "fa-trophy"
+        "fa-trophy",
+        "fa-rocket"
     ];
 
     let currentSlide = 0;
