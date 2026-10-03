@@ -936,7 +936,7 @@ document.addEventListener('DOMContentLoaded', () => {
         tab.addEventListener('click', () => {
             galleryTabs.forEach(t => t.classList.remove('active'));
             tab.classList.add('active');
-            currentGalleryCat = tab.getAttribute('data-gallery-cat');
+            currentGalleryCat = tab.getAttribute('data-gtab') || tab.getAttribute('data-gallery-cat') || 'all';
             renderGallery();
         });
     });
