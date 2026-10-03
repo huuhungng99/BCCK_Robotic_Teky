@@ -2487,56 +2487,190 @@ h1, h2, h3, h4 {
     .gallery-tabs { width: 100%; overflow-x: auto; padding-bottom: 0.3rem; }
     .g-tab { flex-shrink: 0; font-size: 0.75rem; padding: 0.35rem 0.65rem; }
 
-    /* Individual Student Slide (Slides 5-17) Mobile */
-    .student-individual-card { padding: 1rem 0.85rem; border-radius: 16px; gap: 0.9rem; }
-    .student-slide-header { gap: 0.5rem; padding-bottom: 0.6rem; }
-    .student-slide-badge { font-size: 0.75rem; padding: 0.25rem 0.6rem; }
-    .student-title-badge { font-size: 0.75rem; padding: 0.25rem 0.6rem; }
-    .student-nav-btn { padding: 0.35rem 0.75rem; font-size: 0.76rem; }
+    /* Individual Student Slide (Slides 5-17) Mobile Balanced Layout */
+    .student-individual-card { 
+        padding: 1.1rem 0.9rem; 
+        border-radius: 18px; 
+        gap: 1rem; 
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .student-slide-header { 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.65rem; 
+        padding-bottom: 0.8rem; 
+        width: 100%;
+    }
+
+    .student-slide-meta { 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem; 
+        flex-wrap: wrap; 
+        width: 100%;
+    }
+
+    .student-slide-badge { 
+        font-size: 0.75rem; 
+        padding: 0.3rem 0.7rem; 
+        border-radius: 8px;
+    }
+
+    .student-title-badge { 
+        font-size: 0.75rem; 
+        padding: 0.3rem 0.7rem; 
+        border-radius: 8px;
+    }
+
+    .student-slide-nav { 
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--border-color);
+        border-radius: 9999px;
+        padding: 0.25rem 0.6rem;
+        gap: 0.6rem;
+    }
+
+    .student-nav-btn { 
+        padding: 0.35rem 0.75rem; 
+        font-size: 0.76rem; 
+        border-radius: 9999px;
+    }
     
     .student-slide-body {
         display: flex;
         flex-direction: column;
-        gap: 0.9rem;
+        gap: 1rem;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .student-profile-column {
-        padding: 0.85rem;
-        border-radius: 12px;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 1.2rem 1rem;
+        border-radius: 16px;
+        background: var(--bg-card);
+        border: 1px solid var(--border-glow);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        box-shadow: var(--shadow-sm);
     }
-    .student-avatar-frame { width: 88px; height: 88px; margin-bottom: 0.5rem; }
-    .student-profile-name { font-size: 1.15rem; }
-    .stars-gold { font-size: 0.95rem; }
-    .stars-label { font-size: 0.75rem; }
+
+    .student-avatar-frame { 
+        width: 92px; 
+        height: 92px; 
+        margin: 0 auto 0.6rem; 
+    }
+
+    .student-profile-name { 
+        font-size: 1.25rem; 
+        font-weight: 800;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 0.35rem;
+    }
+
+    .student-stars-box {
+        margin-bottom: 0.8rem;
+    }
+
+    .stars-gold { font-size: 1rem; }
+    .stars-label { font-size: 0.78rem; }
+
     .student-skills-mini {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 0.6rem;
-        padding-top: 0.65rem;
+        gap: 0.65rem 0.9rem;
+        width: 100%;
+        box-sizing: border-box;
+        padding-top: 0.85rem;
+        border-top: 1px dashed var(--border-color);
+        text-align: left;
     }
 
-    .student-eval-column { gap: 0.65rem; }
-    .eval-box { padding: 0.75rem; border-radius: 10px; }
-    .eval-box h4 { font-size: 0.78rem; margin-bottom: 0.25rem; }
-    .eval-box p { font-size: 0.82rem; line-height: 1.4; }
-    .btn-student-report-print { width: 100%; padding: 0.65rem; font-size: 0.8rem; }
+    .skill-mini-row {
+        gap: 0.25rem;
+    }
 
-    .student-video-column { padding: 0.75rem; border-radius: 12px; }
-    .video-header { font-size: 0.8rem; }
+    .student-eval-column { 
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem; 
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .eval-box { 
+        padding: 0.9rem 1rem; 
+        border-radius: 14px; 
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-left-width: 4px;
+        box-shadow: var(--shadow-sm);
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .strength-box { border-left-color: var(--accent-green); }
+    .improvement-box { border-left-color: var(--accent-orange); }
+    .summary-eval-box { border-left-color: var(--accent-primary); }
+
+    .eval-box h4 { font-size: 0.82rem; margin-bottom: 0.3rem; }
+    .eval-box p { font-size: 0.84rem; line-height: 1.45; }
+    
+    .btn-student-report-print { 
+        width: 100%; 
+        box-sizing: border-box;
+        padding: 0.75rem 1rem; 
+        font-size: 0.85rem; 
+        font-weight: 700;
+        border-radius: 10px;
+        justify-content: center;
+        margin-top: 0.2rem;
+    }
+
+    .student-video-column { 
+        padding: 0.9rem; 
+        border-radius: 16px; 
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .video-header { font-size: 0.82rem; margin-bottom: 0.3rem; }
     .video-iframe-wrapper {
         aspect-ratio: 16/9;
         max-height: 240px;
         height: auto;
+        border-radius: 12px;
     }
-    .btn-watch-youtube { padding: 0.55rem; font-size: 0.78rem; }
+    .btn-watch-youtube { 
+        padding: 0.65rem 1rem; 
+        font-size: 0.82rem; 
+        border-radius: 10px;
+        width: 100%;
+        justify-content: center;
+    }
 
     .student-jump-strip {
-        padding-top: 0.6rem;
-        gap: 0.4rem;
+        padding: 0.6rem 0.2rem 0.2rem;
+        gap: 0.45rem;
+        width: 100%;
+        box-sizing: border-box;
         -webkit-overflow-scrolling: touch;
     }
     .s-jump-item { flex: 0 0 54px; }
-    .s-jump-avatar { width: 38px; height: 38px; }
+    .s-jump-avatar { width: 40px; height: 40px; }
     .s-jump-name { font-size: 0.68rem; }
 
     /* Slide 18: Conclusion Slide Mobile */
@@ -2597,6 +2731,5 @@ h1, h2, h3, h4 {
     .gallery-grid { grid-template-columns: 1fr; }
     .tools-overview-grid { grid-template-columns: 1fr; }
     .slide-select-btn span { display: none; }
-    .student-skills-mini { grid-template-columns: 1fr; }
 }
 
