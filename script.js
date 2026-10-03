@@ -2,12 +2,13 @@
  * ==========================================================================
  * ROBOTICS COURSE 1 PRESENTATION - COMPLETE JAVASCRIPT LOGIC
  * Includes:
- * 1. 12 Detailed Lessons Data
+ * 1. 12 Detailed Lessons Data with Categories
  * 2. 21 Classroom Photos Gallery
  * 3. 13 Student Profiles with Varied Ratings (4.6 - 5.0)
  * 4. 19-Slide Deck Controller with Touch Swipe & Keyboard Navigation
- * 5. Interactive Lesson Showcase & Gallery Lightbox
- * 6. Student Certificate Modal & Theme Toggle
+ * 5. Interactive Lesson Showcase & Grid View (Slide 3)
+ * 6. Gallery Lightbox Modal (Slide 4)
+ * 7. Student Certificate Modal & Theme Toggle
  * ==========================================================================
  */
 
@@ -18,8 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             id: 1,
             title: "Buổi 1: Khám Phá Khoa Học Chuyển Động Cùng Robot Milo",
-            category: "c1",
-            categoryName: "Khoa Học & Đời Sống",
+            category: "milo",
+            categoryName: "Binh Đoàn Milo",
             icon: "fa-robot",
             img: "Hình ảnh lớp học/IMG_20260815_084353.jpg",
             desc: "Làm quen bộ linh kiện LEGO WeDo 2.0, tìm hiểu cách hoạt động của Động cơ (Motor), Não điều khiển Smarthub và lập trình cho xe thám hiểm Milo di chuyển tiến lên an toàn.",
@@ -34,8 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             id: 2,
             title: "Buổi 2: Mắt Thần Cảm Biến Khoảng Cách Của Xe Milo",
-            category: "c1",
-            categoryName: "Khoa Học & Đời Sống",
+            category: "milo",
+            categoryName: "Binh Đoàn Milo",
             icon: "fa-eye",
             img: "Hình ảnh lớp học/IMG_20260815_084408.jpg",
             desc: "Tìm hiểu nguyên lý phát sóng hồng ngoại của Mắt thần (Motion Sensor). Lập trình cho xe Milo tự động phát hiện vật cản phía trước và phanh dừng khẩn cấp.",
@@ -50,8 +51,8 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             id: 3,
             title: "Buổi 3: Cảm Biến Độ Nghiêng & Báo Động Vượt Dốc",
-            category: "c1",
-            categoryName: "Khoa Học & Đời Sống",
+            category: "milo",
+            categoryName: "Binh Đoàn Milo",
             icon: "fa-compass",
             img: "Hình ảnh lớp học/IMG_20260815_084432.jpg",
             desc: "Khám phá Cảm biến độ nghiêng (Tilt Sensor). Lập trình cho xe Milo nhận biết góc dốc địa hình nguy hiểm, tự động đổi màu đèn LED và phát âm thanh còi cứu hộ.",
@@ -66,8 +67,8 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             id: 4,
             title: "Buổi 4: Đội Cứu Hộ Milo & Hợp Tác Kéo Hàng",
-            category: "c1",
-            categoryName: "Khoa Học & Đời Sống",
+            category: "milo",
+            categoryName: "Binh Đoàn Milo",
             icon: "fa-people-carry-box",
             img: "Hình ảnh lớp học/IMG_20260815_092054.jpg",
             desc: "Lắp ráp móc kéo chịu tải cho xe Milo. Tìm hiểu ma sát bề mặt, trọng tâm xe và lập trình phối hợp nhiều robot để cùng kéo xe hàng nặng về trạm chỉ huy.",
@@ -82,8 +83,8 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             id: 5,
             title: "Buổi 5: Tốc Độ Xe Đua & Bí Mật Cặp Bánh Răng",
-            category: "c2",
-            categoryName: "Kỹ Thuật & Cơ Khí",
+            category: "mechanics",
+            categoryName: "Cơ Cấu Truyền Động",
             icon: "fa-gauge-high",
             img: "Hình ảnh lớp học/IMG_20260815_092512.jpg",
             desc: "Khám phá nguyên lý Tỉ số truyền bánh răng: Bánh răng Lớn (24 răng) truyền động cho Bánh răng Nhỏ (8 răng) để Tăng Tốc Độ gấp 3 lần cho siêu xe đua F1.",
@@ -98,8 +99,8 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             id: 6,
             title: "Buổi 6: Xe Tải Hạng Nặng & Bánh Răng Tăng Lực",
-            category: "c2",
-            categoryName: "Kỹ Thuật & Cơ Khí",
+            category: "mechanics",
+            categoryName: "Cơ Cấu Truyền Động",
             icon: "fa-truck-monster",
             img: "Hình ảnh lớp học/IMG_20260822_091044.jpg",
             desc: "Nghiên cứu chiều truyền động ngược lại: Bánh răng Nhỏ dẫn động Bánh răng Lớn (Tỉ số truyền 1:3) giúp xe Giảm Tốc Độ nhưng Tăng Sức Kéo cực kỳ mạnh mẽ.",
@@ -114,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             id: 7,
             title: "Buổi 7: Bàn Rung Thử Nghiệm Tòa Nhà Chống Động Đất",
-            category: "c3",
+            category: "capstone",
             categoryName: "Thiên Tai & Cuối Khóa",
             icon: "fa-house-crack",
             img: "Hình ảnh lớp học/IMG_20260822_091135.jpg",
@@ -130,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             id: 8,
             title: "Buổi 8: Đập Nước Thông Minh Chống Lũ & Cứu Hộ",
-            category: "c3",
+            category: "capstone",
             categoryName: "Thiên Tai & Cuối Khóa",
             icon: "fa-water",
             img: "Hình ảnh lớp học/IMG_20260822_091408.jpg",
@@ -146,8 +147,8 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             id: 9,
             title: "Buổi 9: Chú Ếch Bật Nhảy & Chu Kỳ Sinh Học",
-            category: "c1",
-            categoryName: "Khoa Học & Đời Sống",
+            category: "nature",
+            categoryName: "Mô Phỏng Tự Nhiên",
             icon: "fa-frog",
             img: "Hình ảnh lớp học/IMG_20260822_091212.jpg",
             desc: "Mô phỏng chuyển động sinh học của loài ếch. Thiết kế cơ cấu chân đòn bẩy đàn hồi và lập trình cho chú ếch LEGO bật nhảy về phía trước khi có tiếng vỗ tay.",
@@ -162,8 +163,8 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             id: 10,
             title: "Buổi 10: Hoa Và Ong - Khám Phá Thụ Phấn Tự Nhiên",
-            category: "c1",
-            categoryName: "Khoa Học & Đời Sống",
+            category: "nature",
+            categoryName: "Mô Phỏng Tự Nhiên",
             icon: "fa-seedling",
             img: "Hình ảnh lớp học/IMG_20260822_091159.jpg",
             desc: "Tìm hiểu mối quan hệ cộng sinh giữa Ong và Hoa. Chế tạo mô hình cánh bướm/ong chao lượn quanh đài hoa nhờ cơ cấu bánh răng nón đổi hướng truyền động 90 độ.",
@@ -178,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             id: 11,
             title: "Buổi 11: Dự Án Robot Cứu Hộ & Dọn Dẹp Môi Trường",
-            category: "c3",
+            category: "capstone",
             categoryName: "Thiên Tai & Cuối Khóa",
             icon: "fa-recycle",
             img: "Hình ảnh lớp học/IMG_20260822_091428.jpg",
@@ -194,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             id: 12,
             title: "Buổi 12: Báo Cáo & Thuyết Trình Dự Án Cuối Khóa",
-            category: "c3",
+            category: "capstone",
             categoryName: "Thiên Tai & Cuối Khóa",
             icon: "fa-trophy",
             img: "Hình ảnh lớp học/IMG_20260822_091430.jpg",
@@ -762,109 +763,139 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 6. Slide 3: Interactive Lesson Showcase Viewer ---
+    // --- 6. Slide 3: Interactive Lesson Showcase & Grid Viewer ---
     let currentLessonIdx = 0;
-    const lessonShowcaseCard = document.getElementById('lesson-showcase-card');
-    const lessonThumbsContainer = document.getElementById('lesson-thumbs-container');
+    let currentCurriculumFilter = 'all';
+    const lessonSlideShowcase = document.getElementById('lesson-slide-showcase');
+    const curriculumGrid = document.getElementById('curriculum-grid');
+    const btnViewSlides = document.getElementById('btn-view-slides');
+    const btnViewGrid = document.getElementById('btn-view-grid');
+    const filterChips = document.querySelectorAll('.filter-chip');
 
     function renderFeaturedLesson(idx) {
-        if (!lessonShowcaseCard) return;
+        if (!lessonSlideShowcase) return;
         currentLessonIdx = idx;
         const l = lessonsData[idx];
 
-        lessonShowcaseCard.innerHTML = `
-            <div class="lesson-slide-header">
-                <div class="lesson-slide-meta">
-                    <span class="lesson-num-badge"><i class="fa-solid fa-circle-play"></i> BUỔI ${l.id} / 12</span>
-                    <span class="lesson-cat-badge"><i class="fa-solid ${l.icon}"></i> ${l.categoryName}</span>
-                </div>
-                <div class="lesson-slide-nav">
-                    <button class="lesson-nav-btn prev" onclick="prevLesson()" ${idx === 0 ? 'disabled' : ''} title="Bài Trước">
-                        <i class="fa-solid fa-chevron-left"></i> Trước
-                    </button>
-                    <span class="lesson-slide-counter">${idx + 1} / ${lessonsData.length}</span>
-                    <button class="lesson-nav-btn next" onclick="nextLesson()" ${idx === lessonsData.length - 1 ? 'disabled' : ''} title="Bài Tiếp">
-                        Tiếp <i class="fa-solid fa-chevron-right"></i>
-                    </button>
-                </div>
-            </div>
-
-            <div class="lesson-slide-body">
-                <div class="lesson-img-container">
-                    <div class="lesson-img-wrapper" onclick="openLightboxForSingleImage('${l.img}', '${l.title}')">
-                        <img src="${encodeURI(l.img)}" alt="${l.title}" class="lesson-product-img">
-                        <div class="lesson-img-overlay">
-                            <span class="zoom-icon"><i class="fa-solid fa-expand"></i> Phóng to ảnh</span>
-                        </div>
+        lessonSlideShowcase.innerHTML = `
+            <div class="featured-lesson-card">
+                <div class="lesson-slide-header">
+                    <div class="lesson-slide-meta">
+                        <span class="lesson-slide-badge"><i class="fa-solid fa-circle-play"></i> BUỔI ${l.id} / 12</span>
+                        <span class="lesson-cat-badge"><i class="fa-solid ${l.icon}"></i> ${l.categoryName}</span>
                     </div>
-                    <span class="lesson-img-caption"><i class="fa-solid fa-camera"></i> Hình ảnh thực hành tại lớp học Teky</span>
+                    <div class="lesson-slide-nav">
+                        <button class="lesson-nav-btn prev" onclick="prevLesson()" ${idx === 0 ? 'disabled' : ''} title="Bài Trước">
+                            <i class="fa-solid fa-chevron-left"></i> Trước
+                        </button>
+                        <span class="lesson-slide-counter">${idx + 1} / ${lessonsData.length}</span>
+                        <button class="lesson-nav-btn next" onclick="nextLesson()" ${idx === lessonsData.length - 1 ? 'disabled' : ''} title="Bài Tiếp">
+                            Tiếp <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
                 </div>
 
-                <div class="lesson-info-container">
-                    <h3 class="lesson-showcase-title">${l.title}</h3>
-                    <p class="lesson-showcase-desc">${l.desc}</p>
-
-                    <div class="core-knowledge-header">
-                        <i class="fa-solid fa-microchip"></i> KIẾN THỨC & KỸ NĂNG TRỌNG TÂM:
+                <div class="lesson-slide-body">
+                    <div class="lesson-img-container">
+                        <div class="lesson-img-wrapper" onclick="openLightboxForSingleImage('${l.img}', '${l.title}')">
+                            <img src="${encodeURI(l.img)}" alt="${l.title}" class="lesson-product-img">
+                            <div class="lesson-img-overlay">
+                                <span class="zoom-icon"><i class="fa-solid fa-expand"></i> Phóng to ảnh</span>
+                            </div>
+                        </div>
+                        <span class="lesson-img-caption"><i class="fa-solid fa-camera"></i> Hình ảnh thực hành tại lớp học Teky</span>
                     </div>
 
-                    <div class="core-knowledge-grid">
-                        <div class="ck-item">
-                            <div class="ck-icon"><i class="fa-solid fa-puzzle-piece"></i></div>
-                            <div class="ck-text">
-                                <h5>Cơ Khí & Lắp Ráp:</h5>
-                                <p>${l.coreKnowledge.assembly}</p>
+                    <div class="lesson-info-container">
+                        <h3 class="lesson-showcase-title">${l.title}</h3>
+                        <p class="lesson-showcase-desc">${l.desc}</p>
+
+                        <div class="core-knowledge-header">
+                            <i class="fa-solid fa-microchip"></i> KIẾN THỨC & KỸ NĂNG TRỌNG TÂM:
+                        </div>
+
+                        <div class="core-knowledge-grid">
+                            <div class="ck-item">
+                                <div class="ck-icon"><i class="fa-solid fa-puzzle-piece"></i></div>
+                                <div class="ck-text">
+                                    <h5>Cơ Khí & Lắp Ráp:</h5>
+                                    <p>${l.coreKnowledge.assembly}</p>
+                                </div>
+                            </div>
+
+                            <div class="ck-item">
+                                <div class="ck-icon"><i class="fa-solid fa-wave-square"></i></div>
+                                <div class="ck-text">
+                                    <h5>Động Cơ & Cảm Biến:</h5>
+                                    <p>${l.coreKnowledge.sensors}</p>
+                                </div>
+                            </div>
+
+                            <div class="ck-item">
+                                <div class="ck-icon"><i class="fa-solid fa-code"></i></div>
+                                <div class="ck-text">
+                                    <h5>Tư Duy Lập Trình:</h5>
+                                    <p>${l.coreKnowledge.coding}</p>
+                                </div>
+                            </div>
+
+                            <div class="ck-item">
+                                <div class="ck-icon"><i class="fa-solid fa-bullseye"></i></div>
+                                <div class="ck-text">
+                                    <h5>Thử Thách Vận Hành:</h5>
+                                    <p>${l.coreKnowledge.challenge}</p>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="ck-item">
-                            <div class="ck-icon"><i class="fa-solid fa-wave-square"></i></div>
-                            <div class="ck-text">
-                                <h5>Động Cơ & Cảm Biến:</h5>
-                                <p>${l.coreKnowledge.sensors}</p>
-                            </div>
-                        </div>
-
-                        <div class="ck-item">
-                            <div class="ck-icon"><i class="fa-solid fa-code"></i></div>
-                            <div class="ck-text">
-                                <h5>Tư Duy Lập Trình:</h5>
-                                <p>${l.coreKnowledge.coding}</p>
-                            </div>
-                        </div>
-
-                        <div class="ck-item">
-                            <div class="ck-icon"><i class="fa-solid fa-bullseye"></i></div>
-                            <div class="ck-text">
-                                <h5>Thử Thách Vận Hành:</h5>
-                                <p>${l.coreKnowledge.challenge}</p>
-                            </div>
+                        <div class="lesson-tags-list">
+                            ${l.tags.map(t => `<span class="lesson-tag-item"><i class="fa-solid fa-check"></i> ${t}</span>`).join('')}
                         </div>
                     </div>
+                </div>
 
-                    <div class="lesson-tags-list">
-                        ${l.tags.map(t => `<span class="lesson-tag-item"><i class="fa-solid fa-check"></i> ${t}</span>`).join('')}
-                    </div>
+                <!-- Carousel thumbnails strip at bottom of showcase -->
+                <div class="lesson-thumbs-carousel">
+                    ${lessonsData.map((ls, lidx) => `
+                        <div class="thumb-item ${lidx === idx ? 'active' : ''}" onclick="selectLesson(${lidx})" title="${ls.title}">
+                            <div class="thumb-img-box">
+                                <img src="${encodeURI(ls.img)}" alt="Buổi ${ls.id}">
+                            </div>
+                            <span class="thumb-label">Buổi ${ls.id}</span>
+                        </div>
+                    `).join('')}
                 </div>
             </div>
         `;
-
-        // Update Thumbnails Active State
-        const thumbs = document.querySelectorAll('.thumb-item');
-        thumbs.forEach((thumb, tIdx) => {
-            thumb.classList.toggle('active', tIdx === idx);
-        });
     }
 
-    function renderLessonThumbs() {
-        if (!lessonThumbsContainer) return;
-        lessonThumbsContainer.innerHTML = lessonsData.map((l, idx) => `
-            <div class="thumb-item ${idx === 0 ? 'active' : ''}" onclick="selectLesson(${idx})" title="${l.title}">
-                <div class="thumb-img-box">
-                    <img src="${encodeURI(l.img)}" alt="Buổi ${l.id}">
-                    <span class="thumb-badge">B${l.id}</span>
+    function renderCurriculumGrid() {
+        if (!curriculumGrid) return;
+        const filtered = lessonsData.filter(l => currentCurriculumFilter === 'all' || l.category === currentCurriculumFilter);
+
+        curriculumGrid.innerHTML = filtered.map(l => `
+            <div class="lesson-card">
+                <div class="lesson-card-img-wrapper" onclick="openLightboxForSingleImage('${l.img}', '${l.title}')">
+                    <img src="${encodeURI(l.img)}" alt="${l.title}" class="lesson-card-img" loading="lazy">
+                    <div class="lesson-card-overlay">
+                        <span class="zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i> Xem lớn</span>
+                    </div>
+                    <span class="lesson-badge">Buổi ${l.id}</span>
                 </div>
-                <span class="thumb-title">Buổi ${l.id}</span>
+                <div class="lesson-card-content">
+                    <div class="lesson-card-header">
+                        <div class="lesson-icon-wrapper"><i class="fa-solid ${l.icon}"></i></div>
+                        <span class="lesson-cat-pill">${l.categoryName}</span>
+                    </div>
+                    <h4 style="font-size: 0.95rem; font-weight: 800; margin-bottom: 0.4rem; color: var(--text-primary);">${l.title}</h4>
+                    <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45; margin-bottom: 0.6rem;">${l.desc}</p>
+                    <div class="lesson-tags-list" style="margin-top: auto;">
+                        ${l.tags.map(t => `<span class="lesson-tag-item"><i class="fa-solid fa-check"></i> ${t}</span>`).join('')}
+                    </div>
+                    <button class="btn-play-lesson-slide" onclick="switchToSlideMode(${l.id - 1})">
+                        <i class="fa-solid fa-desktop"></i> Xem Trình Chiếu Chi Tiết
+                    </button>
+                </div>
             </div>
         `).join('');
     }
@@ -881,24 +912,61 @@ document.addEventListener('DOMContentLoaded', () => {
         if (currentLessonIdx < lessonsData.length - 1) renderFeaturedLesson(currentLessonIdx + 1);
     };
 
-    renderLessonThumbs();
-    renderFeaturedLesson(0);
+    window.switchToSlideMode = function(idx) {
+        if (btnViewSlides && btnViewGrid) {
+            btnViewSlides.classList.add('active');
+            btnViewGrid.classList.remove('active');
+        }
+        if (lessonSlideShowcase && curriculumGrid) {
+            lessonSlideShowcase.classList.remove('hidden');
+            curriculumGrid.classList.add('hidden');
+        }
+        renderFeaturedLesson(idx);
+    };
 
-    // Filter Buttons for Lesson Categories
-    const lessonFilterBtns = document.querySelectorAll('.filter-btn');
-    lessonFilterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            lessonFilterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            const cat = btn.getAttribute('data-cat');
-            if (cat === 'all') {
-                renderFeaturedLesson(0);
+    // Toggle View Modes
+    if (btnViewSlides) {
+        btnViewSlides.addEventListener('click', () => {
+            btnViewSlides.classList.add('active');
+            btnViewGrid.classList.remove('active');
+            lessonSlideShowcase.classList.remove('hidden');
+            curriculumGrid.classList.add('hidden');
+        });
+    }
+
+    if (btnViewGrid) {
+        btnViewGrid.addEventListener('click', () => {
+            btnViewGrid.classList.add('active');
+            btnViewSlides.classList.remove('active');
+            lessonSlideShowcase.classList.add('hidden');
+            curriculumGrid.classList.remove('hidden');
+            renderCurriculumGrid();
+        });
+    }
+
+    // Filter Chips
+    filterChips.forEach(chip => {
+        chip.addEventListener('click', () => {
+            filterChips.forEach(c => c.classList.remove('active'));
+            chip.classList.add('active');
+            currentCurriculumFilter = chip.getAttribute('data-filter') || 'all';
+
+            if (!lessonSlideShowcase.classList.contains('hidden')) {
+                // In slide mode, jump to the first lesson in this category
+                if (currentCurriculumFilter === 'all') {
+                    renderFeaturedLesson(0);
+                } else {
+                    const foundIdx = lessonsData.findIndex(l => l.category === currentCurriculumFilter);
+                    if (foundIdx !== -1) renderFeaturedLesson(foundIdx);
+                }
             } else {
-                const foundIdx = lessonsData.findIndex(l => l.category === cat);
-                if (foundIdx !== -1) renderFeaturedLesson(foundIdx);
+                renderCurriculumGrid();
             }
         });
     });
+
+    renderFeaturedLesson(0);
+    renderCurriculumGrid();
 
     // --- 7. Slide 4: Classroom Gallery & Lightbox ---
     const galleryGrid = document.getElementById('gallery-grid');
