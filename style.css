@@ -2328,89 +2328,192 @@ h1, h2, h3, h4 {
 /* ==========================================================================
    MOBILE RESPONSIVE MEDIA QUERIES (FULL OPTIMIZATION)
    ========================================================================== */
+/* ==========================================================================
+   MOBILE RESPONSIVE MEDIA QUERIES (FULL OPTIMIZATION)
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .student-slide-body {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+    .student-video-column {
+        grid-column: 1 / -1;
+    }
+}
+
 @media (max-width: 768px) {
     /* Navbar Mobile Adjustments */
-    .navbar { height: 64px; }
-    .presentation-wrapper { top: 64px; bottom: 64px; }
-    .logo-title { font-size: 0.95rem; }
+    .navbar { height: 58px; }
+    .presentation-wrapper { top: 58px; bottom: 58px; }
+    .nav-container { padding: 0 0.8rem; }
+    .logo-title { font-size: 0.9rem; }
     .logo-sub { display: none; }
-    .logo-icon { width: 34px; height: 34px; font-size: 1rem; }
+    .logo-icon { width: 32px; height: 32px; font-size: 0.95rem; }
 
-    .slide-select-btn span { font-size: 0.78rem; }
-    .slide-dropdown { width: 220px; }
+    .slide-select-btn { padding: 0.35rem 0.7rem; }
+    .slide-select-btn span { font-size: 0.75rem; max-width: 130px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .slide-dropdown { width: 250px; max-height: 60vh; }
 
     /* Slide Content & Padding */
-    .slide-section { padding: 1rem 0 3.5rem; }
-    .section-title { font-size: 1.6rem; }
-    .section-description { font-size: 0.9rem; }
+    .slide-section { padding: 0.8rem 0 3.8rem; }
+    .section-title { font-size: 1.45rem; }
+    .section-description { font-size: 0.86rem; }
+    .section-tag { font-size: 0.74rem; padding: 0.25rem 0.7rem; }
 
     /* Hero Slide Mobile */
-    .hero-title { font-size: 1.85rem; }
-    .hero-subtitle { font-size: 0.92rem; margin-bottom: 1.4rem; }
-    .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 0.7rem; }
-    .stat-card { padding: 0.8rem; }
-    .stat-number { font-size: 1.3rem; }
-    .stat-label { font-size: 0.72rem; }
+    .hero-title { font-size: 1.65rem; line-height: 1.25; }
+    .hero-subtitle { font-size: 0.88rem; margin-bottom: 1.2rem; }
+    .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
+    .stat-card { padding: 0.75rem; gap: 0.6rem; }
+    .stat-icon { width: 38px; height: 38px; font-size: 1rem; }
+    .stat-number { font-size: 1.25rem; }
+    .stat-label { font-size: 0.7rem; }
     .hero-buttons { flex-direction: column; width: 100%; gap: 0.6rem; }
-    .btn-main { width: 100%; justify-content: center; }
+    .btn-main { width: 100%; justify-content: center; padding: 0.75rem 1.2rem; font-size: 0.88rem; }
 
     /* Teacher Profile Slide Mobile */
-    .teacher-profile-card { padding: 1.2rem; }
-    .teacher-main-info { flex-direction: column; text-align: center; gap: 1rem; }
-    .teacher-bio h3 { font-size: 1.35rem; }
-    .teacher-contacts { justify-content: center; gap: 0.6rem; font-size: 0.8rem; }
-    .teacher-details-grid { grid-template-columns: 1fr; gap: 0.8rem; margin: 1rem 0; }
-    .teacher-detail-box { padding: 0.9rem; }
+    .teacher-profile-card { padding: 1rem; border-radius: 14px; }
+    .teacher-main-info { flex-direction: column; text-align: center; gap: 0.9rem; }
+    .teacher-avatar-box { width: 100%; display: flex; flex-direction: column; align-items: center; }
+    .teacher-avatar-img-wrapper { width: 110px; height: 110px; }
+    .teacher-bio h3 { font-size: 1.3rem; }
+    .teacher-subtitle { font-size: 0.82rem; }
+    .teacher-summary { font-size: 0.84rem; }
+    .teacher-contacts { justify-content: center; gap: 0.5rem; font-size: 0.78rem; }
+    .teacher-details-grid { grid-template-columns: 1fr; gap: 0.75rem; margin: 0.9rem 0; }
+    .teacher-detail-box { padding: 0.85rem; }
+    .teacher-detail-box h4 { font-size: 0.86rem; }
+    .teacher-detail-box li { font-size: 0.8rem; }
     .teacher-link-footer { flex-direction: column; align-items: stretch; text-align: center; gap: 0.6rem; }
     .teacher-ref-btn { justify-content: center; width: 100%; }
 
-    /* Curriculum Grid Mobile */
-    .curriculum-grid { grid-template-columns: 1fr; gap: 0.8rem; }
+    /* Lesson Showcase Slide 3 Mobile */
+    .lesson-slide-body { grid-template-columns: 1fr; gap: 1rem; }
+    .lesson-showcase-title { font-size: 1.25rem; }
+    .lesson-showcase-desc { font-size: 0.86rem; }
+    .core-knowledge-grid { grid-template-columns: 1fr; gap: 0.5rem; }
+    .ck-item { padding: 0.65rem; }
+    .lesson-thumbs-carousel { padding-top: 0.6rem; gap: 0.4rem; }
+    .thumb-item { flex: 0 0 60px; }
+    .thumb-img-box { width: 60px; height: 42px; }
 
     /* Gallery Grid Mobile */
     .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
-    .gallery-controls { flex-direction: column; align-items: stretch; }
+    .gallery-controls { flex-direction: column; align-items: stretch; gap: 0.6rem; }
     .search-box { max-width: 100%; }
     .gallery-tabs { width: 100%; overflow-x: auto; padding-bottom: 0.3rem; }
-    .g-tab { flex-shrink: 0; font-size: 0.75rem; padding: 0.4rem 0.7rem; }
+    .g-tab { flex-shrink: 0; font-size: 0.75rem; padding: 0.35rem 0.65rem; }
 
-    /* Student Section Mobile */
-    .student-toolbar { flex-direction: column; align-items: stretch; }
-    .student-search { max-width: 100%; }
-    .student-sort { justify-content: space-between; }
-    .students-grid { grid-template-columns: 1fr; gap: 1rem; }
+    /* Individual Student Slide (Slides 5-17) Mobile */
+    .student-individual-card { padding: 1rem 0.85rem; border-radius: 16px; gap: 0.9rem; }
+    .student-slide-header { gap: 0.5rem; padding-bottom: 0.6rem; }
+    .student-slide-badge { font-size: 0.75rem; padding: 0.25rem 0.6rem; }
+    .student-title-badge { font-size: 0.75rem; padding: 0.25rem 0.6rem; }
+    .student-nav-btn { padding: 0.35rem 0.75rem; font-size: 0.76rem; }
+    
+    .student-slide-body {
+        display: flex;
+        flex-direction: column;
+        gap: 0.9rem;
+    }
 
-    /* Conclusion Slide Mobile */
-    .conclusion-box { padding: 1.5rem 1rem; }
-    .conclusion-box h3 { font-size: 1.35rem; }
-    .conclusion-actions { flex-direction: column; width: 100%; }
+    .student-profile-column {
+        padding: 0.85rem;
+        border-radius: 12px;
+    }
+    .student-avatar-frame { width: 88px; height: 88px; margin-bottom: 0.5rem; }
+    .student-profile-name { font-size: 1.15rem; }
+    .stars-gold { font-size: 0.95rem; }
+    .stars-label { font-size: 0.75rem; }
+    .student-skills-mini {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.6rem;
+        padding-top: 0.65rem;
+    }
 
-    /* Floating Controls Bar Mobile */
+    .student-eval-column { gap: 0.65rem; }
+    .eval-box { padding: 0.75rem; border-radius: 10px; }
+    .eval-box h4 { font-size: 0.78rem; margin-bottom: 0.25rem; }
+    .eval-box p { font-size: 0.82rem; line-height: 1.4; }
+    .btn-student-report-print { width: 100%; padding: 0.65rem; font-size: 0.8rem; }
+
+    .student-video-column { padding: 0.75rem; border-radius: 12px; }
+    .video-header { font-size: 0.8rem; }
+    .video-iframe-wrapper {
+        aspect-ratio: 16/9;
+        max-height: 240px;
+        height: auto;
+    }
+    .btn-watch-youtube { padding: 0.55rem; font-size: 0.78rem; }
+
+    .student-jump-strip {
+        padding-top: 0.6rem;
+        gap: 0.4rem;
+        -webkit-overflow-scrolling: touch;
+    }
+    .s-jump-item { flex: 0 0 54px; }
+    .s-jump-avatar { width: 38px; height: 38px; }
+    .s-jump-name { font-size: 0.68rem; }
+
+    /* Slide 18: Conclusion Slide Mobile */
+    .conclusion-box { padding: 1.2rem 0.9rem; border-radius: 16px; }
+    .conclusion-icon { width: 56px; height: 56px; font-size: 1.7rem; margin-bottom: 0.8rem; }
+    .conclusion-box h3 { font-size: 1.3rem; }
+    .conclusion-text { font-size: 0.86rem; margin-bottom: 1.1rem; }
+    .conclusion-highlights { gap: 0.5rem; margin-bottom: 1.2rem; }
+    .highlight-item { padding: 0.65rem 0.9rem; font-size: 0.8rem; }
+    .conclusion-actions { flex-direction: column; width: 100%; gap: 0.6rem; }
+
+    /* Slide 19: Next Course Mobile */
+    .tools-overview-grid { grid-template-columns: repeat(2, 1fr); gap: 0.65rem; }
+    .tool-card { padding: 0.85rem; }
+    .tool-card h4 { font-size: 0.84rem; }
+    .tool-card p { font-size: 0.74rem; }
+    .next-lessons-box { padding: 0.9rem; }
+    .next-lessons-grid { grid-template-columns: 1fr; gap: 0.6rem; }
+    .next-lesson-card { padding: 0.75rem; }
+    .next-course-actions { flex-direction: column; width: 100%; gap: 0.6rem; }
+
+    /* Floating Controls Bar Mobile (19 Slides Optimized) */
     .slide-controls-bar {
-        height: 48px;
-        padding: 0 0.6rem;
-        gap: 0.5rem;
-        bottom: 0.8rem;
-        width: calc(100% - 2rem);
-        max-width: 380px;
+        height: 44px;
+        padding: 0 0.5rem;
+        gap: 0.35rem;
+        bottom: 0.6rem;
+        width: calc(100% - 1.2rem);
+        max-width: 350px;
         justify-content: space-between;
     }
 
-    .slide-dots { gap: 0.35rem; }
-    .dot { width: 7px; height: 7px; }
-    .dot.active { width: 18px; }
-    .slide-counter-badge { font-size: 0.78rem; min-width: 32px; }
+    .nav-arrow-btn { width: 34px; height: 34px; font-size: 0.85rem; }
+    .slide-dots {
+        max-width: 130px;
+        overflow-x: auto;
+        gap: 3px;
+        padding: 0 2px;
+        scrollbar-width: none;
+    }
+    .slide-dots::-webkit-scrollbar { display: none; }
+    .dot { width: 6px; height: 6px; flex-shrink: 0; }
+    .dot.active { width: 15px; }
+    .slide-counter-badge { font-size: 0.75rem; min-width: 48px; padding: 0.2rem 0.4rem; }
 
     /* Modal Responsive */
-    .modal-student-header { flex-direction: column; text-align: center; padding: 1.2rem; gap: 0.8rem; }
-    .modal-student-info h3 { font-size: 1.35rem; }
-    .modal-body-padding { padding: 1rem 1.2rem 1.2rem; }
-    .detailed-skills-grid { grid-template-columns: 1fr; }
+    .modal-student-header { flex-direction: column; text-align: center; padding: 1.1rem; gap: 0.7rem; }
+    .modal-avatar { width: 76px; height: 76px; }
+    .modal-student-info h3 { font-size: 1.25rem; }
+    .modal-body-padding { padding: 0.9rem 1rem 1rem; }
+    .detailed-skills-grid { grid-template-columns: 1fr; gap: 0.6rem; }
 }
 
 @media (max-width: 480px) {
-    .section-title { font-size: 1.4rem; }
-    .hero-title { font-size: 1.6rem; }
+    .section-title { font-size: 1.3rem; }
+    .hero-title { font-size: 1.45rem; }
+    .hero-stats { grid-template-columns: repeat(2, 1fr); }
     .gallery-grid { grid-template-columns: 1fr; }
+    .tools-overview-grid { grid-template-columns: 1fr; }
     .slide-select-btn span { display: none; }
+    .student-skills-mini { grid-template-columns: 1fr; }
 }
+

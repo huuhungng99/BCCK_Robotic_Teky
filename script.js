@@ -1,192 +1,200 @@
-/* ==========================================================================
-   ROBOTICS COURSE PRESENTATION SLIDES - 18 SLIDES INTERACTIVE DECK
-   ========================================================================== */
+/**
+ * ==========================================================================
+ * ROBOTICS COURSE 1 PRESENTATION - COMPLETE JAVASCRIPT LOGIC
+ * Includes:
+ * 1. 12 Detailed Lessons Data
+ * 2. 21 Classroom Photos Gallery
+ * 3. 13 Student Profiles with Varied Ratings (4.6 - 5.0)
+ * 4. 19-Slide Deck Controller with Touch Swipe & Keyboard Navigation
+ * 5. Interactive Lesson Showcase & Gallery Lightbox
+ * 6. Student Certificate Modal & Theme Toggle
+ * ==========================================================================
+ */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // --- 1. Data Definitions ---
 
-    // Lessons Data (12 Buổi học diễn giải đơn giản & Hình ảnh sản phẩm)
+    // --- 1. Course 1 Curriculum Data (12 Lessons) ---
     const lessonsData = [
         {
             id: 1,
-            title: "GIỚI THIỆU MILO - XE TỰ HÀNH KHÁM PHÁ KHÔNG GIAN",
-            category: "milo",
-            categoryName: "Binh Đoàn Milo",
-            icon: "fa-rocket",
-            img: "Sản phẩm từng bài/bai_1_milo.jpg",
-            desc: "Khám phá chú xe thám hiểm Milo. Tập lắp bánh xe, gắn cục điều khiển trung tâm WeDo SmartHub và ghép các khối lệnh cơ bản cho xe di chuyển tiến lùi, nhấp nháy đèn báo hiệu.",
+            title: "Buổi 1: Khám Phá Khoa Học Chuyển Động Cùng Robot Milo",
+            category: "c1",
+            categoryName: "Khoa Học & Đời Sống",
+            icon: "fa-robot",
+            img: "Hình ảnh lớp học/IMG_20260815_084353.jpg",
+            desc: "Làm quen bộ linh kiện LEGO WeDo 2.0, tìm hiểu cách hoạt động của Động cơ (Motor), Não điều khiển Smarthub và lập trình cho xe thám hiểm Milo di chuyển tiến lên an toàn.",
             coreKnowledge: {
-                assembly: "Lắp ráp khung xe 4 bánh, kết nối động cơ với SmartHub.",
-                sensors: "Động cơ WeDo & Đèn LED đổi màu SmartHub.",
-                coding: "Ghép lệnh di chuyển tiến/lùi, phát âm thanh không gian.",
-                challenge: "Điều khiển xe Milo tự hành khám phá môi trường."
+                assembly: "Lắp ráp khung gầm bánh xe cơ bản & gá động cơ truyền động.",
+                sensors: "Kết nối Động cơ (Motor) với Não điều khiển Smarthub qua Bluetooth.",
+                coding: "Khối lệnh Khởi động, Động cơ quay theo chiều kim đồng hồ, Dừng lại.",
+                challenge: "Điều khiển xe di chuyển chính xác đến vị trí mẫu vật."
             },
-            tags: ["Lắp ráp xe Milo", "Cục điều khiển SmartHub", "Lập trình tiến lùi"]
+            tags: ["Lắp ráp xe Milo", "Động cơ Motor", "Khối lệnh di chuyển", "Smarthub"]
         },
         {
             id: 2,
-            title: "MILO, HÃY CẨN THẬN!",
-            category: "milo",
-            categoryName: "Binh Đoàn Milo",
-            icon: "fa-shield-halved",
-            img: "Sản phẩm từng bài/bai_2_milo.webp",
-            desc: "Gắn thêm mắt thần cảm biến vật cản (Motion Sensor). Lập trình cho chú xe Milo thông minh biết tự động dừng lại khẩn cấp và phát tín hiệu cảnh báo ngay khi phát hiện chướng ngại vật phía trước.",
+            title: "Buổi 2: Mắt Thần Cảm Biến Khoảng Cách Của Xe Milo",
+            category: "c1",
+            categoryName: "Khoa Học & Đời Sống",
+            icon: "fa-eye",
+            img: "Hình ảnh lớp học/IMG_20260815_084408.jpg",
+            desc: "Tìm hiểu nguyên lý phát sóng hồng ngoại của Mắt thần (Motion Sensor). Lập trình cho xe Milo tự động phát hiện vật cản phía trước và phanh dừng khẩn cấp.",
             coreKnowledge: {
-                assembly: "Gắn cảm biến khoảng cách vào vị trí đầu xe Milo.",
-                sensors: "Cảm biến khoảng cách (Motion Sensor) phát hiện vật cản.",
-                coding: "Khối lệnh chờ (Wait for), tự dừng khẩn cấp & đổi màu còi cảnh báo.",
-                challenge: "Thử thách Milo tự dừng chính xác trước chướng ngại vật ở 5cm."
+                assembly: "Gắn cảm biến khoảng cách ở đầu xe với góc quét tối ưu.",
+                sensors: "Cảm biến khoảng cách (Motion Sensor) nhận diện vật cản.",
+                coding: "Lệnh Đợi sự kiện cảm biến phát hiện vật thể -> Phanh dừng xe.",
+                challenge: "Chạy xe tốc độ cao và phanh dừng cách tường đúng 5cm."
             },
-            tags: ["Mắt thần cảm biến", "Tự dừng trước vật cản", "Phát tín hiệu cảnh báo"]
+            tags: ["Mắt thần cảm biến", "Phanh tự động", "Phát hiện chướng ngại", "Khối lệnh Chờ"]
         },
         {
             id: 3,
-            title: "MILO GỌI, TRUNG TÂM TRẢ LỜI",
-            category: "milo",
-            categoryName: "Binh Đoàn Milo",
-            icon: "fa-satellite-dish",
-            img: "Sản phẩm từng bài/bai_3_milo.jpg",
-            desc: "Trang bị cảm biến độ nghiêng (Tilt Sensor). Lập trình cho Milo phát tiếng kêu thông báo và đổi màu đèn xanh/đỏ mỗi khi xe nghiêng góc leo dốc hoặc xuống dốc.",
+            title: "Buổi 3: Cảm Biến Độ Nghiêng & Báo Động Vượt Dốc",
+            category: "c1",
+            categoryName: "Khoa Học & Đời Sống",
+            icon: "fa-compass",
+            img: "Hình ảnh lớp học/IMG_20260815_084432.jpg",
+            desc: "Khám phá Cảm biến độ nghiêng (Tilt Sensor). Lập trình cho xe Milo nhận biết góc dốc địa hình nguy hiểm, tự động đổi màu đèn LED và phát âm thanh còi cứu hộ.",
             coreKnowledge: {
-                assembly: "Tích hợp cảm biến nghiêng và anten phát sóng trên xe Milo.",
-                sensors: "Cảm biến độ nghiêng (Tilt Sensor) nhận biết góc nghiêng.",
-                coding: "Gửi tín hiệu truyền tin (Send message), phát âm thanh cảnh báo.",
-                challenge: "Truyền tín hiệu về trạm trung tâm khi Milo leo dốc hiểm trở."
+                assembly: "Cố định cảm biến độ nghiêng song song với mặt đất trên xe.",
+                sensors: "Cảm biến Tilt Sensor (Nghiêng lên, xuống, trái, phải, lắc).",
+                coding: "Đổi màu đèn LED Não Smarthub kết hợp phát âm thanh còi báo động.",
+                challenge: "Vượt dốc nghiêng 30 độ và tự bật còi báo nguy hiểm."
             },
-            tags: ["Cảm biến độ nghiêng", "Âm thanh truyền tin", "Báo hiệu màu đèn"]
+            tags: ["Cảm biến độ nghiêng", "Đổi màu đèn LED", "Còi báo động", "Vượt dốc"]
         },
         {
             id: 4,
-            title: "BINH ĐOÀN ROBOT",
-            category: "mechanics",
-            categoryName: "Cơ Cấu Truyền Động",
-            icon: "fa-robot",
-            img: "Sản phẩm từng bài/bai_4_robot.jpg",
-            desc: "Tìm hiểu cách nối nhiều chú robot lại với nhau qua liên kết cơ khí và lập trình. Lập trình cho các robot hoạt động nhịp nhàng, cùng di chuyển đồng bộ như một đội binh đoàn.",
+            title: "Buổi 4: Đội Cứu Hộ Milo & Hợp Tác Kéo Hàng",
+            category: "c1",
+            categoryName: "Khoa Học & Đời Sống",
+            icon: "fa-people-carry-box",
+            img: "Hình ảnh lớp học/IMG_20260815_092054.jpg",
+            desc: "Lắp ráp móc kéo chịu tải cho xe Milo. Tìm hiểu ma sát bề mặt, trọng tâm xe và lập trình phối hợp nhiều robot để cùng kéo xe hàng nặng về trạm chỉ huy.",
             coreKnowledge: {
-                assembly: "Mô hình kết nối đa robot, móc nối kéo kéo nhịp nhàng.",
-                sensors: "Đồng bộ đa động cơ & tín hiệu giao tiếp không dây.",
-                coding: "Lập trình lệnh bắt đầu song song (Parallel execution).",
-                challenge: "Phối hợp 2-3 robot di chuyển thẳng hàng không bị chệch hướng."
+                assembly: "Thiết kế cơ cấu móc kéo, phân bổ trọng tâm tăng lực kéo.",
+                sensors: "Cảm biến khoảng cách giữ khoảng cách giữa các xe trong đội.",
+                coding: "Lập trình công suất động cơ tối đa và đồng bộ thời gian kéo.",
+                challenge: "Kéo xe hàng nặng gấp 3 lần trọng lượng robot."
             },
-            tags: ["Nối nhiều robot", "Phối hợp đồng đội", "Ghép lệnh đồng bộ"]
+            tags: ["Cơ cấu móc kéo", "Lực ma sát", "Làm việc nhóm", "Kéo tải nặng"]
         },
         {
             id: 5,
-            title: "ROBOT PULL XUẤT HIỆN",
-            category: "mechanics",
-            categoryName: "Cơ Cấu Truyền Động",
-            icon: "fa-truck-pickup",
-            img: "Sản phẩm từng bài/bai_5_robot_pull.jfif",
-            desc: "Khám phá nguyên lý bánh răng giảm tốc (Gear Down) để tăng mô-men lực kéo. Thiết kế chú robot kéo xe hàng và thử sức kéo các đồ vật nặng trong lớp học.",
+            title: "Buổi 5: Tốc Độ Xe Đua & Bí Mật Cặp Bánh Răng",
+            category: "c2",
+            categoryName: "Kỹ Thuật & Cơ Khí",
+            icon: "fa-gauge-high",
+            img: "Hình ảnh lớp học/IMG_20260815_092512.jpg",
+            desc: "Khám phá nguyên lý Tỉ số truyền bánh răng: Bánh răng Lớn (24 răng) truyền động cho Bánh răng Nhỏ (8 răng) để Tăng Tốc Độ gấp 3 lần cho siêu xe đua F1.",
             coreKnowledge: {
-                assembly: "Hệ bánh răng giảm tốc (Bánh răng nhỏ kéo bánh răng to).",
-                sensors: "Tăng lực momen từ động cơ WeDo.",
-                coding: "Lập trình điều khiển công suất động cơ (Motor Power).",
-                challenge: "Thi đấu sức kéo: Robot nào kéo được nhiều vật nặng nhất."
+                assembly: "Ghép cặp bánh răng tăng tốc (Tỉ số truyền 3:1) vào trục bánh xe.",
+                sensors: "Lắp cảm biến khoảng cách bấm giờ vạch đích tự động.",
+                coding: "Lập trình tăng ga động cơ mức 10 và đếm thời gian hoàn thành.",
+                challenge: "Đua xe tốc độ cao trên đường đua thẳng 3 mét."
             },
-            tags: ["Bánh răng kéo khỏe", "Robot kéo hàng", "Thử thách sức kéo"]
+            tags: ["Tỉ số truyền bánh răng", "Tăng tốc độ 3x", "Bánh răng 24 & 8", "Đua xe F1"]
         },
         {
             id: 6,
-            title: "VƯƠNG QUỐC XE ĐUA",
-            category: "mechanics",
-            categoryName: "Cơ Cấu Truyền Động",
-            icon: "fa-flag-checkered",
-            img: "Sản phẩm từng bài/bai_6_race_car.jpg",
-            desc: "Tập chọn cặp bánh răng tăng tốc (Gear Up - Bánh răng to kéo bánh răng nhỏ) giúp xe đạt tốc độ tối đa. Thử nghiệm kiểu dáng lướt gió và tổ chức cuộc đua xe robot gay kịch.",
+            title: "Buổi 6: Xe Tải Hạng Nặng & Bánh Răng Tăng Lực",
+            category: "c2",
+            categoryName: "Kỹ Thuật & Cơ Khí",
+            icon: "fa-truck-monster",
+            img: "Hình ảnh lớp học/IMG_20260822_091044.jpg",
+            desc: "Nghiên cứu chiều truyền động ngược lại: Bánh răng Nhỏ dẫn động Bánh răng Lớn (Tỉ số truyền 1:3) giúp xe Giảm Tốc Độ nhưng Tăng Sức Kéo cực kỳ mạnh mẽ.",
             coreKnowledge: {
-                assembly: "Hệ bánh răng tăng tốc (Gear Up), thiết kế thân xe khí động học.",
-                sensors: "Tối ưu tốc độ quay từ động cơ.",
-                coding: "Lập trình tăng tốc tối đa, lập trình đếm ngược xuất phát.",
-                challenge: "Cuộc đua tốc độ xé gió trên đường đua thẳng 3 mét."
+                assembly: "Ghép bánh răng nhỏ dẫn động bánh răng lớn tạo lực mô-men xoắn cao.",
+                sensors: "Cảm biến nghiêng kiểm soát xe khi lên dốc chở nặng.",
+                coding: "Lập trình lực kéo bền bỉ duy trì vận tốc ổn định.",
+                challenge: "Chở khối gạch LEGO leo dốc nghiêng mà không bị tuột."
             },
-            tags: ["Bánh răng tăng tốc", "Xe đua xé gió", "Thi đấu tốc độ"]
+            tags: ["Tăng mô-men lực", "Bánh răng giảm tốc", "Chở tải siêu nặng", "Leo dốc cao"]
         },
         {
             id: 7,
-            title: "CÔNG TRÌNH CHỐNG ĐỘNG ĐẤT",
-            category: "capstone",
+            title: "Buổi 7: Bàn Rung Thử Nghiệm Tòa Nhà Chống Động Đất",
+            category: "c3",
             categoryName: "Thiên Tai & Cuối Khóa",
-            icon: "fa-building-shield",
-            img: "Sản phẩm từng bài/bai_7_may_tao_dong_dat.jpg",
-            desc: "Học cách lắp mô hình tòa nhà chắc chắn với kết cấu đan chéo chịu lực. Lập trình cho chiếc bàn rung lắc mô phỏng động đất với các cấp độ từ nhẹ đến mạnh.",
+            icon: "fa-house-crack",
+            img: "Hình ảnh lớp học/IMG_20260822_091135.jpg",
+            desc: "Nghiên cứu nguyên lý rung chấn của động đất. Thiết kế mô hình bàn rung cơ học dùng trục khuỷu lệch tâm và thử nghiệm độ bền vững của các cấu trúc tòa nhà cao tầng.",
             coreKnowledge: {
-                assembly: "Kết cấu tòa nhà cao tầng chịu lực & cơ cấu bàn rung lệch tâm.",
-                sensors: "Động cơ tạo lực rung theo chu kỳ.",
-                coding: "Lập trình chuỗi mức độ rung (Rung nhẹ -> Rung mạnh -> Dừng).",
-                challenge: "Thử nghiệm tòa nhà đứng vững vàng khi bàn rung cấp độ 5."
+                assembly: "Lắp ráp cơ cấu trục khuỷu biến chuyển động quay thành rung lắc.",
+                sensors: "Lập trình điều chỉnh 3 cấp độ rung: Rung nhẹ, Trung bình, Động đất mạnh.",
+                coding: "Sử dụng biến số công suất động cơ tăng dần theo thời gian.",
+                challenge: "Xây tòa nhà tháp LEGO cao 3 tầng đứng vững qua cấp rung 3."
             },
-            tags: ["Lắp tòa nhà chắc chắn", "Bàn rung động đất", "Thử độ bền công trình"]
+            tags: ["Bàn rung động đất", "Trục khuỷu lệch tâm", "Cấu trúc kiên cố", "Thử tải tòa nhà"]
         },
         {
             id: 8,
-            title: "SỰ TIẾN HÓA CỦA ẾCH",
-            category: "nature",
-            categoryName: "Mô Phỏng Tự Nhiên",
-            icon: "fa-frog",
-            img: "Sản phẩm từng bài/bai_8_frog.jpg",
-            desc: "Tìm hiểu sự phát triển của chú ếch trong tự nhiên. Lắp ráp mô hình robot ếch có cơ cấu 4 chân đòn đẩy linh hoạt, chuyển đổi chuyển động quay thành chuyển động bật nhảy.",
+            title: "Buổi 8: Đập Nước Thông Minh Chống Lũ & Cứu Hộ",
+            category: "c3",
+            categoryName: "Thiên Tai & Cuối Khóa",
+            icon: "fa-water",
+            img: "Hình ảnh lớp học/IMG_20260822_091408.jpg",
+            desc: "Tìm hiểu nguyên lý xả lũ và chống ngập. Chế tạo cửa đập nước tự động đóng/mở bằng cơ cấu trục vít - bánh vít và mắt thần cảm biến nhận diện mực nước dâng cao.",
             coreKnowledge: {
-                assembly: "Cơ cấu đòn đẩy & thanh liên kết (Linkage) tạo chân bật nhảy.",
-                sensors: "Mô phỏng sinh học chuyển động động vật.",
-                coding: "Lập trình nhịp nhảy dừng ngắt quãng tự nhiên.",
-                challenge: "Robot ếch nhảy vượt qua vạch đích 1 mét."
+                assembly: "Lắp ráp cơ cấu trục vít giữ cố định cánh đập không bị nước đẩy.",
+                sensors: "Cảm biến khoảng cách giả lập đo mực nước lũ dâng cao.",
+                coding: "Cửa đập tự động mở xả lũ khi nước vượt ngưỡng an toàn.",
+                challenge: "Hệ thống phản ứng đóng mở chính xác trong 3 giây."
             },
-            tags: ["Mô phỏng chú ếch", "Cơ cấu chân bật nhảy", "Khám phá thiên nhiên"]
+            tags: ["Đập nước chống lũ", "Cơ cấu trục vít", "Mắt thần đo nước", "Tự động xả lũ"]
         },
         {
             id: 9,
-            title: "ROBOT ONG CHÚA",
-            category: "nature",
-            categoryName: "Mô Phỏng Tự Nhiên",
-            icon: "fa-bugs",
-            img: "Sản phẩm từng bài/bai_9_bee.jfif",
-            desc: "Khám phá công việc hút mật thụ phấn của chú ong. Lập trình cho robot ong chúa tự động xoay cánh nhẹ nhàng và phát hiệu ứng âm thanh, đổi màu đèn khi có bông hoa/bạn ong lại gần.",
+            title: "Buổi 9: Chú Ếch Bật Nhảy & Chu Kỳ Sinh Học",
+            category: "c1",
+            categoryName: "Khoa Học & Đời Sống",
+            icon: "fa-frog",
+            img: "Hình ảnh lớp học/IMG_20260822_091212.jpg",
+            desc: "Mô phỏng chuyển động sinh học của loài ếch. Thiết kế cơ cấu chân đòn bẩy đàn hồi và lập trình cho chú ếch LEGO bật nhảy về phía trước khi có tiếng vỗ tay.",
             coreKnowledge: {
-                assembly: "Cơ cấu bánh răng góc nón xoay đôi cánh ong.",
-                sensors: "Cảm biến khoảng cách phát hiện bông hoa lại gần.",
-                coding: "Lập trình vòng lặp (Loop) cánh xoay & sự kiện cảm biến phát nhạc.",
-                challenge: "Ong chúa tự xoay cánh và hát mừng khi phát hiện loài hoa đẹp."
+                assembly: "Cơ cấu chân khớp nối 4 thanh tạo lực đẩy bật nhảy.",
+                sensors: "Sử dụng Micro âm thanh trên máy tính bảng kích hoạt bước nhảy.",
+                coding: "Vòng lặp (Loop) kết hợp lệnh kích hoạt âm thanh.",
+                challenge: "Ếch bật nhảy liên tục 5 bước vượt qua vạch mức."
             },
-            tags: ["Mô phỏng ong chúa", "Cánh xoay tự động", "Tương tác cảm biến"]
+            tags: ["Cơ chế bật nhảy", "Đòn bẩy chân ếch", "Kích hoạt âm thanh", "Chuyển động sinh học"]
         },
         {
             id: 10,
-            title: "HỆ THỐNG ĐIỀU KHIỂN CHỐNG LŨ",
-            category: "capstone",
-            categoryName: "Thiên Tai & Cuối Khóa",
-            icon: "fa-house-flood-water",
-            img: "Sản phẩm từng bài/bai_10_floodgate.jpg",
-            desc: "Lắp mô hình đập nước thông minh bảo vệ khu dân cư. Lập trình cho cửa cống xả lũ tự động mở nâng lên khi mắt thần cảm biến phát hiện mực nước dâng lên cao.",
+            title: "Buổi 10: Hoa Và Ong - Khám Phá Thụ Phấn Tự Nhiên",
+            category: "c1",
+            categoryName: "Khoa Học & Đời Sống",
+            icon: "fa-seedling",
+            img: "Hình ảnh lớp học/IMG_20260822_091159.jpg",
+            desc: "Tìm hiểu mối quan hệ cộng sinh giữa Ong và Hoa. Chế tạo mô hình cánh bướm/ong chao lượn quanh đài hoa nhờ cơ cấu bánh răng nón đổi hướng truyền động 90 độ.",
             coreKnowledge: {
-                assembly: "Mô hình cửa đập xả lũ trượt dọc & hệ thống đòn bẩy nâng.",
-                sensors: "Cảm biến khoảng cách đo mực nước dâng.",
-                coding: "Điều kiện (If/Else): Mực nước cao -> Mở cửa xả lũ & Cảnh báo còi.",
-                challenge: "Mô phỏng giải cứu khu dân cư khỏi ngập lụt thiên tai."
+                assembly: "Lắp ráp bánh răng vương miện (Crown Gear) truyền góc 90 độ.",
+                sensors: "Mắt thần cảm biến phát hiện ong tiếp cận đài hoa.",
+                coding: "Khi ong chạm bông hoa, hoa phát nhạc và đổi màu chúc mừng.",
+                challenge: "Đồng bộ chuyển động xoay tròn và âm thanh hút mật."
             },
-            tags: ["Đập nước thông minh", "Mắt thần đo nước", "Mở cửa xả lũ tự động"]
+            tags: ["Bánh răng nón 90°", "Ong hút mật", "Cộng sinh tự nhiên", "Cảm biến tiệm cận"]
         },
         {
             id: 11,
-            title: "TAI HỌA THIÊN NHIÊN VÀ GIẢI CỨU",
-            category: "capstone",
+            title: "Buổi 11: Dự Án Robot Cứu Hộ & Dọn Dẹp Môi Trường",
+            category: "c3",
             categoryName: "Thiên Tai & Cuối Khóa",
-            icon: "fa-truck-medical",
-            img: "Hình ảnh lớp học/IMG_20260822_091412.jpg",
-            desc: "Lắp chiếc xe robot cứu hộ chuyên dụng có trang bị cánh tay gắp đồ. Lập trình điều khiển robot di chuyển vượt qua vùng thiên tai hiểm trở để giải cứu đồ vật nguy hiểm.",
+            icon: "fa-recycle",
+            img: "Hình ảnh lớp học/IMG_20260822_091428.jpg",
+            desc: "Tích hợp tất cả các kỹ năng đã học: Chế tạo robot gom rác tự động trang bị cả Cảm biến khoảng cách tránh chướng ngại và Tay gắp rác cơ khí điều khiển thông minh.",
             coreKnowledge: {
-                assembly: "Cơ cấu tay gắp đồ & xe di chuyển bánh xích/bánh lớn.",
-                sensors: "Kết hợp cảm biến nghiêng & cảm biến khoảng cách.",
-                coding: "Lập trình chuỗi nhiệm vụ: Di chuyển -> Gắp vật -> Quay về.",
-                challenge: "Giải cứu thành công nạn nhân mô phỏng trong 60 giây."
+                assembly: "Thiết kế tích hợp khung xe, tay gắp hàng và giá đỡ cảm biến.",
+                sensors: "Kết hợp linh hoạt Mắt thần và Cảm biến độ nghiêng trên 1 xe.",
+                coding: "Lập trình điều kiện phức tạp: Tự dò tìm đồ vật, gắp rác và quay về trạm.",
+                challenge: "Dọn dẹp sạch 3 khối rác trên sa bàn trong 60 giây."
             },
-            tags: ["Xe robot cứu hộ", "Cánh tay gắp đồ", "Vượt vật cản giải cứu"]
+            tags: ["Robot cứu hộ đa năng", "Tay gắp cơ khí", "Lập trình rẽ nhánh", "Dự án tổng hợp"]
         },
         {
             id: 12,
-            title: "DỰ ÁN CUỐI KHÓA",
-            category: "capstone",
+            title: "Buổi 12: Báo Cáo & Thuyết Trình Dự Án Cuối Khóa",
+            category: "c3",
             categoryName: "Thiên Tai & Cuối Khóa",
             icon: "fa-trophy",
             img: "Hình ảnh lớp học/IMG_20260822_091430.jpg",
@@ -201,7 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     ];
 
-    // Classroom Photos Data (21 photos)
+    // --- 2. Classroom Photos Gallery Data (21 Photos) ---
     const galleryData = [
         { id: 1, src: "Hình ảnh lớp học/IMG_20260815_084353.jpg", title: "Tập trung lắp ráp khung xe Robot", cat: "building" },
         { id: 2, src: "Hình ảnh lớp học/IMG_20260815_084408.jpg", title: "Kiểm tra bánh răng truyền động", cat: "building" },
@@ -226,7 +234,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 21, src: "Hình ảnh lớp học/IMG_20260822_092140.jpg", title: "Khoảnh khắc chúc mừng hoàn thành khóa học", cat: "team" }
     ];
 
-    // 13 Student Profiles Data
+    // --- 3. 13 Student Profiles Data (Varied Realistic Ratings: 4.6 - 5.0) ---
     const studentsData = [
         {
             id: 1,
@@ -234,7 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
             avatar: "Avatar học sinh/Lê Nhật Minh .jpg",
             badge: "Chuyên Gia Cơ Khí",
             role: "Học Viên Xuất Sắc",
-            stars: 5,
+            stars: 4.9,
             strengths: "Đôi tay lắp ráp cực kỳ khéo léo; chọn và ghép các cặp bánh răng truyền động chuẩn xác giúp xe đua chạy xé gió và robot chở hàng khỏe vượt trội.",
             improvements: "Tiếp tục nâng cao kỹ năng lập trình chuỗi câu lệnh phức tạp kết hợp đa cảm biến.",
             videoUrl: "https://www.youtube.com/embed/DYqpTISKMOs",
@@ -247,7 +255,7 @@ document.addEventListener('DOMContentLoaded', () => {
             avatar: "Avatar học sinh/Nguyễn Bảo Lâm.jpg",
             badge: "Kỹ Sư Lập Trình Nhí",
             role: "Học Viên Tiên Phong",
-            stars: 5,
+            stars: 4.9,
             strengths: "Tư duy lập trình cực kỳ nhanh nhạy; sử dụng thành thạo các khối lệnh mắt thần cảm biến và cảm biến độ nghiêng cho robot tự động cứu hộ.",
             improvements: "Rèn luyện thêm sự cẩn thận khi căn chỉnh khớp nối cơ khí nhỏ.",
             videoUrl: "https://www.youtube.com/embed/_mp8lQIeMHY",
@@ -260,7 +268,7 @@ document.addEventListener('DOMContentLoaded', () => {
             avatar: "Avatar học sinh/Nguyễn Gia Thịnh .jpg",
             badge: "Nhà Thiết Kế Sáng Tạo",
             role: "Học Viên Năng Động",
-            stars: 5,
+            stars: 4.8,
             strengths: "Trí tưởng tượng phong phú; luôn trang trí và thiết kế kiểu dáng robot sinh động, độc đáo, mang năng lượng tích cực cho cả lớp.",
             improvements: "Chú ý kiểm tra kỹ độ chắc chắn của bánh răng trước khi vận hành chạy thử.",
             videoUrl: "https://www.youtube.com/embed/1Z7SQ6F08sU",
@@ -273,7 +281,7 @@ document.addEventListener('DOMContentLoaded', () => {
             avatar: "Avatar học sinh/Nguyễn Hoàng Nam Hải .jpg",
             badge: "Đội Trưởng Tài Năng",
             role: "Học Viên Tiêu Biểu",
-            stars: 5,
+            stars: 4.8,
             strengths: "Kỹ năng làm việc nhóm và lãnh đạo xuất sắc; biết phân chia công việc hợp lý và nhiệt tình hỗ trợ các bạn cùng hoàn thành dự án đập chống lũ.",
             improvements: "Phát triển thêm tư duy lập trình vòng lặp và điều kiện nâng cao.",
             videoUrl: "https://www.youtube.com/embed/1kAYJSXiXqw",
@@ -286,7 +294,7 @@ document.addEventListener('DOMContentLoaded', () => {
             avatar: "Avatar học sinh/Nguyễn Hùng Anh 6 tuổi- .jpg",
             badge: "Mầm Non Tài Năng",
             role: "Học Viên Nhỏ Tuổi",
-            stars: 5,
+            stars: 4.7,
             strengths: "Tự lập và rất kiên trì dù mới 6 tuổi; chọn mảnh ghép đúng chuẩn nhanh chóng và rất thích thú tự vận hành robot.",
             improvements: "Rèn luyện thêm khả năng duy trì tập trung khi viết các chuỗi lệnh lập trình dài.",
             videoUrl: "https://www.youtube.com/embed/Ruq5nQUjTfo",
@@ -299,7 +307,7 @@ document.addEventListener('DOMContentLoaded', () => {
             avatar: "Avatar học sinh/Nguyễn Minh Trí .jpg",
             badge: "Kiến Trúc Sư Robot",
             role: "Học Viên Cẩn Thận",
-            stars: 5,
+            stars: 4.8,
             strengths: "Cẩn thận, tỉ mỉ và điềm đĩnh; lắp mô hình tòa nhà chống động đất cực kỳ chắc chắn, đứng vững vàng khi bàn rung thử nghiệm.",
             improvements: "Tự tin xung phong phát biểu và thuyết trình ý tưởng nhiều hơn trước tập thể.",
             videoUrl: "https://www.youtube.com/embed/4K-WK0AWW_A",
@@ -312,7 +320,7 @@ document.addEventListener('DOMContentLoaded', () => {
             avatar: "Avatar học sinh/Nguyễn Ngọc Quốc Anh 6 tuổi.jpg",
             badge: "Ngôi Sao Năng Lượng",
             role: "Học Viên Hăng Hái",
-            stars: 5,
+            stars: 4.6,
             strengths: "Sôi nổi, tò mò khám phá chuyển động động cơ và cảm biến; tiến bộ vượt bậc qua từng buổi học và tự tay hoàn thiện sản phẩm.",
             improvements: "Rèn thói quen lắng nghe trọn vẹn hướng dẫn trước khi bắt tay vào lắp ráp.",
             videoUrl: "https://www.youtube.com/embed/OA25OLI_uhA",
@@ -325,7 +333,7 @@ document.addEventListener('DOMContentLoaded', () => {
             avatar: "Avatar học sinh/Nguyễn Thiện Bách.jpg",
             badge: "Chiến Binh Sáng Tạo",
             role: "Học Viên Kiên Trì",
-            stars: 5,
+            stars: 4.9,
             strengths: "Tinh thần không bỏ cuộc; kiên trì thử nghiệm những khối lệnh mới và sẵn sàng kiên nhẫn sửa mã khi robot gặp sự cố.",
             improvements: "Sắp xếp mã lập trình gọn gàng và tối ưu hơn nữa.",
             videoUrl: "https://www.youtube.com/embed/-o5nYTU1Vdo",
@@ -338,7 +346,7 @@ document.addEventListener('DOMContentLoaded', () => {
             avatar: "Avatar học sinh/Nguyễn Đăng Bách.jpg",
             badge: "Chuyên Gia Tối Ưu",
             role: "Học Viên Logic",
-            stars: 5,
+            stars: 4.8,
             strengths: "Tư duy ghép lệnh mạch lạc, thông minh; chọn cặp bánh răng xe đua rất tối ưu giúp robot đạt vận tốc mượt mà.",
             improvements: "Tích cực chia sẻ bí quyết lắp ráp bánh răng cho các bạn khác trong lớp.",
             videoUrl: "https://www.youtube.com/embed/-4H0O7TH4nk",
@@ -351,7 +359,7 @@ document.addEventListener('DOMContentLoaded', () => {
             avatar: "Avatar học sinh/Phạm Huy Hoàn .jpg",
             badge: "Nhà Nghiên Cứu Robot",
             role: "Học Viên Hiếu Học",
-            stars: 5,
+            stars: 4.7,
             strengths: "Ham học hỏi, thích khám phá nguyên lý cảm biến; mô phỏng chuyển động sinh học (chân ếch bật nhảy, cánh ong chúa xoay) rất khéo léo.",
             improvements: "Gia cố thêm các khớp nối cơ khí để mô hình chịu lực tốt hơn.",
             videoUrl: "https://www.youtube.com/embed/JNT9MS11P5c",
@@ -364,7 +372,7 @@ document.addEventListener('DOMContentLoaded', () => {
             avatar: "Avatar học sinh/Trần An Nguyên.png",
             badge: "Nghệ Sĩ Lắp Ráp",
             role: "Học Viên Tỉ Mỉ",
-            stars: 5,
+            stars: 4.8,
             strengths: "Tính thẩm mỹ cao; phối màu sắc và đính kèm chi tiết robot sắc sảo; tinh thần tự giác học tập cao.",
             improvements: "Tự tin rèn luyện kỹ năng thuyết trình báo cáo trước đám đông.",
             videoUrl: null,
@@ -377,7 +385,7 @@ document.addEventListener('DOMContentLoaded', () => {
             avatar: "Avatar học sinh/Đào Quốc Hưng .jpg",
             badge: "Chiến Lược Gia Tự Động",
             role: "Học Viên Linh Hoạt",
-            stars: 5,
+            stars: 4.7,
             strengths: "Nhanh trí, ứng dụng linh hoạt cảm biến độ nghiêng để phát còi cảnh báo khi xe Milo lên dốc; hòa đồng, sẵn sàng chỉ dẫn bạn.",
             improvements: "Gọn gàng dây cáp cảm biến để không ảnh hưởng quay động cơ.",
             videoUrl: "https://www.youtube.com/embed/27v7bI3InyM",
@@ -390,7 +398,7 @@ document.addEventListener('DOMContentLoaded', () => {
             avatar: "Avatar học sinh/Đặng Khánh Nhật Minh.jpg",
             badge: "Thủ Lĩnh Công Nghệ",
             role: "Học Viên Toàn Diện",
-            stars: 5,
+            stars: 5.0,
             strengths: "Năng lực toàn diện xuất sắc; làm chủ các chuỗi lệnh phức tạp và mô hình robot lớn; thuyết trình dự án tự tin, lôi cuốn.",
             improvements: "Tiếp tục chinh phục các khóa học Robotics nâng cao tiếp theo.",
             videoUrl: "https://www.youtube.com/embed/MkdtpIerUNw",
@@ -399,13 +407,34 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     ];
 
+    // Helper to extract YouTube video ID from various formats
     function getYouTubeId(url) {
         if (!url) return null;
         const match = url.match(/(?:embed\/|v=|vi\/|youtu\.be\/|\/v\/|\/e\/|watch\?v=)([^#&?]+)/);
         return match ? match[1] : url;
     }
 
-    // --- 2. Inject 13 Individual Student Slides into Presentation Deck ---
+    // Star rating rendering helper for full and half stars
+    function renderStars(rating) {
+        let html = '';
+        const full = Math.floor(rating);
+        const frac = rating - full;
+        for (let i = 0; i < full; i++) {
+            html += '<i class="fa-solid fa-star"></i> ';
+        }
+        if (frac >= 0.3 && frac <= 0.7) {
+            html += '<i class="fa-solid fa-star-half-stroke"></i> ';
+        } else if (frac > 0.7) {
+            html += '<i class="fa-solid fa-star"></i> ';
+        }
+        const count = full + (frac >= 0.3 ? 1 : 0);
+        for (let i = count; i < 5; i++) {
+            html += '<i class="fa-regular fa-star"></i> ';
+        }
+        return html;
+    }
+
+    // --- 4. Inject 13 Individual Student Slides into Deck ---
     function injectStudentSlides() {
         const anchor = document.getElementById('students-slides-anchor');
         if (!anchor) return;
@@ -446,13 +475,9 @@ document.addEventListener('DOMContentLoaded', () => {
                                     <h3 class="student-profile-name">${s.name}</h3>
                                     <div class="student-stars-box">
                                         <div class="stars-gold">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
+                                            ${renderStars(s.stars)}
                                         </div>
-                                        <span class="stars-label">Đánh giá 5/5 ⭐</span>
+                                        <span class="stars-label">Đánh giá ${s.stars}/5.0 ⭐</span>
                                     </div>
 
                                     <div class="student-skills-mini">
@@ -547,7 +572,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Inject all student slides first
     injectStudentSlides();
 
-    // --- 3. Slide Presentation Deck Controller (19 Slides Total) ---
+    // --- 5. Slide Presentation Deck Controller (19 Slides Total) ---
     const slides = document.querySelectorAll('.slide-section');
     const prevBtn = document.getElementById('prev-slide-btn');
     const nextBtn = document.getElementById('next-slide-btn');
@@ -580,7 +605,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentSlide = 0;
     const totalSlides = slides.length;
 
-    // Populate Slide Dropdown Menu with all 18 Slides
+    // Populate Slide Dropdown Menu with all 19 Slides
     function populateSlideDropdown() {
         if (!slideDropdown) return;
         slideDropdown.innerHTML = slideTitles.map((title, idx) => `
@@ -591,7 +616,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     populateSlideDropdown();
 
-    // Populate Slide Dots with all 18 Dots
+    // Populate Slide Dots with all 19 Dots
     function populateSlideDots() {
         if (!slideDotsContainer) return;
         slideDotsContainer.innerHTML = slideTitles.map((title, idx) => `
@@ -600,112 +625,126 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     populateSlideDots();
 
-    const dots = document.querySelectorAll('.slide-dots .dot');
-    const dropdownItems = document.querySelectorAll('#slide-dropdown .dropdown-item');
-
+    // Slide Transition Core Function
     window.goToSlide = function(index) {
         if (index < 0 || index >= totalSlides) return;
 
         slides[currentSlide].classList.remove('active');
-        if (dots[currentSlide]) dots[currentSlide].classList.remove('active');
-        if (dropdownItems[currentSlide]) dropdownItems[currentSlide].classList.remove('active');
-
         currentSlide = index;
-
         slides[currentSlide].classList.add('active');
-        if (dots[currentSlide]) {
-            dots[currentSlide].classList.add('active');
-            dots[currentSlide].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-        }
-        if (dropdownItems[currentSlide]) {
-            dropdownItems[currentSlide].classList.add('active');
-        }
 
-        // Update Counter & Title
+        // Reset scroll position on active slide
+        slides[currentSlide].scrollTop = 0;
+
+        // Update Counter
         if (counterBadge) counterBadge.textContent = `${currentSlide + 1} / ${totalSlides}`;
+
+        // Update Top Title Dropdown
         if (currentSlideTitle) currentSlideTitle.textContent = slideTitles[currentSlide];
 
-        // Close dropdown if open
-        if (slideDropdown) slideDropdown.classList.remove('open');
+        // Update Dropdown Active States
+        const dropdownItems = document.querySelectorAll('.dropdown-item');
+        dropdownItems.forEach((item, idx) => {
+            item.classList.toggle('active', idx === currentSlide);
+        });
+
+        // Update Dots Active States & scroll dot into view
+        const dots = document.querySelectorAll('.dot');
+        dots.forEach((dot, idx) => {
+            dot.classList.toggle('active', idx === currentSlide);
+            if (idx === currentSlide && slideDotsContainer) {
+                dot.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            }
+        });
+
+        // Update Navigation Button States
+        if (prevBtn) prevBtn.disabled = currentSlide === 0;
+        if (nextBtn) nextBtn.disabled = currentSlide === totalSlides - 1;
+
+        // Close dropdown menu if open
+        if (slideDropdown) slideDropdown.classList.remove('active');
     };
 
-    if (prevBtn) {
-        prevBtn.addEventListener('click', () => {
-            const nextIdx = (currentSlide - 1 + totalSlides) % totalSlides;
-            goToSlide(nextIdx);
+    if (prevBtn) prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
+    if (nextBtn) nextBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
+
+    // Dropdown Toggle
+    if (slideSelectBtn && slideDropdown) {
+        slideSelectBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            slideDropdown.classList.toggle('active');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!slideDropdown.contains(e.target) && !slideSelectBtn.contains(e.target)) {
+                slideDropdown.classList.remove('active');
+            }
         });
     }
 
-    if (nextBtn) {
-        nextBtn.addEventListener('click', () => {
-            const nextIdx = (currentSlide + 1) % totalSlides;
-            goToSlide(nextIdx);
-        });
-    }
-
-    // Keyboard Navigation across all 18 slides
+    // Keyboard Navigation
     document.addEventListener('keydown', (e) => {
-        const isModalActive = document.querySelector('.modal-overlay.active') || document.querySelector('.lightbox-overlay.active');
-        if (isModalActive) return;
+        const modalActive = document.querySelector('.modal-overlay.active') || document.querySelector('.lightbox-overlay.active');
+        if (modalActive) return;
 
-        if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') {
+        if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
+            if (currentSlide < totalSlides - 1) {
+                e.preventDefault();
+                goToSlide(currentSlide + 1);
+            }
+        } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+            if (currentSlide > 0) {
+                e.preventDefault();
+                goToSlide(currentSlide - 1);
+            }
+        } else if (e.key === 'Home') {
             e.preventDefault();
-            goToSlide((currentSlide + 1) % totalSlides);
-        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+            goToSlide(0);
+        } else if (e.key === 'End') {
             e.preventDefault();
-            goToSlide((currentSlide - 1 + totalSlides) % totalSlides);
+            goToSlide(totalSlides - 1);
         }
     });
 
-    // Touch Swipe Gestures for Mobile
+    // Touch Swipe Support for Mobile Screens
     let touchStartX = 0;
     let touchStartY = 0;
     let touchEndX = 0;
     let touchEndY = 0;
+    const presentationWrapper = document.querySelector('.presentation-wrapper');
 
-    const slidesContainer = document.getElementById('slides-container');
-    if (slidesContainer) {
-        slidesContainer.addEventListener('touchstart', (e) => {
+    if (presentationWrapper) {
+        presentationWrapper.addEventListener('touchstart', (e) => {
             touchStartX = e.changedTouches[0].screenX;
             touchStartY = e.changedTouches[0].screenY;
         }, { passive: true });
 
-        slidesContainer.addEventListener('touchend', (e) => {
+        presentationWrapper.addEventListener('touchend', (e) => {
             touchEndX = e.changedTouches[0].screenX;
             touchEndY = e.changedTouches[0].screenY;
-            handleSwipe();
+            handleTouchSwipe();
         }, { passive: true });
     }
 
-    function handleSwipe() {
-        const isModalActive = document.querySelector('.modal-overlay.active') || document.querySelector('.lightbox-overlay.active');
-        if (isModalActive) return;
+    function handleTouchSwipe() {
+        const deltaX = touchEndX - touchStartX;
+        const deltaY = touchEndY - touchStartY;
+        // Check if swipe is primarily horizontal and exceeds threshold
+        if (Math.abs(deltaX) > 60 && Math.abs(deltaX) > Math.abs(deltaY) * 1.5) {
+            const modalActive = document.querySelector('.modal-overlay.active') || document.querySelector('.lightbox-overlay.active');
+            if (modalActive) return;
 
-        const diffX = touchEndX - touchStartX;
-        const diffY = touchEndY - touchStartY;
-
-        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
-            if (diffX < 0) {
-                goToSlide((currentSlide + 1) % totalSlides);
-            } else {
-                goToSlide((currentSlide - 1 + totalSlides) % totalSlides);
+            if (deltaX < 0 && currentSlide < totalSlides - 1) {
+                // Swiped Left -> Next Slide
+                goToSlide(currentSlide + 1);
+            } else if (deltaX > 0 && currentSlide > 0) {
+                // Swiped Right -> Prev Slide
+                goToSlide(currentSlide - 1);
             }
         }
     }
 
-    // Slide Dropdown Toggle
-    if (slideSelectBtn && slideDropdown) {
-        slideSelectBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            slideDropdown.classList.toggle('open');
-        });
-
-        document.addEventListener('click', () => {
-            slideDropdown.classList.remove('open');
-        });
-    }
-
-    // Fullscreen Toggle Button
+    // Fullscreen Support
     const fullscreenBtn = document.getElementById('fullscreen-btn');
     if (fullscreenBtn) {
         fullscreenBtn.addEventListener('click', () => {
@@ -717,298 +756,201 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 if (document.exitFullscreen) {
                     document.exitFullscreen();
+                    fullscreenBtn.innerHTML = '<i class="fa-solid fa-expand"></i>';
                 }
-                fullscreenBtn.innerHTML = '<i class="fa-solid fa-expand"></i>';
             }
         });
     }
 
-    // --- 4. Render Curriculum Slide Showcase & Grid ---
-    let activeLessonIndex = 0;
-    let activeCategoryFilter = 'all';
+    // --- 6. Slide 3: Interactive Lesson Showcase Viewer ---
+    let currentLessonIdx = 0;
+    const lessonShowcaseCard = document.getElementById('lesson-showcase-card');
+    const lessonThumbsContainer = document.getElementById('lesson-thumbs-container');
 
-    const lessonShowcaseEl = document.getElementById('lesson-slide-showcase');
-    const curriculumGridEl = document.getElementById('curriculum-grid');
-    const btnViewSlides = document.getElementById('btn-view-slides');
-    const btnViewGrid = document.getElementById('btn-view-grid');
+    function renderFeaturedLesson(idx) {
+        if (!lessonShowcaseCard) return;
+        currentLessonIdx = idx;
+        const l = lessonsData[idx];
 
-    function getFilteredLessons() {
-        if (activeCategoryFilter === 'all') return lessonsData;
-        return lessonsData.filter(l => l.category === activeCategoryFilter);
-    }
+        lessonShowcaseCard.innerHTML = `
+            <div class="lesson-slide-header">
+                <div class="lesson-slide-meta">
+                    <span class="lesson-num-badge"><i class="fa-solid fa-circle-play"></i> BUỔI ${l.id} / 12</span>
+                    <span class="lesson-cat-badge"><i class="fa-solid ${l.icon}"></i> ${l.categoryName}</span>
+                </div>
+                <div class="lesson-slide-nav">
+                    <button class="lesson-nav-btn prev" onclick="prevLesson()" ${idx === 0 ? 'disabled' : ''} title="Bài Trước">
+                        <i class="fa-solid fa-chevron-left"></i> Trước
+                    </button>
+                    <span class="lesson-slide-counter">${idx + 1} / ${lessonsData.length}</span>
+                    <button class="lesson-nav-btn next" onclick="nextLesson()" ${idx === lessonsData.length - 1 ? 'disabled' : ''} title="Bài Tiếp">
+                        Tiếp <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
 
-    function renderLessonShowcase() {
-        if (!lessonShowcaseEl) return;
-        const currentList = getFilteredLessons();
-        if (currentList.length === 0) {
-            lessonShowcaseEl.innerHTML = `<div class="empty-msg"><i class="fa-solid fa-circle-info"></i> Không tìm thấy bài học phù hợp.</div>`;
-            return;
-        }
-
-        if (activeLessonIndex >= currentList.length) activeLessonIndex = 0;
-        if (activeLessonIndex < 0) activeLessonIndex = currentList.length - 1;
-
-        const lesson = currentList[activeLessonIndex];
-
-        lessonShowcaseEl.innerHTML = `
-            <div class="featured-lesson-card">
-                <div class="lesson-slide-header">
-                    <div class="lesson-slide-meta">
-                        <span class="lesson-slide-badge"><i class="fa-solid fa-chalkboard"></i> BUỔI HỌC #${lesson.id} / 12</span>
-                        <span class="lesson-cat-badge"><i class="fa-solid ${lesson.icon}"></i> ${lesson.categoryName}</span>
+            <div class="lesson-slide-body">
+                <div class="lesson-img-container">
+                    <div class="lesson-img-wrapper" onclick="openLightboxForSingleImage('${l.img}', '${l.title}')">
+                        <img src="${encodeURI(l.img)}" alt="${l.title}" class="lesson-product-img">
+                        <div class="lesson-img-overlay">
+                            <span class="zoom-icon"><i class="fa-solid fa-expand"></i> Phóng to ảnh</span>
+                        </div>
                     </div>
-                    <div class="lesson-slide-nav">
-                        <button class="lesson-nav-btn prev" id="prev-lesson-btn" title="Bài Trước">
-                            <i class="fa-solid fa-chevron-left"></i> Bài Trước
-                        </button>
-                        <span class="lesson-slide-counter">${activeLessonIndex + 1} / ${currentList.length}</span>
-                        <button class="lesson-nav-btn next" id="next-lesson-btn" title="Bài Tiếp theo">
-                            Bài Tiếp <i class="fa-solid fa-chevron-right"></i>
-                        </button>
-                    </div>
+                    <span class="lesson-img-caption"><i class="fa-solid fa-camera"></i> Hình ảnh thực hành tại lớp học Teky</span>
                 </div>
 
-                <div class="lesson-slide-body">
-                    <div class="lesson-img-container">
-                        <div class="lesson-img-wrapper" id="lesson-img-click">
-                            <img src="${encodeURI(lesson.img)}" alt="${lesson.title}" class="lesson-product-img">
-                            <div class="lesson-img-overlay">
-                                <span class="zoom-icon"><i class="fa-solid fa-expand"></i> Phóng to ảnh sản phẩm</span>
+                <div class="lesson-info-container">
+                    <h3 class="lesson-showcase-title">${l.title}</h3>
+                    <p class="lesson-showcase-desc">${l.desc}</p>
+
+                    <div class="core-knowledge-header">
+                        <i class="fa-solid fa-microchip"></i> KIẾN THỨC & KỸ NĂNG TRỌNG TÂM:
+                    </div>
+
+                    <div class="core-knowledge-grid">
+                        <div class="ck-item">
+                            <div class="ck-icon"><i class="fa-solid fa-puzzle-piece"></i></div>
+                            <div class="ck-text">
+                                <h5>Cơ Khí & Lắp Ráp:</h5>
+                                <p>${l.coreKnowledge.assembly}</p>
                             </div>
                         </div>
-                        <div class="lesson-img-caption">
-                            <i class="fa-solid fa-camera"></i> Ảnh sản phẩm thực hành: <strong>Bài ${lesson.id}</strong>
+
+                        <div class="ck-item">
+                            <div class="ck-icon"><i class="fa-solid fa-wave-square"></i></div>
+                            <div class="ck-text">
+                                <h5>Động Cơ & Cảm Biến:</h5>
+                                <p>${l.coreKnowledge.sensors}</p>
+                            </div>
+                        </div>
+
+                        <div class="ck-item">
+                            <div class="ck-icon"><i class="fa-solid fa-code"></i></div>
+                            <div class="ck-text">
+                                <h5>Tư Duy Lập Trình:</h5>
+                                <p>${l.coreKnowledge.coding}</p>
+                            </div>
+                        </div>
+
+                        <div class="ck-item">
+                            <div class="ck-icon"><i class="fa-solid fa-bullseye"></i></div>
+                            <div class="ck-text">
+                                <h5>Thử Thách Vận Hành:</h5>
+                                <p>${l.coreKnowledge.challenge}</p>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="lesson-info-container">
-                        <h3 class="lesson-showcase-title">${lesson.title}</h3>
-                        <p class="lesson-showcase-desc">${lesson.desc}</p>
-
-                        <h4 class="core-knowledge-header"><i class="fa-solid fa-brain"></i> KIẾN THỨC TRỌNG TÂM & MỤC TIÊU BÀI HỌC:</h4>
-
-                        <div class="core-knowledge-grid">
-                            <div class="ck-item">
-                                <div class="ck-icon"><i class="fa-solid fa-gears"></i></div>
-                                <div class="ck-text">
-                                    <h5>Cơ Cấu Máy & Lắp Ráp</h5>
-                                    <p>${lesson.coreKnowledge.assembly}</p>
-                                </div>
-                            </div>
-                            <div class="ck-item">
-                                <div class="ck-icon"><i class="fa-solid fa-microchip"></i></div>
-                                <div class="ck-text">
-                                    <h5>Cảm Biến & Động Cơ</h5>
-                                    <p>${lesson.coreKnowledge.sensors}</p>
-                                </div>
-                            </div>
-                            <div class="ck-item">
-                                <div class="ck-icon"><i class="fa-solid fa-code"></i></div>
-                                <div class="ck-text">
-                                    <h5>Tư Duy Lập Trình</h5>
-                                    <p>${lesson.coreKnowledge.coding}</p>
-                                </div>
-                            </div>
-                            <div class="ck-item">
-                                <div class="ck-icon"><i class="fa-solid fa-bullseye"></i></div>
-                                <div class="ck-text">
-                                    <h5>Thử Thách Thực Hành</h5>
-                                    <p>${lesson.coreKnowledge.challenge}</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="lesson-tags-list">
-                            ${lesson.tags.map(t => `<span class="lesson-tag-item"><i class="fa-solid fa-circle-check"></i> ${t}</span>`).join('')}
-                        </div>
+                    <div class="lesson-tags-list">
+                        ${l.tags.map(t => `<span class="lesson-tag-item"><i class="fa-solid fa-check"></i> ${t}</span>`).join('')}
                     </div>
-                </div>
-
-                <div class="lesson-thumbs-carousel">
-                    ${lessonsData.map((l, idx) => {
-                        const isCurrent = l.id === lesson.id;
-                        return `
-                            <div class="thumb-item ${isCurrent ? 'active' : ''}" data-lesson-idx="${idx}">
-                                <div class="thumb-img-box">
-                                    <img src="${encodeURI(l.img)}" alt="${l.title}">
-                                </div>
-                                <span class="thumb-label">Bài ${l.id}</span>
-                            </div>
-                        `;
-                    }).join('')}
                 </div>
             </div>
         `;
 
-        document.getElementById('prev-lesson-btn').addEventListener('click', () => {
-            activeLessonIndex--;
-            renderLessonShowcase();
-        });
-        document.getElementById('next-lesson-btn').addEventListener('click', () => {
-            activeLessonIndex++;
-            renderLessonShowcase();
-        });
-
-        document.getElementById('lesson-img-click').addEventListener('click', () => {
-            openLightboxForSingleImage(lesson.img, `${lesson.title} - Ảnh Sản Phẩm Bài ${lesson.id}`);
-        });
-
-        document.querySelectorAll('.lesson-thumbs-carousel .thumb-item').forEach(thumb => {
-            thumb.addEventListener('click', () => {
-                const targetIdx = parseInt(thumb.dataset.lessonIdx);
-                const targetLesson = lessonsData[targetIdx];
-                const currentFiltered = getFilteredLessons();
-                const newFilteredIdx = currentFiltered.findIndex(l => l.id === targetLesson.id);
-                if (newFilteredIdx !== -1) {
-                    activeLessonIndex = newFilteredIdx;
-                } else {
-                    activeCategoryFilter = 'all';
-                    document.querySelectorAll('.curriculum-filter .filter-chip').forEach(c => {
-                        c.classList.toggle('active', c.dataset.filter === 'all');
-                    });
-                    activeLessonIndex = targetIdx;
-                }
-                renderLessonShowcase();
-            });
+        // Update Thumbnails Active State
+        const thumbs = document.querySelectorAll('.thumb-item');
+        thumbs.forEach((thumb, tIdx) => {
+            thumb.classList.toggle('active', tIdx === idx);
         });
     }
 
-    function renderCurriculum() {
-        if (!curriculumGridEl) return;
-        curriculumGridEl.innerHTML = '';
-        const filtered = getFilteredLessons();
-
-        filtered.forEach((lesson, index) => {
-            const card = document.createElement('div');
-            card.className = 'lesson-card';
-            card.innerHTML = `
-                <div class="lesson-card-img-wrapper" data-lesson-idx="${index}">
-                    <img src="${encodeURI(lesson.img)}" alt="${lesson.title}" loading="lazy" class="lesson-card-img">
-                    <span class="lesson-badge">Bài ${lesson.id}</span>
-                    <div class="lesson-card-overlay">
-                        <span class="zoom-btn"><i class="fa-solid fa-expand"></i> Phóng to</span>
-                    </div>
+    function renderLessonThumbs() {
+        if (!lessonThumbsContainer) return;
+        lessonThumbsContainer.innerHTML = lessonsData.map((l, idx) => `
+            <div class="thumb-item ${idx === 0 ? 'active' : ''}" onclick="selectLesson(${idx})" title="${l.title}">
+                <div class="thumb-img-box">
+                    <img src="${encodeURI(l.img)}" alt="Buổi ${l.id}">
+                    <span class="thumb-badge">B${l.id}</span>
                 </div>
-                <div class="lesson-card-content">
-                    <div class="lesson-card-header">
-                        <div class="lesson-icon-wrapper">
-                            <i class="fa-solid ${lesson.icon}"></i>
-                        </div>
-                        <span class="lesson-cat-pill">${lesson.categoryName}</span>
-                    </div>
-                    <h3 class="lesson-title">${lesson.title}</h3>
-                    <p class="lesson-desc">${lesson.desc}</p>
-                    <div class="lesson-tags">
-                        ${lesson.tags.map(t => `<span class="lesson-tag-item"><i class="fa-solid fa-check"></i> ${t}</span>`).join('')}
-                    </div>
-                    <button class="btn-play-lesson-slide" data-lesson-idx="${index}">
-                        <i class="fa-solid fa-desktop"></i> Trình Chiếu Slide Bài Này
-                    </button>
-                </div>
-            `;
-            
-            card.querySelector('.lesson-card-img-wrapper').addEventListener('click', () => {
-                openLightboxForSingleImage(lesson.img, `${lesson.title} - Ảnh Sản Phẩm Bài ${lesson.id}`);
-            });
-
-            card.querySelector('.btn-play-lesson-slide').addEventListener('click', () => {
-                activeLessonIndex = index;
-                switchCurriculumView('slides');
-                renderLessonShowcase();
-            });
-
-            curriculumGridEl.appendChild(card);
-        });
+                <span class="thumb-title">Buổi ${l.id}</span>
+            </div>
+        `).join('');
     }
 
-    function switchCurriculumView(mode) {
-        if (mode === 'slides') {
-            btnViewSlides.classList.add('active');
-            btnViewGrid.classList.remove('active');
-            lessonShowcaseEl.classList.remove('hidden');
-            curriculumGridEl.classList.add('hidden');
-        } else {
-            btnViewSlides.classList.remove('active');
-            btnViewGrid.classList.add('active');
-            lessonShowcaseEl.classList.add('hidden');
-            curriculumGridEl.classList.remove('hidden');
-        }
-    }
+    window.selectLesson = function(idx) {
+        renderFeaturedLesson(idx);
+    };
 
-    if (btnViewSlides && btnViewGrid) {
-        btnViewSlides.addEventListener('click', () => switchCurriculumView('slides'));
-        btnViewGrid.addEventListener('click', () => switchCurriculumView('grid'));
-    }
+    window.prevLesson = function() {
+        if (currentLessonIdx > 0) renderFeaturedLesson(currentLessonIdx - 1);
+    };
 
-    // Filter Chips Event Handlers
-    const filterChips = document.querySelectorAll('.curriculum-filter .filter-chip');
-    filterChips.forEach(chip => {
-        chip.addEventListener('click', () => {
-            filterChips.forEach(c => c.classList.remove('active'));
-            chip.classList.add('active');
-            activeCategoryFilter = chip.dataset.filter;
-            activeLessonIndex = 0;
-            renderLessonShowcase();
-            renderCurriculum();
+    window.nextLesson = function() {
+        if (currentLessonIdx < lessonsData.length - 1) renderFeaturedLesson(currentLessonIdx + 1);
+    };
+
+    renderLessonThumbs();
+    renderFeaturedLesson(0);
+
+    // Filter Buttons for Lesson Categories
+    const lessonFilterBtns = document.querySelectorAll('.filter-btn');
+    lessonFilterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            lessonFilterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const cat = btn.getAttribute('data-cat');
+            if (cat === 'all') {
+                renderFeaturedLesson(0);
+            } else {
+                const foundIdx = lessonsData.findIndex(l => l.category === cat);
+                if (foundIdx !== -1) renderFeaturedLesson(foundIdx);
+            }
         });
     });
 
-    renderLessonShowcase();
-    renderCurriculum();
-
-    // --- 5. Render Classroom Gallery Grid ---
+    // --- 7. Slide 4: Classroom Gallery & Lightbox ---
     const galleryGrid = document.getElementById('gallery-grid');
-    let currentGalleryList = [...galleryData];
+    const gallerySearch = document.getElementById('gallery-search');
+    const galleryTabs = document.querySelectorAll('.g-tab');
 
-    function renderGallery(items) {
+    let currentGalleryCat = 'all';
+    let gallerySearchQuery = '';
+
+    function renderGallery() {
         if (!galleryGrid) return;
-        galleryGrid.innerHTML = '';
-        items.forEach((photo, index) => {
-            const item = document.createElement('div');
-            item.className = 'gallery-item';
-            item.innerHTML = `
-                <img src="${encodeURI(photo.src)}" alt="${photo.title}" loading="lazy">
-                <div class="gallery-overlay">
-                    <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
-                    <div class="gallery-info">
-                        <h4>${photo.title}</h4>
-                        <p><i class="fa-solid fa-camera"></i> Ảnh Lớp Học #${photo.id}</p>
+
+        let filtered = galleryData.filter(item => {
+            const matchesCat = currentGalleryCat === 'all' || item.cat === currentGalleryCat;
+            const matchesSearch = item.title.toLowerCase().includes(gallerySearchQuery.toLowerCase());
+            return matchesCat && matchesSearch;
+        });
+
+        galleryGrid.innerHTML = filtered.map((item, idx) => `
+            <div class="gallery-card" onclick="openLightbox(${idx}, filteredGallery)">
+                <div class="gallery-img-wrapper">
+                    <img src="${encodeURI(item.src)}" alt="${item.title}" loading="lazy">
+                    <div class="gallery-card-overlay">
+                        <span class="gallery-zoom-badge"><i class="fa-solid fa-magnifying-glass-plus"></i> Xem lớn</span>
+                        <p class="gallery-card-title">${item.title}</p>
                     </div>
                 </div>
-            `;
-            item.addEventListener('click', () => openLightbox(index, items));
-            galleryGrid.appendChild(item);
-        });
-    }
-    renderGallery(galleryData);
+            </div>
+        `).join('');
 
-    const gTabs = document.querySelectorAll('.g-tab');
-    const gSearch = document.getElementById('gallery-search');
-
-    function filterGallery() {
-        const activeTab = document.querySelector('.g-tab.active').dataset.gtab;
-        const query = gSearch.value.toLowerCase().trim();
-
-        currentGalleryList = galleryData.filter(item => {
-            const matchesTab = activeTab === 'all' || item.cat === activeTab;
-            const matchesQuery = item.title.toLowerCase().includes(query);
-            return matchesTab && matchesQuery;
-        });
-
-        renderGallery(currentGalleryList);
+        window.filteredGallery = filtered;
     }
 
-    gTabs.forEach(tab => {
+    galleryTabs.forEach(tab => {
         tab.addEventListener('click', () => {
-            gTabs.forEach(t => t.classList.remove('active'));
+            galleryTabs.forEach(t => t.classList.remove('active'));
             tab.classList.add('active');
-            filterGallery();
+            currentGalleryCat = tab.getAttribute('data-gallery-cat');
+            renderGallery();
         });
     });
 
-    if (gSearch) gSearch.addEventListener('input', filterGallery);
+    if (gallerySearch) {
+        gallerySearch.addEventListener('input', (e) => {
+            gallerySearchQuery = e.target.value.trim();
+            renderGallery();
+        });
+    }
 
-    // --- 6. Lightbox Functionality ---
+    renderGallery();
+
+    // Lightbox Functionality
     const lightboxModal = document.getElementById('lightbox-modal');
     const lightboxImg = document.getElementById('lightbox-img');
     const lightboxCaption = document.getElementById('lightbox-caption');
@@ -1018,12 +960,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentLightboxIdx = 0;
     let activeLightboxArray = [];
 
-    function openLightbox(index, array) {
+    window.openLightbox = function(index, array) {
         currentLightboxIdx = index;
-        activeLightboxArray = array;
+        activeLightboxArray = array && array.length ? array : galleryData;
         updateLightbox();
         lightboxModal.classList.add('active');
-    }
+    };
 
     window.openLightboxForSingleImage = function(src, caption) {
         activeLightboxArray = [{ src: src, title: caption }];
@@ -1033,6 +975,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     function updateLightbox() {
+        if (!activeLightboxArray.length) return;
         const item = activeLightboxArray[currentLightboxIdx];
         lightboxImg.src = encodeURI(item.src);
         lightboxCaption.textContent = `${item.title} (${currentLightboxIdx + 1} / ${activeLightboxArray.length})`;
@@ -1057,7 +1000,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 7. Student Detail Modal Function ---
+    // --- 8. Student Certificate Modal ---
     const studentModal = document.getElementById('student-modal');
     const modalBodyContent = document.getElementById('modal-body-content');
     const modalCloseBtn = document.getElementById('modal-close-btn');
@@ -1075,7 +1018,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <span class="modal-badge"><i class="fa-solid fa-certificate"></i> ${student.badge}</span>
                     <h3>${student.name}</h3>
                     <p style="color: var(--text-secondary); font-size: 0.9rem;">
-                        <i class="fa-solid fa-graduation-cap"></i> ${student.role} - Khóa Học Robotics Sáng Tạo 2026
+                        <i class="fa-solid fa-graduation-cap"></i> ${student.role} - Đánh giá: ${student.stars}/5.0 ⭐
                     </p>
                 </div>
             </div>
@@ -1170,7 +1113,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 8. Theme Toggle ---
+    // --- 9. Theme Toggle ---
     const themeToggleBtn = document.getElementById('theme-toggle');
     const htmlEl = document.documentElement;
 
