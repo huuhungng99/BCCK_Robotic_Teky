@@ -304,7 +304,11 @@ h1, h2, h3, h4 {
     border: 1px solid var(--border-glow);
     border-radius: 14px;
     padding: 0.4rem;
-    width: 250px;
+    width: 290px;
+    max-height: 440px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-glow) transparent;
     box-shadow: var(--shadow-modal);
     opacity: 0;
     visibility: hidden;
@@ -319,10 +323,10 @@ h1, h2, h3, h4 {
 }
 
 .dropdown-item {
-    padding: 0.6rem 0.8rem;
+    padding: 0.55rem 0.8rem;
     border-radius: 8px;
     color: var(--text-secondary);
-    font-size: 0.84rem;
+    font-size: 0.82rem;
     font-weight: 600;
     cursor: pointer;
     display: flex;
@@ -334,6 +338,16 @@ h1, h2, h3, h4 {
 .dropdown-item:hover {
     background: rgba(0, 242, 254, 0.1);
     color: var(--accent-primary);
+}
+
+.dropdown-item.active {
+    background: var(--gradient-primary);
+    color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 242, 254, 0.35);
+}
+
+.dropdown-item.active i {
+    color: #ffffff;
 }
 
 .nav-actions {
@@ -412,25 +426,34 @@ h1, h2, h3, h4 {
 .slide-dots {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.35rem;
+    max-width: 320px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding: 2px;
+}
+
+.slide-dots::-webkit-scrollbar {
+    display: none;
 }
 
 .dot {
-    width: 9px;
-    height: 9px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.22);
+    background: rgba(255, 255, 255, 0.25);
     cursor: pointer;
-    transition: all 0.3s ease;
+    flex-shrink: 0;
+    transition: all 0.25s ease;
 }
 
 .dot:hover {
     background: var(--accent-primary);
-    transform: scale(1.2);
+    transform: scale(1.25);
 }
 
 .dot.active {
-    width: 24px;
+    width: 20px;
     border-radius: 9999px;
     background: var(--gradient-primary);
     box-shadow: 0 0 10px rgba(0, 242, 254, 0.6);
@@ -1325,44 +1348,17 @@ h1, h2, h3, h4 {
     align-items: center;
 }
 
-.student-search-select-box i {
-    position: absolute;
-    left: 0.9rem;
-    color: var(--accent-primary);
-    pointer-events: none;
-}
-
-.student-search-select-box select {
-    padding: 0.55rem 1rem 0.55rem 2.4rem;
-    border-radius: 9999px;
-    border: 1px solid var(--border-glow);
-    background: var(--bg-card);
-    color: var(--text-primary);
-    font-family: inherit;
-    font-size: 0.85rem;
-    font-weight: 600;
-    outline: none;
-    cursor: pointer;
-    box-shadow: var(--shadow-sm);
-    min-width: 280px;
-}
-
-/* Featured Student Slide Showcase Card */
-.student-slide-showcase {
-    width: 100%;
-    margin-bottom: 1rem;
-}
-
-.featured-student-card {
+/* --- Slide 5 to 17: Individual Student Slides (1 Student / 1 Slide) --- */
+.student-individual-card {
     background: var(--bg-card);
     border: 1px solid var(--border-glow);
     border-radius: 20px;
-    padding: 1.5rem;
+    padding: 1.4rem;
     backdrop-filter: blur(16px);
     box-shadow: var(--shadow-md);
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 1.1rem;
     animation: fadeInSlide 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -1370,7 +1366,7 @@ h1, h2, h3, h4 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-bottom: 0.9rem;
+    padding-bottom: 0.8rem;
     border-bottom: 1px solid var(--border-color);
     flex-wrap: wrap;
     gap: 0.8rem;
@@ -1438,6 +1434,66 @@ h1, h2, h3, h4 {
     color: var(--accent-primary);
     font-size: 0.9rem;
     padding: 0 0.3rem;
+}
+
+/* Horizontal Student Jump Strip at bottom of each slide */
+.student-jump-strip {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding-top: 0.8rem;
+    border-top: 1px solid var(--border-color);
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-glow) transparent;
+}
+
+.s-jump-item {
+    flex: 0 0 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    cursor: pointer;
+    opacity: 0.55;
+    transition: all 0.25s ease;
+}
+
+.s-jump-item:hover, .s-jump-item.active {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+.s-jump-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid transparent;
+    padding: 2px;
+    background: var(--bg-main);
+}
+
+.s-jump-item.active .s-jump-avatar {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 10px rgba(0, 242, 254, 0.6);
+}
+
+.s-jump-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.s-jump-name {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    white-space: nowrap;
+}
+
+.s-jump-item.active .s-jump-name {
+    color: var(--accent-primary);
 }
 
 /* 3-Column Layout for Student Slide */

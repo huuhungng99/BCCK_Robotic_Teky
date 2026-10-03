@@ -1,137 +1,11 @@
 /* ==========================================================================
-   ROBOTICS COURSE PRESENTATION SLIDES - INTERACTIVE JS WITH CHILD-FRIENDLY TERMS
+   ROBOTICS COURSE PRESENTATION SLIDES - 18 SLIDES INTERACTIVE DECK
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Slide Presentation Controller ---
-    const slides = document.querySelectorAll('.slide-section');
-    const dots = document.querySelectorAll('.slide-dots .dot');
-    const prevBtn = document.getElementById('prev-slide-btn');
-    const nextBtn = document.getElementById('next-slide-btn');
-    const counterBadge = document.getElementById('slide-counter-badge');
-    const currentSlideTitle = document.getElementById('current-slide-title');
-    const slideSelectBtn = document.getElementById('slide-select-btn');
-    const slideDropdown = document.getElementById('slide-dropdown');
+    // --- 1. Data Definitions ---
 
-    const slideTitles = [
-        "Slide 1: Tổng Quan Khóa Học",
-        "Slide 2: Giảng Viên Hướng Dẫn",
-        "Slide 3: Nội Dung 12 Buổi Học",
-        "Slide 4: Ảnh Hoạt Động Lớp Học",
-        "Slide 5: Nhận Xét 13 Học Sinh",
-        "Slide 6: Tổng Kết & Chứng Nhận"
-    ];
-
-    let currentSlide = 0;
-    const totalSlides = slides.length;
-
-    window.goToSlide = function(index) {
-        if (index < 0 || index >= totalSlides) return;
-
-        slides[currentSlide].classList.remove('active');
-        dots[currentSlide].classList.remove('active');
-
-        currentSlide = index;
-
-        slides[currentSlide].classList.add('active');
-        dots[currentSlide].classList.add('active');
-
-        // Update Counter & Title
-        counterBadge.textContent = `${currentSlide + 1} / ${totalSlides}`;
-        currentSlideTitle.textContent = slideTitles[currentSlide];
-
-        // Close dropdown if open
-        slideDropdown.classList.remove('open');
-    };
-
-    prevBtn.addEventListener('click', () => {
-        const nextIdx = (currentSlide - 1 + totalSlides) % totalSlides;
-        goToSlide(nextIdx);
-    });
-
-    nextBtn.addEventListener('click', () => {
-        const nextIdx = (currentSlide + 1) % totalSlides;
-        goToSlide(nextIdx);
-    });
-
-    // Keyboard Navigation
-    document.addEventListener('keydown', (e) => {
-        const isModalActive = document.querySelector('.modal-overlay.active') || document.querySelector('.lightbox-overlay.active');
-        if (isModalActive) return;
-
-        if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') {
-            e.preventDefault();
-            goToSlide((currentSlide + 1) % totalSlides);
-        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-            e.preventDefault();
-            goToSlide((currentSlide - 1 + totalSlides) % totalSlides);
-        }
-    });
-
-    // Touch Swipe Gestures for Mobile
-    let touchStartX = 0;
-    let touchStartY = 0;
-    let touchEndX = 0;
-    let touchEndY = 0;
-
-    const slidesContainer = document.getElementById('slides-container');
-
-    slidesContainer.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-        touchStartY = e.changedTouches[0].screenY;
-    }, { passive: true });
-
-    slidesContainer.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        touchEndY = e.changedTouches[0].screenY;
-        handleSwipe();
-    }, { passive: true });
-
-    function handleSwipe() {
-        const isModalActive = document.querySelector('.modal-overlay.active') || document.querySelector('.lightbox-overlay.active');
-        if (isModalActive) return;
-
-        const diffX = touchEndX - touchStartX;
-        const diffY = touchEndY - touchStartY;
-
-        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
-            if (diffX < 0) {
-                goToSlide((currentSlide + 1) % totalSlides);
-            } else {
-                goToSlide((currentSlide - 1 + totalSlides) % totalSlides);
-            }
-        }
-    }
-
-    // Slide Dropdown Toggle
-    slideSelectBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        slideDropdown.classList.toggle('open');
-    });
-
-    document.addEventListener('click', () => {
-        slideDropdown.classList.remove('open');
-    });
-
-    // Fullscreen Toggle Button
-    const fullscreenBtn = document.getElementById('fullscreen-btn');
-    fullscreenBtn.addEventListener('click', () => {
-        if (!document.fullscreenElement) {
-            document.documentElement.requestFullscreen().catch(err => {
-                console.log(`Error attempting to enable fullscreen: ${err.message}`);
-            });
-            fullscreenBtn.innerHTML = '<i class="fa-solid fa-compress"></i>';
-        } else {
-            if (document.exitFullscreen) {
-                document.exitFullscreen();
-            }
-            fullscreenBtn.innerHTML = '<i class="fa-solid fa-expand"></i>';
-        }
-    });
-
-    // --- Data Definitions (Giao diện & Ngôn ngữ Đơn giản, Gần gũi với Học sinh) ---
-
-    // 1. Lessons Data (12 Buổi học diễn giải đơn giản & Hình ảnh sản phẩm)
+    // Lessons Data (12 Buổi học diễn giải đơn giản & Hình ảnh sản phẩm)
     const lessonsData = [
         {
             id: 1,
@@ -327,7 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     ];
 
-    // 2. Classroom Photos Data (21 photos)
+    // Classroom Photos Data (21 photos)
     const galleryData = [
         { id: 1, src: "Hình ảnh lớp học/IMG_20260815_084353.jpg", title: "Tập trung lắp ráp khung xe Robot", cat: "building" },
         { id: 2, src: "Hình ảnh lớp học/IMG_20260815_084408.jpg", title: "Kiểm tra bánh răng truyền động", cat: "building" },
@@ -352,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 21, src: "Hình ảnh lớp học/IMG_20260822_092140.jpg", title: "Khoảnh khắc chúc mừng hoàn thành khóa học", cat: "team" }
     ];
 
-    // 3. 13 Student Profiles Data - Với Video Thuyết Trình & Đánh Giá 1 Bạn / 1 Slide
+    // 13 Student Profiles Data
     const studentsData = [
         {
             id: 1,
@@ -525,7 +399,329 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     ];
 
-    // --- Render Curriculum Slide Showcase & Grid ---
+    function getYouTubeId(url) {
+        if (!url) return null;
+        const match = url.match(/(?:embed\/|v=|vi\/|youtu\.be\/|\/v\/|\/e\/|watch\?v=)([^#&?]+)/);
+        return match ? match[1] : url;
+    }
+
+    // --- 2. Inject 13 Individual Student Slides into Presentation Deck ---
+    function injectStudentSlides() {
+        const anchor = document.getElementById('students-slides-anchor');
+        if (!anchor) return;
+
+        let slidesHTML = '';
+        studentsData.forEach((s, idx) => {
+            const slideIdx = idx + 4; // 0-based index: Student 1 is Slide 5 (index 4)
+            const videoId = s.videoUrl ? getYouTubeId(s.videoUrl) : null;
+            const embedUrl = videoId ? `https://www.youtube-nocookie.com/embed/${videoId}?rel=0` : null;
+            const watchUrl = videoId ? `https://www.youtube.com/watch?v=${videoId}` : null;
+
+            slidesHTML += `
+                <section class="slide-section" data-slide="${slideIdx}">
+                    <div class="container slide-content student-individual-slide">
+                        <div class="student-individual-card">
+                            <div class="student-slide-header">
+                                <div class="student-slide-meta">
+                                    <span class="student-slide-badge"><i class="fa-solid fa-graduation-cap"></i> HỌC VIÊN #${s.id} / 13</span>
+                                    <span class="student-title-badge"><i class="fa-solid fa-award"></i> ${s.badge}</span>
+                                </div>
+                                <div class="student-slide-nav">
+                                    <button class="student-nav-btn prev" onclick="goToSlide(${slideIdx - 1})" title="Slide Trước">
+                                        <i class="fa-solid fa-chevron-left"></i> Trước
+                                    </button>
+                                    <span class="student-slide-counter">${s.id} / 13</span>
+                                    <button class="student-nav-btn next" onclick="goToSlide(${slideIdx + 1})" title="Slide Tiếp Theo">
+                                        Tiếp <i class="fa-solid fa-chevron-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="student-slide-body">
+                                <!-- Column 1: Student Profile Photo & Rating -->
+                                <div class="student-profile-column">
+                                    <div class="student-avatar-frame">
+                                        <img src="${encodeURI(s.avatar)}" alt="${s.name}" class="student-profile-img">
+                                    </div>
+                                    <h3 class="student-profile-name">${s.name}</h3>
+                                    <div class="student-stars-box">
+                                        <div class="stars-gold">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </div>
+                                        <span class="stars-label">Đánh giá 5/5 ⭐</span>
+                                    </div>
+
+                                    <div class="student-skills-mini">
+                                        <div class="skill-mini-row">
+                                            <span>Lắp ráp cơ khí: <strong>${s.skills.assembly}%</strong></span>
+                                            <div class="s-bar"><div class="s-fill" style="width:${s.skills.assembly}%"></div></div>
+                                        </div>
+                                        <div class="skill-mini-row">
+                                            <span>Tư duy lập trình: <strong>${s.skills.logic}%</strong></span>
+                                            <div class="s-bar"><div class="s-fill" style="width:${s.skills.logic}%"></div></div>
+                                        </div>
+                                        <div class="skill-mini-row">
+                                            <span>Trí sáng tạo: <strong>${s.skills.creativity}%</strong></span>
+                                            <div class="s-bar"><div class="s-fill" style="width:${s.skills.creativity}%"></div></div>
+                                        </div>
+                                        <div class="skill-mini-row">
+                                            <span>Làm việc nhóm: <strong>${s.skills.teamwork}%</strong></span>
+                                            <div class="s-bar"><div class="s-fill" style="width:${s.skills.teamwork}%"></div></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Column 2: Strengths & Growth Evaluation -->
+                                <div class="student-eval-column">
+                                    <div class="eval-box strength-box">
+                                        <h4><i class="fa-solid fa-thumbs-up"></i> ƯU ĐIỂM NỔI BẬT & THÀNH TÍCH:</h4>
+                                        <p>${s.strengths}</p>
+                                    </div>
+
+                                    <div class="eval-box improvement-box">
+                                        <h4><i class="fa-solid fa-bullseye"></i> ĐIỂM CẦN CẢI THIỆN & ĐỊNH HƯỚNG:</h4>
+                                        <p>${s.improvements}</p>
+                                    </div>
+
+                                    <div class="eval-box summary-eval-box">
+                                        <h4><i class="fa-solid fa-comment-dots"></i> LỜI NHẬN XÉT CỦA GIẢNG VIÊN:</h4>
+                                        <p>"${s.eval}"</p>
+                                    </div>
+
+                                    <button class="btn-student-report-print" onclick="openStudentModal(${s.id})">
+                                        <i class="fa-solid fa-certificate"></i> Xem & In Chứng Nhận Báo Cáo
+                                    </button>
+                                </div>
+
+                                <!-- Column 3: Presentation Video Player -->
+                                <div class="student-video-column">
+                                    <div class="video-header">
+                                        <i class="fa-solid fa-video"></i> Video Thuyết Trình Dự Án Cuối Khóa
+                                    </div>
+                                    ${videoId ? `
+                                        <div class="video-iframe-wrapper">
+                                            <iframe src="${embedUrl}" title="Video thuyết trình của ${s.name}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                        </div>
+                                        <div class="video-caption">
+                                            <i class="fa-brands fa-youtube" style="color:#ff4d4f;"></i> Thuyết trình sản phẩm của <strong>${s.name}</strong>
+                                        </div>
+                                        <div class="video-actions-bar">
+                                            <a href="${watchUrl}" target="_blank" rel="noopener noreferrer" class="btn-watch-youtube" title="Xem video đầy đủ trên YouTube">
+                                                <i class="fa-brands fa-youtube"></i> Mở xem trên YouTube <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                            </a>
+                                        </div>
+                                    ` : `
+                                        <div class="no-video-box">
+                                            <i class="fa-solid fa-chalkboard-user"></i>
+                                            <p>Học sinh thuyết trình trực tiếp tại lớp học</p>
+                                            <span class="no-video-sub">Đánh giá và cấp chứng nhận dựa trên phần trình diễn trực tiếp</span>
+                                        </div>
+                                    `}
+                                </div>
+                            </div>
+
+                            <!-- Horizontal Student Quick Jump Strip -->
+                            <div class="student-jump-strip">
+                                ${studentsData.map((st, sidx) => `
+                                    <div class="s-jump-item ${sidx === idx ? 'active' : ''}" onclick="goToSlide(${sidx + 4})" title="Chuyển nhanh đến Slide của ${st.name}">
+                                        <div class="s-jump-avatar">
+                                            <img src="${encodeURI(st.avatar)}" alt="${st.name}">
+                                        </div>
+                                        <span class="s-jump-name">${st.name.split(' ').pop()}</span>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            `;
+        });
+
+        anchor.outerHTML = slidesHTML;
+    }
+
+    // Inject all student slides first
+    injectStudentSlides();
+
+    // --- 3. Slide Presentation Deck Controller (18 Slides Total) ---
+    const slides = document.querySelectorAll('.slide-section');
+    const prevBtn = document.getElementById('prev-slide-btn');
+    const nextBtn = document.getElementById('next-slide-btn');
+    const counterBadge = document.getElementById('slide-counter-badge');
+    const currentSlideTitle = document.getElementById('current-slide-title');
+    const slideSelectBtn = document.getElementById('slide-select-btn');
+    const slideDropdown = document.getElementById('slide-dropdown');
+    const slideDotsContainer = document.getElementById('slide-dots');
+
+    const slideTitles = [
+        "Slide 1: Tổng Quan Khóa Học",
+        "Slide 2: Giảng Viên Hướng Dẫn",
+        "Slide 3: Nội Dung 12 Buổi Học",
+        "Slide 4: Ảnh Hoạt Động Lớp Học",
+        ...studentsData.map((s, idx) => `Slide ${idx + 5}: Nhận Xét ${s.name}`),
+        "Slide 18: Tổng Kết & Chứng Nhận"
+    ];
+
+    const slideIcons = [
+        "fa-house",
+        "fa-user-tie",
+        "fa-book-open",
+        "fa-images",
+        ...studentsData.map(() => "fa-user-graduate"),
+        "fa-trophy"
+    ];
+
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+
+    // Populate Slide Dropdown Menu with all 18 Slides
+    function populateSlideDropdown() {
+        if (!slideDropdown) return;
+        slideDropdown.innerHTML = slideTitles.map((title, idx) => `
+            <div class="dropdown-item ${idx === 0 ? 'active' : ''}" data-slide-target="${idx}" onclick="goToSlide(${idx})">
+                <i class="fa-solid ${slideIcons[idx]}"></i> ${title}
+            </div>
+        `).join('');
+    }
+    populateSlideDropdown();
+
+    // Populate Slide Dots with all 18 Dots
+    function populateSlideDots() {
+        if (!slideDotsContainer) return;
+        slideDotsContainer.innerHTML = slideTitles.map((title, idx) => `
+            <span class="dot ${idx === 0 ? 'active' : ''}" onclick="goToSlide(${idx})" title="${title}"></span>
+        `).join('');
+    }
+    populateSlideDots();
+
+    const dots = document.querySelectorAll('.slide-dots .dot');
+    const dropdownItems = document.querySelectorAll('#slide-dropdown .dropdown-item');
+
+    window.goToSlide = function(index) {
+        if (index < 0 || index >= totalSlides) return;
+
+        slides[currentSlide].classList.remove('active');
+        if (dots[currentSlide]) dots[currentSlide].classList.remove('active');
+        if (dropdownItems[currentSlide]) dropdownItems[currentSlide].classList.remove('active');
+
+        currentSlide = index;
+
+        slides[currentSlide].classList.add('active');
+        if (dots[currentSlide]) {
+            dots[currentSlide].classList.add('active');
+            dots[currentSlide].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }
+        if (dropdownItems[currentSlide]) {
+            dropdownItems[currentSlide].classList.add('active');
+        }
+
+        // Update Counter & Title
+        if (counterBadge) counterBadge.textContent = `${currentSlide + 1} / ${totalSlides}`;
+        if (currentSlideTitle) currentSlideTitle.textContent = slideTitles[currentSlide];
+
+        // Close dropdown if open
+        if (slideDropdown) slideDropdown.classList.remove('open');
+    };
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            const nextIdx = (currentSlide - 1 + totalSlides) % totalSlides;
+            goToSlide(nextIdx);
+        });
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            const nextIdx = (currentSlide + 1) % totalSlides;
+            goToSlide(nextIdx);
+        });
+    }
+
+    // Keyboard Navigation across all 18 slides
+    document.addEventListener('keydown', (e) => {
+        const isModalActive = document.querySelector('.modal-overlay.active') || document.querySelector('.lightbox-overlay.active');
+        if (isModalActive) return;
+
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') {
+            e.preventDefault();
+            goToSlide((currentSlide + 1) % totalSlides);
+        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+            e.preventDefault();
+            goToSlide((currentSlide - 1 + totalSlides) % totalSlides);
+        }
+    });
+
+    // Touch Swipe Gestures for Mobile
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchEndX = 0;
+    let touchEndY = 0;
+
+    const slidesContainer = document.getElementById('slides-container');
+    if (slidesContainer) {
+        slidesContainer.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            touchStartY = e.changedTouches[0].screenY;
+        }, { passive: true });
+
+        slidesContainer.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            touchEndY = e.changedTouches[0].screenY;
+            handleSwipe();
+        }, { passive: true });
+    }
+
+    function handleSwipe() {
+        const isModalActive = document.querySelector('.modal-overlay.active') || document.querySelector('.lightbox-overlay.active');
+        if (isModalActive) return;
+
+        const diffX = touchEndX - touchStartX;
+        const diffY = touchEndY - touchStartY;
+
+        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
+            if (diffX < 0) {
+                goToSlide((currentSlide + 1) % totalSlides);
+            } else {
+                goToSlide((currentSlide - 1 + totalSlides) % totalSlides);
+            }
+        }
+    }
+
+    // Slide Dropdown Toggle
+    if (slideSelectBtn && slideDropdown) {
+        slideSelectBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            slideDropdown.classList.toggle('open');
+        });
+
+        document.addEventListener('click', () => {
+            slideDropdown.classList.remove('open');
+        });
+    }
+
+    // Fullscreen Toggle Button
+    const fullscreenBtn = document.getElementById('fullscreen-btn');
+    if (fullscreenBtn) {
+        fullscreenBtn.addEventListener('click', () => {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(err => {
+                    console.log(`Error attempting to enable fullscreen: ${err.message}`);
+                });
+                fullscreenBtn.innerHTML = '<i class="fa-solid fa-compress"></i>';
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+                fullscreenBtn.innerHTML = '<i class="fa-solid fa-expand"></i>';
+            }
+        });
+    }
+
+    // --- 4. Render Curriculum Slide Showcase & Grid ---
     let activeLessonIndex = 0;
     let activeCategoryFilter = 'all';
 
@@ -539,7 +735,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return lessonsData.filter(l => l.category === activeCategoryFilter);
     }
 
-    // Function to render single 1-lesson slide showcase
     function renderLessonShowcase() {
         if (!lessonShowcaseEl) return;
         const currentList = getFilteredLessons();
@@ -548,7 +743,6 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Clamp index
         if (activeLessonIndex >= currentList.length) activeLessonIndex = 0;
         if (activeLessonIndex < 0) activeLessonIndex = currentList.length - 1;
 
@@ -644,7 +838,6 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `;
 
-        // Event listeners for prev / next
         document.getElementById('prev-lesson-btn').addEventListener('click', () => {
             activeLessonIndex--;
             renderLessonShowcase();
@@ -654,12 +847,10 @@ document.addEventListener('DOMContentLoaded', () => {
             renderLessonShowcase();
         });
 
-        // Event listener for lightbox on main product image
         document.getElementById('lesson-img-click').addEventListener('click', () => {
             openLightboxForSingleImage(lesson.img, `${lesson.title} - Ảnh Sản Phẩm Bài ${lesson.id}`);
         });
 
-        // Event listeners for thumbnail carousel clicks
         document.querySelectorAll('.lesson-thumbs-carousel .thumb-item').forEach(thumb => {
             thumb.addEventListener('click', () => {
                 const targetIdx = parseInt(thumb.dataset.lessonIdx);
@@ -669,7 +860,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (newFilteredIdx !== -1) {
                     activeLessonIndex = newFilteredIdx;
                 } else {
-                    // Reset filter to all if clicking a lesson outside active filter
                     activeCategoryFilter = 'all';
                     document.querySelectorAll('.curriculum-filter .filter-chip').forEach(c => {
                         c.classList.toggle('active', c.dataset.filter === 'all');
@@ -681,7 +871,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Function to render curriculum grid
     function renderCurriculum() {
         if (!curriculumGridEl) return;
         curriculumGridEl.innerHTML = '';
@@ -716,12 +905,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
             
-            // Click image to zoom
             card.querySelector('.lesson-card-img-wrapper').addEventListener('click', () => {
                 openLightboxForSingleImage(lesson.img, `${lesson.title} - Ảnh Sản Phẩm Bài ${lesson.id}`);
             });
 
-            // Click button to open slide view
             card.querySelector('.btn-play-lesson-slide').addEventListener('click', () => {
                 activeLessonIndex = index;
                 switchCurriculumView('slides');
@@ -764,15 +951,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Initial render
     renderLessonShowcase();
     renderCurriculum();
 
-    // --- Render Classroom Gallery Grid ---
+    // --- 5. Render Classroom Gallery Grid ---
     const galleryGrid = document.getElementById('gallery-grid');
     let currentGalleryList = [...galleryData];
 
     function renderGallery(items) {
+        if (!galleryGrid) return;
         galleryGrid.innerHTML = '';
         items.forEach((photo, index) => {
             const item = document.createElement('div');
@@ -817,9 +1004,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    gSearch.addEventListener('input', filterGallery);
+    if (gSearch) gSearch.addEventListener('input', filterGallery);
 
-    // --- Lightbox Functionality ---
+    // --- 6. Lightbox Functionality ---
     const lightboxModal = document.getElementById('lightbox-modal');
     const lightboxImg = document.getElementById('lightbox-img');
     const lightboxCaption = document.getElementById('lightbox-caption');
@@ -849,273 +1036,26 @@ document.addEventListener('DOMContentLoaded', () => {
         lightboxCaption.textContent = `${item.title} (${currentLightboxIdx + 1} / ${activeLightboxArray.length})`;
     }
 
-    lightboxClose.addEventListener('click', () => lightboxModal.classList.remove('active'));
-    lightboxPrev.addEventListener('click', () => {
-        currentLightboxIdx = (currentLightboxIdx - 1 + activeLightboxArray.length) % activeLightboxArray.length;
-        updateLightbox();
-    });
-    lightboxNext.addEventListener('click', () => {
-        currentLightboxIdx = (currentLightboxIdx + 1) % activeLightboxArray.length;
-        updateLightbox();
-    });
-    lightboxModal.addEventListener('click', (e) => {
-        if (e.target === lightboxModal) lightboxModal.classList.remove('active');
-    });
-
-    // --- Student Slide Showcase Render & Controls ---
-    let activeStudentIndex = 0;
-    const studentShowcaseEl = document.getElementById('student-slide-showcase');
-    const studentsGridEl = document.getElementById('students-grid');
-    const btnStudentSlideView = document.getElementById('btn-student-slide-view');
-    const btnStudentGridView = document.getElementById('btn-student-grid-view');
-    const studentDropdownSelect = document.getElementById('student-dropdown-select');
-
-    // Populate student dropdown options
-    function populateStudentDropdown() {
-        if (!studentDropdownSelect) return;
-        studentDropdownSelect.innerHTML = studentsData.map((s, idx) => `
-            <option value="${idx}">Học viên ${idx + 1}: ${s.name} (${s.badge})</option>
-        `).join('');
-
-        studentDropdownSelect.addEventListener('change', (e) => {
-            activeStudentIndex = parseInt(e.target.value);
-            renderStudentShowcase();
+    if (lightboxClose) lightboxClose.addEventListener('click', () => lightboxModal.classList.remove('active'));
+    if (lightboxPrev) {
+        lightboxPrev.addEventListener('click', () => {
+            currentLightboxIdx = (currentLightboxIdx - 1 + activeLightboxArray.length) % activeLightboxArray.length;
+            updateLightbox();
         });
     }
-    populateStudentDropdown();
-
-    function getYouTubeId(url) {
-        if (!url) return null;
-        const match = url.match(/(?:embed\/|v=|vi\/|youtu\.be\/|\/v\/|\/e\/|watch\?v=)([^#&?]+)/);
-        return match ? match[1] : url;
+    if (lightboxNext) {
+        lightboxNext.addEventListener('click', () => {
+            currentLightboxIdx = (currentLightboxIdx + 1) % activeLightboxArray.length;
+            updateLightbox();
+        });
     }
-
-    window.playEmbeddedVideo = function(id, videoId, studentName) {
-        const box = document.getElementById(`video-box-${id}`);
-        if (!box) return;
-        box.innerHTML = `
-            <div class="video-iframe-wrapper">
-                <iframe src="https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0" title="Video thuyết trình của ${decodeURIComponent(studentName)}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-        `;
-    };
-
-    function renderStudentShowcase() {
-        if (!studentShowcaseEl) return;
-
-        if (activeStudentIndex >= studentsData.length) activeStudentIndex = 0;
-        if (activeStudentIndex < 0) activeStudentIndex = studentsData.length - 1;
-
-        const student = studentsData[activeStudentIndex];
-        if (studentDropdownSelect) studentDropdownSelect.value = activeStudentIndex;
-
-        const videoId = student.videoUrl ? getYouTubeId(student.videoUrl) : null;
-        const watchUrl = videoId ? `https://www.youtube.com/watch?v=${videoId}` : null;
-        const isLocalFile = window.location.protocol === 'file:';
-
-        studentShowcaseEl.innerHTML = `
-            <div class="featured-student-card">
-                <div class="student-slide-header">
-                    <div class="student-slide-meta">
-                        <span class="student-slide-badge"><i class="fa-solid fa-graduation-cap"></i> HỌC VIÊN #${student.id} / 13</span>
-                        <span class="student-title-badge"><i class="fa-solid fa-award"></i> ${student.badge}</span>
-                    </div>
-                    <div class="student-slide-nav">
-                        <button class="student-nav-btn prev" id="prev-student-btn" title="Học Sinh Trước">
-                            <i class="fa-solid fa-chevron-left"></i> Học Sinh Trước
-                        </button>
-                        <span class="student-slide-counter">${activeStudentIndex + 1} / 13</span>
-                        <button class="student-nav-btn next" id="next-student-btn" title="Học Sinh Tiếp Theo">
-                            Học Sinh Tiếp <i class="fa-solid fa-chevron-right"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="student-slide-body">
-                    <div class="student-profile-column">
-                        <div class="student-avatar-frame">
-                            <img src="${encodeURI(student.avatar)}" alt="${student.name}" class="student-profile-img">
-                        </div>
-                        <h3 class="student-profile-name">${student.name}</h3>
-                        <div class="student-stars-box">
-                            <div class="stars-gold">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                            <span class="stars-label">Đánh giá 5/5 ⭐</span>
-                        </div>
-
-                        <div class="student-skills-mini">
-                            <div class="skill-mini-row">
-                                <span>Lắp ráp cơ khí: <strong>${student.skills.assembly}%</strong></span>
-                                <div class="s-bar"><div class="s-fill" style="width:${student.skills.assembly}%"></div></div>
-                            </div>
-                            <div class="skill-mini-row">
-                                <span>Tư duy lập trình: <strong>${student.skills.logic}%</strong></span>
-                                <div class="s-bar"><div class="s-fill" style="width:${student.skills.logic}%"></div></div>
-                            </div>
-                            <div class="skill-mini-row">
-                                <span>Trí sáng tạo: <strong>${student.skills.creativity}%</strong></span>
-                                <div class="s-bar"><div class="s-fill" style="width:${student.skills.creativity}%"></div></div>
-                            </div>
-                            <div class="skill-mini-row">
-                                <span>Làm việc nhóm: <strong>${student.skills.teamwork}%</strong></span>
-                                <div class="s-bar"><div class="s-fill" style="width:${student.skills.teamwork}%"></div></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="student-eval-column">
-                        <div class="eval-box strength-box">
-                            <h4><i class="fa-solid fa-thumbs-up"></i> ƯU ĐIỂM NỔI BẬT & THÀNH TÍCH:</h4>
-                            <p>${student.strengths}</p>
-                        </div>
-
-                        <div class="eval-box improvement-box">
-                            <h4><i class="fa-solid fa-bullseye"></i> ĐIỂM CẦN CẢI THIỆN & ĐỊNH HƯỚNG:</h4>
-                            <p>${student.improvements}</p>
-                        </div>
-
-                        <div class="eval-box summary-eval-box">
-                            <h4><i class="fa-solid fa-comment-dots"></i> LỜI NHẬN XÉT CỦA GIẢNG VIÊN:</h4>
-                            <p>"${student.eval}"</p>
-                        </div>
-
-                        <button class="btn-student-report-print" onclick="openStudentModal(${student.id})">
-                            <i class="fa-solid fa-certificate"></i> Xem & In Chứng Nhận Báo Cáo
-                        </button>
-                    </div>
-
-                    <div class="student-video-column">
-                        <div class="video-header">
-                            <i class="fa-solid fa-video"></i> Video Thuyết Trình Dự Án Cuối Khóa
-                        </div>
-                        ${videoId ? `
-                            <div class="video-player-box" id="video-box-${student.id}">
-                                <div class="video-thumb-preview" onclick="playEmbeddedVideo('${student.id}', '${videoId}', '${encodeURIComponent(student.name)}')">
-                                    <img src="https://img.youtube.com/vi/${videoId}/hqdefault.jpg" alt="Thumbnail video của ${student.name}" class="video-thumb-img" onerror="this.src='https://via.placeholder.com/320x180/1a1a2e/ffffff?text=Video+Thuyet+Trinh'">
-                                    <div class="video-play-overlay">
-                                        <div class="yt-play-btn"><i class="fa-brands fa-youtube"></i></div>
-                                        <span class="play-text">Bấm để phát video</span>
-                                    </div>
-                                    <span class="video-duration-badge"><i class="fa-solid fa-play"></i> Video HD</span>
-                                </div>
-                            </div>
-                            <div class="video-caption">
-                                <i class="fa-brands fa-youtube" style="color:#ff4d4f;"></i> Thuyết trình sản phẩm: <strong>${student.name}</strong>
-                            </div>
-                            <div class="video-actions-bar">
-                                <a href="${watchUrl}" target="_blank" rel="noopener noreferrer" class="btn-watch-youtube" title="Xem video đầy đủ trên YouTube">
-                                    <i class="fa-brands fa-youtube"></i> Mở xem trực tiếp trên YouTube <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                </a>
-                            </div>
-                            ${isLocalFile ? `
-                                <div class="file-protocol-tip">
-                                    <i class="fa-solid fa-circle-info"></i>
-                                    <span>Khi mở file offline <code>file://</code>, YouTube chặn nhúng (Lỗi 153). Bạn hãy bấm nút đỏ <strong>"Mở xem trên YouTube"</strong> ở trên hoặc chạy file <strong>Chay_Web.bat</strong> để xem nhúng trên localhost.</span>
-                                </div>
-                            ` : ''}
-                        ` : `
-                            <div class="no-video-box">
-                                <i class="fa-solid fa-chalkboard-user"></i>
-                                <p>Học sinh thuyết trình trực tiếp tại lớp học</p>
-                                <span class="no-video-sub">Đánh giá và cấp chứng nhận dựa trên phần trình diễn trực tiếp</span>
-                            </div>
-                        `}
-                    </div>
-                </div>
-
-                <div class="student-thumbs-carousel">
-                    ${studentsData.map((s, idx) => `
-                        <div class="student-thumb-item ${idx === activeStudentIndex ? 'active' : ''}" data-student-idx="${idx}">
-                            <div class="student-thumb-avatar">
-                                <img src="${encodeURI(s.avatar)}" alt="${s.name}">
-                            </div>
-                            <span class="student-thumb-name">${s.name.split(' ').pop()}</span>
-                        </div>
-                    `).join('')}
-                </div>
-            </div>
-        `;
-
-        // Event listeners for prev / next
-        document.getElementById('prev-student-btn').addEventListener('click', () => {
-            activeStudentIndex--;
-            renderStudentShowcase();
-        });
-        document.getElementById('next-student-btn').addEventListener('click', () => {
-            activeStudentIndex++;
-            renderStudentShowcase();
-        });
-
-        // Event listeners for student thumbnail carousel
-        document.querySelectorAll('.student-thumbs-carousel .student-thumb-item').forEach(thumb => {
-            thumb.addEventListener('click', () => {
-                activeStudentIndex = parseInt(thumb.dataset.studentIdx);
-                renderStudentShowcase();
-            });
+    if (lightboxModal) {
+        lightboxModal.addEventListener('click', (e) => {
+            if (e.target === lightboxModal) lightboxModal.classList.remove('active');
         });
     }
 
-    // Function to render student grid
-    function renderStudents() {
-        if (!studentsGridEl) return;
-        studentsGridEl.innerHTML = '';
-        studentsData.forEach((s, index) => {
-            const card = document.createElement('div');
-            card.className = 'student-card';
-            card.innerHTML = `
-                <div class="student-badge-tag"><i class="fa-solid fa-award"></i> ${s.badge}</div>
-                <div class="avatar-wrapper">
-                    <img class="avatar-img" src="${encodeURI(s.avatar)}" alt="${s.name}" onerror="this.src='https://via.placeholder.com/110?text=Robot+Student'">
-                </div>
-                <h3 class="student-name">${s.name}</h3>
-                <div class="student-role">${s.role}</div>
-                <div class="student-evaluation-snippet">
-                    "${s.eval.substring(0, 100)}..."
-                </div>
-                <button class="btn-play-student-slide" data-student-idx="${index}">
-                    <i class="fa-solid fa-play"></i> Trình Chiếu Slide Học Sinh
-                </button>
-            `;
-
-            card.querySelector('.btn-play-student-slide').addEventListener('click', () => {
-                activeStudentIndex = index;
-                switchStudentView('slides');
-                renderStudentShowcase();
-            });
-
-            studentsGridEl.appendChild(card);
-        });
-    }
-
-    function switchStudentView(mode) {
-        if (mode === 'slides') {
-            btnStudentSlideView.classList.add('active');
-            btnStudentGridView.classList.remove('active');
-            studentShowcaseEl.classList.remove('hidden');
-            studentsGridEl.classList.add('hidden');
-        } else {
-            btnStudentSlideView.classList.remove('active');
-            btnStudentGridView.classList.add('active');
-            studentShowcaseEl.classList.add('hidden');
-            studentsGridEl.classList.remove('hidden');
-        }
-    }
-
-    if (btnStudentSlideView && btnStudentGridView) {
-        btnStudentSlideView.addEventListener('click', () => switchStudentView('slides'));
-        btnStudentGridView.addEventListener('click', () => switchStudentView('grid'));
-    }
-
-    // Initial student render
-    renderStudentShowcase();
-    renderStudents();
-
-    // --- Student Detail Modal Function ---
+    // --- 7. Student Detail Modal Function ---
     const studentModal = document.getElementById('student-modal');
     const modalBodyContent = document.getElementById('modal-body-content');
     const modalCloseBtn = document.getElementById('modal-close-btn');
@@ -1221,21 +1161,25 @@ document.addEventListener('DOMContentLoaded', () => {
         studentModal.classList.remove('active');
     };
 
-    modalCloseBtn.addEventListener('click', closeStudentModal);
-    studentModal.addEventListener('click', (e) => {
-        if (e.target === studentModal) closeStudentModal();
-    });
+    if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeStudentModal);
+    if (studentModal) {
+        studentModal.addEventListener('click', (e) => {
+            if (e.target === studentModal) closeStudentModal();
+        });
+    }
 
-    // --- Theme Toggle ---
+    // --- 8. Theme Toggle ---
     const themeToggleBtn = document.getElementById('theme-toggle');
     const htmlEl = document.documentElement;
 
-    themeToggleBtn.addEventListener('click', () => {
-        const currentTheme = htmlEl.getAttribute('data-theme');
-        const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        htmlEl.setAttribute('data-theme', nextTheme);
-        themeToggleBtn.innerHTML = nextTheme === 'dark' 
-            ? '<i class="fa-solid fa-moon"></i>' 
-            : '<i class="fa-solid fa-sun"></i>';
-    });
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = htmlEl.getAttribute('data-theme');
+            const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            htmlEl.setAttribute('data-theme', nextTheme);
+            themeToggleBtn.innerHTML = nextTheme === 'dark' 
+                ? '<i class="fa-solid fa-moon"></i>' 
+                : '<i class="fa-solid fa-sun"></i>';
+        });
+    }
 });

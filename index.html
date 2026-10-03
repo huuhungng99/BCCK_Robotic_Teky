@@ -43,12 +43,7 @@
                     <i class="fa-solid fa-chevron-down"></i>
                 </button>
                 <div class="slide-dropdown" id="slide-dropdown">
-                    <div class="dropdown-item" onclick="goToSlide(0)"><i class="fa-solid fa-house"></i> Slide 1: Tổng Quan Khóa Học</div>
-                    <div class="dropdown-item" onclick="goToSlide(1)"><i class="fa-solid fa-user-tie"></i> Slide 2: Giảng Viên Hướng Dẫn</div>
-                    <div class="dropdown-item" onclick="goToSlide(2)"><i class="fa-solid fa-book-open"></i> Slide 3: Nội Dung 12 Buổi Học</div>
-                    <div class="dropdown-item" onclick="goToSlide(3)"><i class="fa-solid fa-images"></i> Slide 4: Ảnh Hoạt Động Lớp Học</div>
-                    <div class="dropdown-item" onclick="goToSlide(4)"><i class="fa-solid fa-user-graduate"></i> Slide 5: Nhận Xét 13 Học Sinh</div>
-                    <div class="dropdown-item" onclick="goToSlide(5)"><i class="fa-solid fa-trophy"></i> Slide 6: Tổng Kết & Chứng Nhận</div>
+                    <!-- Populated dynamically with all 18 slides by JS -->
                 </div>
             </div>
 
@@ -258,50 +253,11 @@
                 </div>
             </section>
 
-            <!-- SLIDE 5: STUDENT EVALUATIONS -->
-            <section class="slide-section" data-slide="4">
-                <div class="container slide-content">
-                    <div class="section-header center">
-                        <span class="section-tag"><i class="fa-solid fa-award"></i> TỔNG KẾT HỌC VIÊN</span>
-                        <h2 class="section-title">Nhận Xét Chi Tiết <span class="gradient-text">13 Học Sinh</span></h2>
-                        <p class="section-description">
-                            Đánh giá toàn diện thái độ học tập, khả năng tiếp thu logic, tư duy sáng tạo và định hướng phát triển từng em.
-                        </p>
-                    </div>
+            <!-- 13 INDIVIDUAL STUDENT SLIDES (SLIDES 5 TO 17) ARE INJECTED HERE BY JS -->
+            <div id="students-slides-anchor"></div>
 
-                    <!-- Student Controls: View Mode & Search Selector -->
-                    <div class="student-controls-bar">
-                        <div class="view-mode-toggle">
-                            <button class="view-btn active" id="btn-student-slide-view" title="Trình chiếu mỗi học sinh 1 Slide chi tiết">
-                                <i class="fa-solid fa-id-card"></i> Slide Trình Chiếu (1 Bạn / 1 Slide)
-                            </button>
-                            <button class="view-btn" id="btn-student-grid-view" title="Xem danh sách tổng quan 13 học sinh">
-                                <i class="fa-solid fa-users"></i> Danh Sách 13 Học Sinh
-                            </button>
-                        </div>
-
-                        <div class="student-search-select-box">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                            <select id="student-dropdown-select">
-                                <!-- JS will populate student options -->
-                            </select>
-                        </div>
-                    </div>
-
-                    <!-- Single Student Slide Showcase (1 Student / 1 Slide) -->
-                    <div class="student-slide-showcase" id="student-slide-showcase">
-                        <!-- JS will inject active student slide here -->
-                    </div>
-
-                    <!-- Student Grid Container (Hidden by default) -->
-                    <div class="students-grid hidden" id="students-grid">
-                        <!-- Javascript will inject 13 student cards here -->
-                    </div>
-                </div>
-            </section>
-
-            <!-- SLIDE 6: CONCLUSION & CERTIFICATES -->
-            <section class="slide-section" data-slide="5">
+            <!-- SLIDE 18: CONCLUSION & CERTIFICATES -->
+            <section class="slide-section" data-slide="17" id="conclusion-slide">
                 <div class="container slide-content conclusion-slide">
                     <div class="section-tag"><i class="fa-solid fa-flag-checkered"></i> TỔNG KẾT KHÓA HỌC</div>
                     <h2 class="section-title">Chúc Mừng Hoàn Thành <span class="gradient-text">Khóa Học Robotics!</span></h2>
@@ -330,11 +286,11 @@
 
                         <div class="conclusion-actions">
                             <button class="btn-main primary" onclick="goToSlide(4)">
-                                <i class="fa-solid fa-id-card"></i> Xem Báo Cáo Học Sinh
+                                <i class="fa-solid fa-id-card"></i> Xem Lại Báo Cáo Học Sinh (Slide 5)
                             </button>
-                            <a href="http://nguyenhuuhungsite.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-main secondary">
-                                <i class="fa-solid fa-globe"></i> Profile Giảng Viên
-                            </a>
+                            <button class="btn-main secondary" onclick="goToSlide(0)">
+                                <i class="fa-solid fa-rotate-left"></i> Quay Về Đầu Trang
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -350,15 +306,10 @@
         </button>
 
         <div class="slide-dots" id="slide-dots">
-            <span class="dot active" onclick="goToSlide(0)" title="Slide 1: Tổng Quan"></span>
-            <span class="dot" onclick="goToSlide(1)" title="Slide 2: Giảng Viên"></span>
-            <span class="dot" onclick="goToSlide(2)" title="Slide 3: Bài Học"></span>
-            <span class="dot" onclick="goToSlide(3)" title="Slide 4: Thư Viện Ảnh"></span>
-            <span class="dot" onclick="goToSlide(4)" title="Slide 5: Học Sinh"></span>
-            <span class="dot" onclick="goToSlide(5)" title="Slide 6: Kết Luận"></span>
+            <!-- Populated dynamically with 18 dots by JS -->
         </div>
 
-        <span class="slide-counter-badge" id="slide-counter-badge">1 / 6</span>
+        <span class="slide-counter-badge" id="slide-counter-badge">1 / 18</span>
 
         <button class="nav-arrow-btn" id="next-slide-btn" title="Slide Tiếp Theo (Phải / Down / Space)">
             <i class="fa-solid fa-chevron-right"></i>
