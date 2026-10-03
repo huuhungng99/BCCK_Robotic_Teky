@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="description" content="Slide Báo Cáo Tổng Kết Khóa Học Robotics: Nội dung bài học, profile giảng viên Nguyễn Hữu Hùng, bộ ảnh lớp học và nhận xét chi tiết 13 học sinh.">
+    <title>Slide Báo Cáo Tổng Kết Khóa Học Robotics - Sáng Tạo & Khám Phá</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Background Grid & Glow Effects -->
+    <div class="bg-effects">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+        <div class="glow-orb orb-3"></div>
+        <div class="cyber-grid"></div>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="brand-logo" onclick="goToSlide(0); return false;">
+                <div class="logo-icon"><i class="fa-solid fa-robot"></i></div>
+                <div class="logo-text">
+                    <span class="logo-title">ROBOTICS</span>
+                    <span class="logo-sub">PRESENTATION SLIDES</span>
+                </div>
+            </a>
+
+            <!-- Quick Slide Selector Dropdown -->
+            <div class="slide-nav-menu">
+                <button class="slide-select-btn" id="slide-select-btn">
+                    <span id="current-slide-title">Slide 1: Tổng Quan Khóa Học</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="slide-dropdown" id="slide-dropdown">
+                    <div class="dropdown-item" onclick="goToSlide(0)"><i class="fa-solid fa-house"></i> Slide 1: Tổng Quan Khóa Học</div>
+                    <div class="dropdown-item" onclick="goToSlide(1)"><i class="fa-solid fa-user-tie"></i> Slide 2: Giảng Viên Hướng Dẫn</div>
+                    <div class="dropdown-item" onclick="goToSlide(2)"><i class="fa-solid fa-book-open"></i> Slide 3: Nội Dung 12 Buổi Học</div>
+                    <div class="dropdown-item" onclick="goToSlide(3)"><i class="fa-solid fa-images"></i> Slide 4: Ảnh Hoạt Động Lớp Học</div>
+                    <div class="dropdown-item" onclick="goToSlide(4)"><i class="fa-solid fa-user-graduate"></i> Slide 5: Nhận Xét 13 Học Sinh</div>
+                    <div class="dropdown-item" onclick="goToSlide(5)"><i class="fa-solid fa-trophy"></i> Slide 6: Tổng Kết & Chứng Nhận</div>
+                </div>
+            </div>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" title="Chuyển đổi giao diện Sáng/Tối">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <button class="fullscreen-btn" id="fullscreen-btn" title="Chế độ Toàn Màn Hình">
+                    <i class="fa-solid fa-expand"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Presentation Slide Deck -->
+    <div class="presentation-wrapper">
+        <div class="slides-container" id="slides-container">
+
+            <!-- SLIDE 1: HERO OVERVIEW -->
+            <section class="slide-section active" data-slide="0">
+                <div class="container slide-content hero-slide">
+                    <div class="hero-badge">
+                        <span class="pulse-dot"></span>
+                        <i class="fa-solid fa-graduation-cap"></i> Báo Cáo Tổng Kết Khóa Học Robotics
+                    </div>
+                    <h1 class="hero-title">HÀNH TRÌNH KHÁM PHÁ & SÁNG TẠO <span class="gradient-text">ROBOTICS</span></h1>
+                    <p class="hero-subtitle">
+                        Trình bày nội dung các buổi học, giới thiệu giảng viên hướng dẫn, bộ ảnh thực hành lớp học và bảng đánh giá sự phát triển năng lực của 13 học viên xuất sắc.
+                    </p>
+
+                    <div class="hero-stats">
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                            <div class="stat-info">
+                                <span class="stat-number">12</span>
+                                <span class="stat-label">Chủ Đề Bài Học</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fa-solid fa-users-gear"></i></div>
+                            <div class="stat-info">
+                                <span class="stat-number">13</span>
+                                <span class="stat-label">Học Viên Nhí</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fa-solid fa-microchip"></i></div>
+                            <div class="stat-info">
+                                <span class="stat-number">24+</span>
+                                <span class="stat-label">Mô Hình Robot</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fa-solid fa-camera-retro"></i></div>
+                            <div class="stat-info">
+                                <span class="stat-number">21</span>
+                                <span class="stat-label">Hình Ảnh Lớp Học</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero-buttons">
+                        <button class="btn-main primary" onclick="goToSlide(1)">
+                            Bắt Đầu Báo Cáo <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                        <button class="btn-main secondary" onclick="goToSlide(4)">
+                            <i class="fa-solid fa-address-card"></i> Nhận Xét Học Sinh
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 2: TEACHER PROFILE (REF HTTP://NGUYENHUUHUNGSITE.VERCEL.APP/) -->
+            <section class="slide-section" data-slide="1">
+                <div class="container slide-content teacher-slide">
+                    <div class="section-tag"><i class="fa-solid fa-chalkboard-user"></i> GIẢNG VIÊN HƯỚNG DẪN</div>
+                    <h2 class="section-title">Hồ Sơ Năng Lực <span class="gradient-text">Thầy Nguyễn Hữu Hùng</span></h2>
+                    
+                    <div class="teacher-profile-card">
+                        <div class="teacher-main-info">
+                            <div class="teacher-avatar-box">
+                                <div class="teacher-avatar-img-wrapper">
+                                    <img src="Anh_giao_vien.png" alt="Giảng viên Nguyễn Hữu Hùng" class="teacher-avatar-img">
+                                </div>
+                                <span class="teacher-badge"><i class="fa-solid fa-certificate"></i> Bách Khoa HUST</span>
+                            </div>
+                            <div class="teacher-bio">
+                                <h3>Nguyễn Hữu Hùng <span class="birth-year">(Sinh năm 1999)</span></h3>
+                                <p class="teacher-subtitle">
+                                    Kỹ sư Tự động hoá & Giảng viên STEAM Robotics
+                                </p>
+                                <p class="teacher-summary">
+                                    Tốt nghiệp chuyên ngành <strong>Kỹ thuật Tự động hóa - Đại học Bách Khoa Hà Nội</strong>. Với tinh hoa kỹ nghệ tự động hóa chính xác tại <strong>Canon Việt Nam</strong> cùng hơn <strong>5 năm tận tâm truyền lửa đam mê công nghệ</strong> cho thế hệ trẻ tại <strong>Teky Holding</strong>.
+                                </p>
+                                
+                                <div class="teacher-contacts">
+                                    <span><i class="fa-solid fa-envelope"></i> nghuuhung1999@gmail.com</span>
+                                    <span><i class="fa-solid fa-phone"></i> 0934873722</span>
+                                    <span><i class="fa-solid fa-location-dot"></i> Hà Nội / Bắc Ninh</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="teacher-details-grid">
+                            <div class="teacher-detail-box">
+                                <h4><i class="fa-solid fa-industry"></i> Kinh Nghiệm Kỹ Thuật Tự Động Hoá (Canon VN)</h4>
+                                <ul>
+                                    <li>Lập trình điều khiển thiết bị & hệ thống tự động hoá công nghiệp (PLC, HMI, Động cơ & Cảm biến).</li>
+                                    <li>Triển khai thành công mô hình Xe tự hành nâng hàng thông minh AGF.</li>
+                                    <li>Đoạt giải <strong>Best Machine 2025</strong>, <strong>Best Idea 2024</strong>, <strong>The Best Group 2026</strong> và Giải thưởng Sáng kiến Sáng tạo từ Công đoàn Hà Nội (2025, 2026).</li>
+                                </ul>
+                            </div>
+
+                            <div class="teacher-detail-box">
+                                <h4><i class="fa-solid fa-graduation-cap"></i> Đào Tạo STEAM Robotics (Teky)</h4>
+                                <ul>
+                                    <li>Hơn 5 năm đồng hành dạy Robotics (LEGO Education, WeDo, VEX IQ, Arduino) & Lập trình cho học sinh 6 - 18 tuổi.</li>
+                                    <li>Đạt danh hiệu <strong>Giáo viên Tiêu biểu Học viện Teky 2022</strong> & <strong>Cộng tác viên Xuất sắc nhất</strong>.</li>
+                                    <li>Phương pháp giảng dạy sinh động, dễ hiểu, khơi gợi niềm đam mê sáng tạo khoa học cho các bé.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="teacher-link-footer">
+                            <span class="ref-label"><i class="fa-solid fa-link"></i> Website Profile Chính Thức:</span>
+                            <a href="http://nguyenhuuhungsite.vercel.app/" target="_blank" rel="noopener noreferrer" class="teacher-ref-btn">
+                                nguyenhuuhungsite.vercel.app <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 3: CURRICULUM & LESSONS -->
+            <section class="slide-section" data-slide="2">
+                <div class="container slide-content">
+                    <div class="section-header center">
+                        <span class="section-tag"><i class="fa-solid fa-brain"></i> KHÁM PHÁ CHƯƠNG TRÌNH</span>
+                        <h2 class="section-title">Nội Dung Buổi Học & <span class="gradient-text">Kiến Thức Trọng Tâm</span></h2>
+                        <p class="section-description">
+                            Chương trình kết hợp kiến thức cơ khí (STEM) và tư duy lập trình điều khiển tự động qua 12 chủ đề sinh động.
+                        </p>
+                    </div>
+
+                    <!-- Curriculum Controls: View Mode & Category Filters -->
+                    <div class="curriculum-controls">
+                        <div class="view-mode-toggle">
+                            <button class="view-btn active" id="btn-view-slides" title="Trình chiếu mỗi bài 1 Slide chi tiết">
+                                <i class="fa-solid fa-desktop"></i> Trình Chiếu Bài Học (1 Bài / 1 Slide)
+                            </button>
+                            <button class="view-btn" id="btn-view-grid" title="Xem tổng quan danh sách 12 bài học">
+                                <i class="fa-solid fa-grip"></i> Danh Sách Lưới (12 Bài)
+                            </button>
+                        </div>
+
+                        <div class="curriculum-filter" id="curriculum-filter">
+                            <button class="filter-chip active" data-filter="all">Tất Cả (12 Bài)</button>
+                            <button class="filter-chip" data-filter="milo">Binh Đoàn Milo</button>
+                            <button class="filter-chip" data-filter="mechanics">Cơ Cấu Truyền Động</button>
+                            <button class="filter-chip" data-filter="nature">Mô Phỏng Tự Nhiên</button>
+                            <button class="filter-chip" data-filter="capstone">Thiên Tai & Cuối Khóa</button>
+                        </div>
+                    </div>
+
+                    <!-- Single Lesson Slide Showcase (1 Lesson / 1 Slide) -->
+                    <div class="lesson-slide-showcase" id="lesson-slide-showcase">
+                        <!-- JS will inject active lesson slide showcase -->
+                    </div>
+
+                    <!-- Curriculum Grid (Hidden by default, toggled on request) -->
+                    <div class="curriculum-grid hidden" id="curriculum-grid">
+                        <!-- JS will inject 12 lesson cards with product images -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 4: CLASSROOM GALLERY -->
+            <section class="slide-section" data-slide="3">
+                <div class="container slide-content">
+                    <div class="section-header">
+                        <div>
+                            <span class="section-tag"><i class="fa-solid fa-photo-film"></i> KHOẢNH KHẮC ĐÁNG NHỚ</span>
+                            <h2 class="section-title">Hình Ảnh <span class="gradient-text">Hoạt Động Lớp Học</span></h2>
+                        </div>
+                        <p class="section-description max-w-400">
+                            Hình ảnh chân thực ghi lại tinh thần say sưa lắp ráp, hợp tác nhóm và niềm vui khi làm cho Robot chạy thành công.
+                        </p>
+                    </div>
+
+                    <div class="gallery-controls">
+                        <div class="search-box">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" id="gallery-search" placeholder="Tìm ảnh theo hoạt động...">
+                        </div>
+                        <div class="gallery-tabs">
+                            <button class="g-tab active" data-gtab="all">Tất cả (21)</button>
+                            <button class="g-tab" data-gtab="building">Thực hành Lắp ráp</button>
+                            <button class="g-tab" data-gtab="coding">Lập trình & Test</button>
+                            <button class="g-tab" data-gtab="team">Hoạt động Nhóm</button>
+                        </div>
+                    </div>
+
+                    <!-- Gallery Grid -->
+                    <div class="gallery-grid" id="gallery-grid">
+                        <!-- Javascript will inject classroom photos here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 5: STUDENT EVALUATIONS -->
+            <section class="slide-section" data-slide="4">
+                <div class="container slide-content">
+                    <div class="section-header center">
+                        <span class="section-tag"><i class="fa-solid fa-award"></i> TỔNG KẾT HỌC VIÊN</span>
+                        <h2 class="section-title">Nhận Xét Chi Tiết <span class="gradient-text">13 Học Sinh</span></h2>
+                        <p class="section-description">
+                            Đánh giá toàn diện thái độ học tập, khả năng tiếp thu logic, tư duy sáng tạo và định hướng phát triển từng em.
+                        </p>
+                    </div>
+
+                    <!-- Student Controls: View Mode & Search Selector -->
+                    <div class="student-controls-bar">
+                        <div class="view-mode-toggle">
+                            <button class="view-btn active" id="btn-student-slide-view" title="Trình chiếu mỗi học sinh 1 Slide chi tiết">
+                                <i class="fa-solid fa-id-card"></i> Slide Trình Chiếu (1 Bạn / 1 Slide)
+                            </button>
+                            <button class="view-btn" id="btn-student-grid-view" title="Xem danh sách tổng quan 13 học sinh">
+                                <i class="fa-solid fa-users"></i> Danh Sách 13 Học Sinh
+                            </button>
+                        </div>
+
+                        <div class="student-search-select-box">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <select id="student-dropdown-select">
+                                <!-- JS will populate student options -->
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Single Student Slide Showcase (1 Student / 1 Slide) -->
+                    <div class="student-slide-showcase" id="student-slide-showcase">
+                        <!-- JS will inject active student slide here -->
+                    </div>
+
+                    <!-- Student Grid Container (Hidden by default) -->
+                    <div class="students-grid hidden" id="students-grid">
+                        <!-- Javascript will inject 13 student cards here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 6: CONCLUSION & CERTIFICATES -->
+            <section class="slide-section" data-slide="5">
+                <div class="container slide-content conclusion-slide">
+                    <div class="section-tag"><i class="fa-solid fa-flag-checkered"></i> TỔNG KẾT KHÓA HỌC</div>
+                    <h2 class="section-title">Chúc Mừng Hoàn Thành <span class="gradient-text">Khóa Học Robotics!</span></h2>
+
+                    <div class="conclusion-box">
+                        <div class="conclusion-icon"><i class="fa-solid fa-award"></i></div>
+                        <h3>Tự Hào Về Sự Tiến Bộ Của 13 Học Viên Nhí</h3>
+                        <p class="conclusion-text">
+                            Trải qua 12 chủ đề bài học phong phú, 100% học sinh đã xuất sắc nắm vững kiến thức cơ bản về cơ cấu truyền động bánh răng, nguyên lý cảm biến nghiêng & chuyển động, cùng khả năng viết mã lập trình điều khiển robot tự động.
+                        </p>
+                        
+                        <div class="conclusion-highlights">
+                            <div class="highlight-item">
+                                <i class="fa-solid fa-check-double"></i>
+                                <span>100% Học sinh làm chủ mô hình Robot</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fa-solid fa-people-group"></i>
+                                <span>Phát triển kỹ năng làm việc nhóm & giao tiếp</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fa-solid fa-lightbulb"></i>
+                                <span>Kích thích tư duy sáng tạo & giải quyết vấn đề</span>
+                            </div>
+                        </div>
+
+                        <div class="conclusion-actions">
+                            <button class="btn-main primary" onclick="goToSlide(4)">
+                                <i class="fa-solid fa-id-card"></i> Xem Báo Cáo Học Sinh
+                            </button>
+                            <a href="http://nguyenhuuhungsite.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-main secondary">
+                                <i class="fa-solid fa-globe"></i> Profile Giảng Viên
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Floating Slide Controls Bar -->
+    <div class="slide-controls-bar">
+        <button class="nav-arrow-btn" id="prev-slide-btn" title="Slide Trước (Trái / Up)">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <div class="slide-dots" id="slide-dots">
+            <span class="dot active" onclick="goToSlide(0)" title="Slide 1: Tổng Quan"></span>
+            <span class="dot" onclick="goToSlide(1)" title="Slide 2: Giảng Viên"></span>
+            <span class="dot" onclick="goToSlide(2)" title="Slide 3: Bài Học"></span>
+            <span class="dot" onclick="goToSlide(3)" title="Slide 4: Thư Viện Ảnh"></span>
+            <span class="dot" onclick="goToSlide(4)" title="Slide 5: Học Sinh"></span>
+            <span class="dot" onclick="goToSlide(5)" title="Slide 6: Kết Luận"></span>
+        </div>
+
+        <span class="slide-counter-badge" id="slide-counter-badge">1 / 6</span>
+
+        <button class="nav-arrow-btn" id="next-slide-btn" title="Slide Tiếp Theo (Phải / Down / Space)">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+    </div>
+
+    <!-- Student Detail Modal / Certificate View -->
+    <div class="modal-overlay" id="student-modal">
+        <div class="modal-content student-modal-content">
+            <button class="modal-close" id="modal-close-btn">&times;</button>
+            <div class="modal-body" id="modal-body-content">
+                <!-- Dynamic Content injected by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Lightbox Modal -->
+    <div class="lightbox-overlay" id="lightbox-modal">
+        <button class="lightbox-close" id="lightbox-close-btn">&times;</button>
+        <button class="lightbox-nav prev" id="lightbox-prev"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="lightbox-nav next" id="lightbox-next"><i class="fa-solid fa-chevron-right"></i></button>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="Hình ảnh phóng to">
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
