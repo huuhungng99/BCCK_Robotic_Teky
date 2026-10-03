@@ -319,7 +319,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             id: 5,
-            name: "Nguyễn Hùng Anh (6 tuổi)",
+            name: "Nguyễn Ngọc Hùng Anh",
             avatar: "Avatar học sinh/Nguyễn Hùng Anh 6 tuổi- .jpg",
             badge: "Mầm Non Tài Năng",
             role: "Học Viên Nhỏ Tuổi",
@@ -359,7 +359,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             id: 7,
-            name: "Nguyễn Ngọc Quốc Anh (6 tuổi)",
+            name: "Nguyễn Ngọc Quốc Anh",
             avatar: "Avatar học sinh/Nguyễn Ngọc Quốc Anh 6 tuổi.jpg",
             badge: "Ngôi Sao Năng Lượng",
             role: "Học Viên Hăng Hái",
@@ -718,7 +718,7 @@ document.addEventListener('DOMContentLoaded', () => {
     populateSlideDots();
 
     // Slide Transition Core Function
-    window.goToSlide = function(index) {
+    window.goToSlide = function (index) {
         if (index < 0 || index >= totalSlides) return;
 
         slides[currentSlide].classList.remove('active');
@@ -991,19 +991,19 @@ document.addEventListener('DOMContentLoaded', () => {
         `).join('');
     }
 
-    window.selectLesson = function(idx) {
+    window.selectLesson = function (idx) {
         renderFeaturedLesson(idx);
     };
 
-    window.prevLesson = function() {
+    window.prevLesson = function () {
         if (currentLessonIdx > 0) renderFeaturedLesson(currentLessonIdx - 1);
     };
 
-    window.nextLesson = function() {
+    window.nextLesson = function () {
         if (currentLessonIdx < lessonsData.length - 1) renderFeaturedLesson(currentLessonIdx + 1);
     };
 
-    window.switchToSlideMode = function(idx) {
+    window.switchToSlideMode = function (idx) {
         if (btnViewSlides && btnViewGrid) {
             btnViewSlides.classList.add('active');
             btnViewGrid.classList.remove('active');
@@ -1119,14 +1119,14 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentLightboxIdx = 0;
     let activeLightboxArray = [];
 
-    window.openLightbox = function(index, array) {
+    window.openLightbox = function (index, array) {
         currentLightboxIdx = index;
         activeLightboxArray = array && array.length ? array : galleryData;
         updateLightbox();
         lightboxModal.classList.add('active');
     };
 
-    window.openLightboxForSingleImage = function(src, caption) {
+    window.openLightboxForSingleImage = function (src, caption) {
         activeLightboxArray = [{ src: src, title: caption }];
         currentLightboxIdx = 0;
         updateLightbox();
@@ -1164,7 +1164,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalBodyContent = document.getElementById('modal-body-content');
     const modalCloseBtn = document.getElementById('modal-close-btn');
 
-    window.openStudentModal = function(id) {
+    window.openStudentModal = function (id) {
         const student = studentsData.find(s => s.id === id);
         if (!student) return;
 
@@ -1261,7 +1261,7 @@ document.addEventListener('DOMContentLoaded', () => {
         studentModal.classList.add('active');
     };
 
-    window.closeStudentModal = function() {
+    window.closeStudentModal = function () {
         studentModal.classList.remove('active');
     };
 
@@ -1281,8 +1281,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const currentTheme = htmlEl.getAttribute('data-theme');
             const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
             htmlEl.setAttribute('data-theme', nextTheme);
-            themeToggleBtn.innerHTML = nextTheme === 'dark' 
-                ? '<i class="fa-solid fa-moon"></i>' 
+            themeToggleBtn.innerHTML = nextTheme === 'dark'
+                ? '<i class="fa-solid fa-moon"></i>'
                 : '<i class="fa-solid fa-sun"></i>';
         });
     }
