@@ -235,7 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 21, src: "Hình ảnh lớp học/IMG_20260822_092140.jpg", title: "Khoảnh khắc chúc mừng hoàn thành khóa học", cat: "team" }
     ];
 
-    // --- 3. 13 Student Profiles Data (Varied Realistic Ratings: 4.6 - 5.0) ---
+    // --- 3. 13 Student Profiles Data (Detailed Bullet Points Format) ---
     const studentsData = [
         {
             id: 1,
@@ -244,8 +244,15 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: "Chuyên Gia Cơ Khí",
             role: "Học Viên Xuất Sắc",
             stars: 4.9,
-            strengths: "Đôi tay lắp ráp cực kỳ khéo léo; chọn và ghép các cặp bánh răng truyền động chuẩn xác giúp xe đua chạy xé gió và robot chở hàng khỏe vượt trội.",
-            improvements: "Tiếp tục nâng cao kỹ năng lập trình chuỗi câu lệnh phức tạp kết hợp đa cảm biến.",
+            strengths: [
+                "Đôi tay lắp ráp cực kỳ khéo léo, thao tác chọn mảnh ghép nhanh và chính xác.",
+                "Rất sáng tạo trong thiết kế cơ khí, chủ động cải tiến cặp bánh răng giúp xe đua chạy nhanh xé gió và robot chở hàng khỏe vượt trội.",
+                "Tinh thần học tập tự giác, tập trung cao độ và luôn hoàn thiện mô hình trước thời hạn."
+            ],
+            improvements: [
+                "Cần rèn luyện phong thái thuyết trình tự tin, nói to và dõng dạc hơn trước đám đông.",
+                "Thường xuyên ôn tập lại các khối lệnh điều kiện và cảm biến phức tạp để ghi nhớ sâu hơn."
+            ],
             videoUrl: "https://www.youtube.com/embed/DYqpTISKMOs",
             eval: "Nhật Minh có đôi tay rất khéo léo và khả năng chọn mảnh ghép robot rất chuẩn. Em luôn lắp robot chính xác, chắc chắn và biết cách cải tiến cặp bánh răng giúp xe đua chạy nhanh hơn và robot chở hàng khỏe hơn.",
             skills: { logic: 92, assembly: 98, creativity: 90, teamwork: 88, focus: 95 }
@@ -257,8 +264,15 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: "Kỹ Sư Lập Trình Nhí",
             role: "Học Viên Tiên Phong",
             stars: 4.9,
-            strengths: "Tư duy lập trình cực kỳ nhanh nhạy; sử dụng thành thạo các khối lệnh mắt thần cảm biến và cảm biến độ nghiêng cho robot tự động cứu hộ.",
-            improvements: "Rèn luyện thêm sự cẩn thận khi căn chỉnh khớp nối cơ khí nhỏ.",
+            strengths: [
+                "Tư duy lập trình logic cực kỳ nhạy bén, tiếp thu và làm chủ các khối lệnh mới rất nhanh.",
+                "Sử dụng thành thạo cảm biến khoảng cách và cảm biến độ nghiêng cho robot tự động cứu hộ.",
+                "Nhanh nhẹn, tự tin chia sẻ giải pháp lập trình sáng tạo và tích cực tương tác cùng thầy cô."
+            ],
+            improvements: [
+                "Cần rèn luyện thêm sự tỉ mỉ khi căn chỉnh các khớp nối cơ khí nhỏ để robot chắc chắn hơn.",
+                "Ôn tập lại các khối lệnh vòng lặp và câu lệnh ghép nâng cao để ghi nhớ kỹ càng hơn."
+            ],
             videoUrl: "https://www.youtube.com/embed/_mp8lQIeMHY",
             eval: "Bảo Lâm là một học sinh rất thông minh và tiếp thu các khối lệnh lập trình rất nhanh. Em sử dụng thành thạo mắt thần cảm biến, tự mình ghép thành công các chuỗi lệnh thông minh cho robot cứu hộ tự động.",
             skills: { logic: 98, assembly: 90, creativity: 95, teamwork: 90, focus: 92 }
@@ -270,8 +284,15 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: "Nhà Thiết Kế Sáng Tạo",
             role: "Học Viên Năng Động",
             stars: 4.8,
-            strengths: "Trí tưởng tượng phong phú; luôn trang trí và thiết kế kiểu dáng robot sinh động, độc đáo, mang năng lượng tích cực cho cả lớp.",
-            improvements: "Chú ý kiểm tra kỹ độ chắc chắn của bánh răng trước khi vận hành chạy thử.",
+            strengths: [
+                "Trí tưởng tượng phong phú, có khiếu thẩm mỹ và luôn trang trí kiểu dáng robot sinh động, độc đáo.",
+                "Khéo léo trong lắp ráp, hoàn thiện mô hình nhanh nhẹn và tràn đầy năng lượng tích cực.",
+                "Tự tin bày tỏ ý tưởng mới, luôn tạo không khí vui tươi và hào hứng trong lớp."
+            ],
+            improvements: [
+                "Cần kiểm tra kỹ độ chắc chắn của các trục bánh răng và khớp gá trước khi vận hành chạy thử.",
+                "Cần ôn tập lại các khối lệnh chờ sự kiện và âm thanh để nhớ kỹ và ghép lệnh chuẩn xác hơn."
+            ],
             videoUrl: "https://www.youtube.com/embed/1Z7SQ6F08sU",
             eval: "Gia Thịnh có trí tưởng tượng phong phú và thích thiết kế hình dáng robot độc đáo. Em hay thêm các chi tiết trang trí sinh động cho robot. Em luôn tràn đầy năng lượng tích cực và sự hăng hái trong lớp.",
             skills: { logic: 88, assembly: 94, creativity: 98, teamwork: 92, focus: 90 }
@@ -283,8 +304,15 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: "Đội Trưởng Tài Năng",
             role: "Học Viên Tiêu Biểu",
             stars: 4.8,
-            strengths: "Kỹ năng làm việc nhóm và lãnh đạo xuất sắc; biết phân chia công việc hợp lý và nhiệt tình hỗ trợ các bạn cùng hoàn thành dự án đập chống lũ.",
-            improvements: "Phát triển thêm tư duy lập trình vòng lặp và điều kiện nâng cao.",
+            strengths: [
+                "Kỹ năng làm việc nhóm và giao tiếp xuất sắc, có tố chất lãnh đạo và nhiệt tình hỗ trợ bạn bè.",
+                "Khả năng lắp ráp nhanh, biết phân chia công việc hợp lý giúp nhóm hoàn thành dự án đúng hạn.",
+                "Thuyết trình tự tin, diễn đạt rõ ràng và tự hào khi giới thiệu mô hình của đội."
+            ],
+            improvements: [
+                "Cần phát triển và ôn tập thêm tư duy lập trình với các khối lệnh rẽ nhánh và điều kiện nâng cao.",
+                "Cần quan sát bao quát toàn bộ cơ cấu chuyển động để phát hiện và khắc phục lỗi cơ khí nhanh hơn."
+            ],
             videoUrl: "https://www.youtube.com/embed/1kAYJSXiXqw",
             eval: "Nam Hải có tố chất làm đội trưởng rất tốt và giao tiếp hòa đồng. Trong các bài tập nhóm, em luôn biết phân chia việc hợp lý và tận tình giúp đỡ các bạn cùng hoàn thành đập nước chống lũ đúng giờ.",
             skills: { logic: 90, assembly: 92, creativity: 91, teamwork: 98, focus: 94 }
@@ -296,8 +324,15 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: "Mầm Non Tài Năng",
             role: "Học Viên Nhỏ Tuổi",
             stars: 4.7,
-            strengths: "Tự lập và rất kiên trì dù mới 6 tuổi; chọn mảnh ghép đúng chuẩn nhanh chóng và rất thích thú tự vận hành robot.",
-            improvements: "Rèn luyện thêm khả năng duy trì tập trung khi viết các chuỗi lệnh lập trình dài.",
+            strengths: [
+                "Rất tự lập, kiên trì và tập trung cao độ dù là một trong những học viên nhỏ tuổi nhất lớp.",
+                "Đôi tay khéo léo, nhận diện và chọn đúng các chi tiết lắp ráp nhanh chóng.",
+                "Rất hào hứng, tự tin bấm nút vận hành robot và say mê khám phá công nghệ."
+            ],
+            improvements: [
+                "Cần rèn luyện nói to, dõng dạc và tự tin hơn khi đứng thuyết trình báo cáo trước lớp.",
+                "Cần ôn tập lại các khối lệnh lập trình điều khiển động cơ và đổi màu LED để nhớ kỹ hơn."
+            ],
             videoUrl: "https://www.youtube.com/embed/Ruq5nQUjTfo",
             eval: "Dù mới 6 tuổi và là một trong những học viên nhỏ nhất lớp, Hùng Anh rất kiên trì và tự lập. Em chọn đúng mảnh ghép robot rất nhanh và luôn thích thú tự bấm nút điều khiển cho robot chạy.",
             skills: { logic: 86, assembly: 92, creativity: 90, teamwork: 85, focus: 96 }
@@ -309,8 +344,15 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: "Kiến Trúc Sư Robot",
             role: "Học Viên Cẩn Thận",
             stars: 4.8,
-            strengths: "Cẩn thận, tỉ mỉ và điềm đĩnh; lắp mô hình tòa nhà chống động đất cực kỳ chắc chắn, đứng vững vàng khi bàn rung thử nghiệm.",
-            improvements: "Tự tin xung phong phát biểu và thuyết trình ý tưởng nhiều hơn trước tập thể.",
+            strengths: [
+                "Cực kỳ cẩn thận, điềm đĩnh và tỉ mỉ; mô hình lắp ráp luôn kiên cố, cân đối và thẩm mỹ cao.",
+                "Có khả năng cải tiến cơ khí vượt trội, lắp tòa nhà chống động đất vững vàng qua thử nghiệm rung lắc mạnh.",
+                "Tinh thần tự giác cao, tập trung hoàn thành trọn vẹn từng nhiệm vụ được giao."
+            ],
+            improvements: [
+                "Cần mạnh dạn xung phong phát biểu và rèn luyện kỹ năng thuyết trình tự tin hơn trước tập thể.",
+                "Ôn tập lại các câu lệnh điều khiển tốc độ động cơ theo thời gian để phản xạ ghép lệnh nhanh hơn."
+            ],
             videoUrl: "https://www.youtube.com/embed/4K-WK0AWW_A",
             eval: "Minh Trí làm việc rất cẩn thận, điềm đĩnh và tỉ mỉ. Em cẩn thận lắp từng chiếc bánh răng và gắn cảm biến đúng vị trí. Mô hình tòa nhà chống động đất của em được lắp rất chắc chắn và đứng vững vàng.",
             skills: { logic: 93, assembly: 96, creativity: 89, teamwork: 90, focus: 97 }
@@ -322,8 +364,15 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: "Ngôi Sao Năng Lượng",
             role: "Học Viên Hăng Hái",
             stars: 4.6,
-            strengths: "Sôi nổi, tò mò khám phá chuyển động động cơ và cảm biến; tiến bộ vượt bậc qua từng buổi học và tự tay hoàn thiện sản phẩm.",
-            improvements: "Rèn thói quen lắng nghe trọn vẹn hướng dẫn trước khi bắt tay vào lắp ráp.",
+            strengths: [
+                "Sôi nổi, tràn đầy năng lượng, luôn tò mò khám phá chuyển động của động cơ và mắt thần cảm biến.",
+                "Có sự tiến bộ vượt bậc sau từng buổi học, đôi tay nhanh nhẹn tự mình hoàn thiện sản phẩm.",
+                "Rất tự tin, hào hứng khi robot của mình vận hành chạy thử nghiệm thành công."
+            ],
+            improvements: [
+                "Cần rèn thói quen lắng nghe trọn vẹn hướng dẫn của thầy trước khi bắt tay vào lắp ráp.",
+                "Cần ôn tập lại các khối lệnh cơ bản và rèn luyện kỹ năng trình bày mạch lạc, tự tin hơn."
+            ],
             videoUrl: "https://www.youtube.com/embed/OA25OLI_uhA",
             eval: "Quốc Anh mang đến không khí lớp học rất sôi nổi. Em rất thích khám phá cách động cơ quay và cách mắt thần cảm biến nhận biết đồ vật. Em tiến bộ rất nhanh và tự tay hoàn thiện robot của mình.",
             skills: { logic: 88, assembly: 90, creativity: 93, teamwork: 89, focus: 94 }
@@ -335,8 +384,15 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: "Chiến Binh Sáng Tạo",
             role: "Học Viên Kiên Trì",
             stars: 4.9,
-            strengths: "Tinh thần không bỏ cuộc; kiên trì thử nghiệm những khối lệnh mới và sẵn sàng kiên nhẫn sửa mã khi robot gặp sự cố.",
-            improvements: "Sắp xếp mã lập trình gọn gàng và tối ưu hơn nữa.",
+            strengths: [
+                "Tinh thần bền bỉ và không ngại thử thách khó, kiên nhẫn tìm và sửa mã khi robot gặp sự cố.",
+                "Rất sáng tạo trong lắp ráp và chủ động cải tiến cấu trúc truyền động giúp robot hoạt động tối ưu.",
+                "Tự tin thử nghiệm những khối lệnh lập trình mới và hào hứng chia sẻ kinh nghiệm cùng bạn."
+            ],
+            improvements: [
+                "Cần sắp xếp các khối lệnh gọn gàng, có hệ thống và khoa học hơn trên bảng lập trình.",
+                "Ôn tập kỹ hơn về cách kết hợp đồng thời nhiều cảm biến để nâng cao độ chính xác."
+            ],
             videoUrl: "https://www.youtube.com/embed/-o5nYTU1Vdo",
             eval: "Thiện Bách rất đam mê học làm robot. Em không ngần ngại thử nghiệm những cách ghép lệnh mới và kiên trì kiểm tra, sửa lại câu lệnh khi robot chưa chạy như ý. Tinh thần không bỏ cuộc của em rất đáng khen!",
             skills: { logic: 95, assembly: 91, creativity: 96, teamwork: 91, focus: 98 }
@@ -348,8 +404,15 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: "Chuyên Gia Tối Ưu",
             role: "Học Viên Logic",
             stars: 4.8,
-            strengths: "Tư duy ghép lệnh mạch lạc, thông minh; chọn cặp bánh răng xe đua rất tối ưu giúp robot đạt vận tốc mượt mà.",
-            improvements: "Tích cực chia sẻ bí quyết lắp ráp bánh răng cho các bạn khác trong lớp.",
+            strengths: [
+                "Tư duy ghép lệnh logic, thông minh; sắp xếp chương trình mạch lạc và tối ưu.",
+                "Khả năng lắp ráp và tính toán bánh răng rất tốt, chọn đúng cặp bánh răng giúp xe đua đạt vận tốc cao.",
+                "Tự tin, nhanh chóng hoàn thành bài học và tích cực hướng dẫn bạn cùng bàn."
+            ],
+            improvements: [
+                "Cần rèn luyện phong thái thuyết trình tự tin, tương tác sinh động hơn với người nghe.",
+                "Ôn tập thêm các lệnh điều khiển nâng cao kết hợp cảm biến độ nghiêng trong tình huống khó."
+            ],
             videoUrl: "https://www.youtube.com/embed/-4H0O7TH4nk",
             eval: "Đăng Bách có tư duy ghép lệnh rất thông minh. Em luôn tìm cách sắp xếp câu lệnh gọn gàng và chọn đúng cặp bánh răng phù hợp để chú xe đua robot di chuyển nhanh và mượt mà nhất.",
             skills: { logic: 97, assembly: 93, creativity: 92, teamwork: 90, focus: 95 }
@@ -361,8 +424,15 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: "Nhà Nghiên Cứu Robot",
             role: "Học Viên Hiếu Học",
             stars: 4.7,
-            strengths: "Ham học hỏi, thích khám phá nguyên lý cảm biến; mô phỏng chuyển động sinh học (chân ếch bật nhảy, cánh ong chúa xoay) rất khéo léo.",
-            improvements: "Gia cố thêm các khớp nối cơ khí để mô hình chịu lực tốt hơn.",
+            strengths: [
+                "Ham học hỏi, thích khám phá nguyên lý hoạt động của các cơ cấu sinh học (chân ếch, cánh ong).",
+                "Đôi tay khéo léo, lắp ráp mô hình chuyển động linh hoạt và hoàn thành đúng yêu cầu bài học.",
+                "Tự tin vận hành thử nghiệm và hào hứng chia sẻ quan sát thực tế với thầy cô."
+            ],
+            improvements: [
+                "Cần gia cố chắc chắn hơn các khớp nối cơ khí chịu lực khi robot chuyển động liên tục.",
+                "Cần ôn tập lại các câu lệnh vòng lặp và câu lệnh chờ sự kiện để ghi nhớ sâu hơn."
+            ],
             videoUrl: "https://www.youtube.com/embed/JNT9MS11P5c",
             eval: "Huy Hoàn rất hay tò mò khám phá xem động cơ và mắt thần hoạt động thế nào. Em hiểu bài rất nhanh và mô phỏng rất khéo léo chuyển động của chú ếch bật nhảy và chú ong chúa xoay cánh.",
             skills: { logic: 94, assembly: 92, creativity: 94, teamwork: 93, focus: 93 }
@@ -374,8 +444,15 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: "Nghệ Sĩ Lắp Ráp",
             role: "Học Viên Tỉ Mỉ",
             stars: 4.8,
-            strengths: "Tính thẩm mỹ cao; phối màu sắc và đính kèm chi tiết robot sắc sảo; tinh thần tự giác học tập cao.",
-            improvements: "Tự tin rèn luyện kỹ năng thuyết trình báo cáo trước đám đông.",
+            strengths: [
+                "Khả năng thẩm mỹ cao, phối màu sắc và đính kèm chi tiết cho mô hình robot vô cùng sắc sảo.",
+                "Lắp ráp cẩn thận, khéo léo và có ý thức giữ gìn bộ đồ dùng học tập rất ngăn nắp.",
+                "Tinh thần tự giác cao, tiếp thu nhanh các khối lệnh lập trình của bài học."
+            ],
+            improvements: [
+                "Cần rèn luyện nói to, dõng dạc và tự tin hơn khi đứng thuyết trình báo cáo trước đám đông.",
+                "Ôn tập lại các khối lệnh âm thanh và cảm biến để tự tin lập trình độc lập hơn."
+            ],
             videoUrl: null,
             eval: "An Nguyên lắp ráp rất cẩn thận và chú ý đến tính thẩm mỹ. Các mô hình robot em tạo ra không chỉ chạy tốt mà còn được phối màu và gắn chi tiết rất đẹp mắt. Em chăm chỉ và có tinh thần tự giác cao.",
             skills: { logic: 90, assembly: 97, creativity: 95, teamwork: 92, focus: 96 }
@@ -387,8 +464,15 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: "Chiến Lược Gia Tự Động",
             role: "Học Viên Linh Hoạt",
             stars: 4.7,
-            strengths: "Nhanh trí, ứng dụng linh hoạt cảm biến độ nghiêng để phát còi cảnh báo khi xe Milo lên dốc; hòa đồng, sẵn sàng chỉ dẫn bạn.",
-            improvements: "Gọn gàng dây cáp cảm biến để không ảnh hưởng quay động cơ.",
+            strengths: [
+                "Nhanh trí, ứng dụng linh hoạt cảm biến độ nghiêng và động cơ vào các thử thách thực tế.",
+                "Sáng tạo trong cải tiến mô hình xe Milo, lắp ráp nhanh nhẹn và thao tác thành thạo.",
+                "Hòa đồng, cởi mở, tự tin giao tiếp và nhiệt tình giúp đỡ các bạn trong lớp."
+            ],
+            improvements: [
+                "Cần chú ý bố trí dây cáp cảm biến gọn gàng để tránh bị vướng vào trục quay động cơ.",
+                "Ôn tập và luyện tập thêm các câu lệnh logic điều kiện rẽ nhánh để nhớ kỹ hơn."
+            ],
             videoUrl: "https://www.youtube.com/embed/27v7bI3InyM",
             eval: "Quốc Hưng có tư duy nhanh nhạy và tinh thần cởi mở. Em rất nhanh trí khi dùng cảm biến độ nghiêng để giúp xe Milo phát ra âm thanh báo động khi lên dốc. Em cũng vui vẻ chỉ dẫn kinh nghiệm cho bạn cùng lớp.",
             skills: { logic: 93, assembly: 94, creativity: 91, teamwork: 95, focus: 94 }
@@ -400,8 +484,15 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: "Thủ Lĩnh Công Nghệ",
             role: "Học Viên Toàn Diện",
             stars: 5.0,
-            strengths: "Năng lực toàn diện xuất sắc; làm chủ các chuỗi lệnh phức tạp và mô hình robot lớn; thuyết trình dự án tự tin, lôi cuốn.",
-            improvements: "Tiếp tục chinh phục các khóa học Robotics nâng cao tiếp theo.",
+            strengths: [
+                "Năng lực toàn diện xuất sắc cả về lắp ráp cơ khí chính xác lẫn tư duy lập trình chuỗi lệnh phức tạp.",
+                "Cực kỳ sáng tạo, luôn chủ động nâng cấp và mở rộng tính năng mới cho mô hình robot.",
+                "Thuyết trình tự tin, lôi cuốn, tác phong đĩnh đạc và khả năng hoàn thiện dự án vượt trội."
+            ],
+            improvements: [
+                "Tiếp tục phát huy thế mạnh tư duy công nghệ, sẵn sàng chinh phục các khóa học Robotics nâng cao tiếp theo.",
+                "Rèn luyện thêm kỹ năng hướng dẫn, cố vấn cho các bạn trong các dự án làm việc nhóm lớn."
+            ],
             videoUrl: "https://www.youtube.com/embed/MkdtpIerUNw",
             eval: "Khánh Nhật Minh thể hiện năng lực xuất sắc trong suốt khóa học. Em luôn xung phong nhận phần ghép khối lệnh và xây dựng mô hình robot phức tạp. Phần giới thiệu Dự Án Cuối Khóa của em rất tự tin và sinh động.",
             skills: { logic: 96, assembly: 95, creativity: 96, teamwork: 97, focus: 96 }
@@ -483,7 +574,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                                     <div class="student-skills-mini">
                                         <div class="skill-mini-row">
-                                            <span>Lắp ráp cơ khí: <strong>${s.skills.assembly}%</strong></span>
+                                            <span>Lắp ráp: <strong>${s.skills.assembly}%</strong></span>
                                             <div class="s-bar"><div class="s-fill" style="width:${s.skills.assembly}%"></div></div>
                                         </div>
                                         <div class="skill-mini-row">
@@ -505,22 +596,22 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <div class="student-eval-column">
                                     <div class="eval-box strength-box">
                                         <h4><i class="fa-solid fa-thumbs-up"></i> ƯU ĐIỂM NỔI BẬT & THÀNH TÍCH:</h4>
-                                        <p>${s.strengths}</p>
+                                        <ul class="eval-bullets">
+                                            ${s.strengths.map(item => `<li><i class="fa-solid fa-check"></i> <span>${item}</span></li>`).join('')}
+                                        </ul>
                                     </div>
 
                                     <div class="eval-box improvement-box">
                                         <h4><i class="fa-solid fa-bullseye"></i> ĐIỂM CẦN CẢI THIỆN & ĐỊNH HƯỚNG:</h4>
-                                        <p>${s.improvements}</p>
+                                        <ul class="eval-bullets">
+                                            ${s.improvements.map(item => `<li><i class="fa-solid fa-arrow-right"></i> <span>${item}</span></li>`).join('')}
+                                        </ul>
                                     </div>
 
                                     <div class="eval-box summary-eval-box">
                                         <h4><i class="fa-solid fa-comment-dots"></i> LỜI NHẬN XÉT CỦA GIẢNG VIÊN:</h4>
                                         <p>"${s.eval}"</p>
                                     </div>
-
-                                    <button class="btn-student-report-print" onclick="openStudentModal(${s.id})">
-                                        <i class="fa-solid fa-certificate"></i> Xem & In Chứng Nhận Báo Cáo
-                                    </button>
                                 </div>
 
                                 <!-- Column 3: Presentation Video Player -->
